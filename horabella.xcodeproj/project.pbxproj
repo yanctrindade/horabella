@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
+		BB1B6DE11BDEA033004C95EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DE01BDEA033004C95EB /* ViewController.swift */; };
+		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
+		BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE51BDEA033004C95EB /* Assets.xcassets */; };
+		BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */; };
+		BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */; };
+		BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB1B6DF01BDEA033004C95EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB1B6DD31BDEA033004C95EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB1B6DDA1BDEA033004C95EB;
+			remoteInfo = horabella;
+		};
+		BB1B6DFB1BDEA033004C95EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB1B6DD31BDEA033004C95EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB1B6DDA1BDEA033004C95EB;
+			remoteInfo = horabella;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB1B6DDB1BDEA033004C95EB /* horabella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horabella.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB1B6DE01BDEA033004C95EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB1B6DE31BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB1B6DE51BDEA033004C95EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB1B6DE81BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB1B6DEA1BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB1B6DEF1BDEA033004C95EB /* horabellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = horabellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = horabellaTests.swift; sourceTree = "<group>"; };
+		BB1B6DF51BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB1B6DFA1BDEA033004C95EB /* horabellaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = horabellaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = horabellaUITests.swift; sourceTree = "<group>"; };
+		BB1B6E001BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB1B6DD81BDEA033004C95EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DEC1BDEA033004C95EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DF71BDEA033004C95EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB1B6DD21BDEA033004C95EB = {
+			isa = PBXGroup;
+			children = (
+				BB1B6DDD1BDEA033004C95EB /* horabella */,
+				BB1B6DF21BDEA033004C95EB /* horabellaTests */,
+				BB1B6DFD1BDEA033004C95EB /* horabellaUITests */,
+				BB1B6DDC1BDEA033004C95EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB1B6DDC1BDEA033004C95EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB1B6DDB1BDEA033004C95EB /* horabella.app */,
+				BB1B6DEF1BDEA033004C95EB /* horabellaTests.xctest */,
+				BB1B6DFA1BDEA033004C95EB /* horabellaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB1B6DDD1BDEA033004C95EB /* horabella */ = {
+			isa = PBXGroup;
+			children = (
+				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
+				BB1B6DE01BDEA033004C95EB /* ViewController.swift */,
+				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
+				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
+				BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */,
+				BB1B6DEA1BDEA033004C95EB /* Info.plist */,
+			);
+			path = horabella;
+			sourceTree = "<group>";
+		};
+		BB1B6DF21BDEA033004C95EB /* horabellaTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */,
+				BB1B6DF51BDEA033004C95EB /* Info.plist */,
+			);
+			path = horabellaTests;
+			sourceTree = "<group>";
+		};
+		BB1B6DFD1BDEA033004C95EB /* horabellaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */,
+				BB1B6E001BDEA033004C95EB /* Info.plist */,
+			);
+			path = horabellaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB1B6DDA1BDEA033004C95EB /* horabella */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB1B6E031BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabella" */;
+			buildPhases = (
+				BB1B6DD71BDEA033004C95EB /* Sources */,
+				BB1B6DD81BDEA033004C95EB /* Frameworks */,
+				BB1B6DD91BDEA033004C95EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = horabella;
+			productName = horabella;
+			productReference = BB1B6DDB1BDEA033004C95EB /* horabella.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB1B6DEE1BDEA033004C95EB /* horabellaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB1B6E061BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaTests" */;
+			buildPhases = (
+				BB1B6DEB1BDEA033004C95EB /* Sources */,
+				BB1B6DEC1BDEA033004C95EB /* Frameworks */,
+				BB1B6DED1BDEA033004C95EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB1B6DF11BDEA033004C95EB /* PBXTargetDependency */,
+			);
+			name = horabellaTests;
+			productName = horabellaTests;
+			productReference = BB1B6DEF1BDEA033004C95EB /* horabellaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB1B6DF91BDEA033004C95EB /* horabellaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB1B6E091BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaUITests" */;
+			buildPhases = (
+				BB1B6DF61BDEA033004C95EB /* Sources */,
+				BB1B6DF71BDEA033004C95EB /* Frameworks */,
+				BB1B6DF81BDEA033004C95EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB1B6DFC1BDEA033004C95EB /* PBXTargetDependency */,
+			);
+			name = horabellaUITests;
+			productName = horabellaUITests;
+			productReference = BB1B6DFA1BDEA033004C95EB /* horabellaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB1B6DD31BDEA033004C95EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Yi Mobile";
+				TargetAttributes = {
+					BB1B6DDA1BDEA033004C95EB = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					BB1B6DEE1BDEA033004C95EB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = BB1B6DDA1BDEA033004C95EB;
+					};
+					BB1B6DF91BDEA033004C95EB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = BB1B6DDA1BDEA033004C95EB;
+					};
+				};
+			};
+			buildConfigurationList = BB1B6DD61BDEA033004C95EB /* Build configuration list for PBXProject "horabella" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB1B6DD21BDEA033004C95EB;
+			productRefGroup = BB1B6DDC1BDEA033004C95EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB1B6DDA1BDEA033004C95EB /* horabella */,
+				BB1B6DEE1BDEA033004C95EB /* horabellaTests */,
+				BB1B6DF91BDEA033004C95EB /* horabellaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB1B6DD91BDEA033004C95EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */,
+				BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */,
+				BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DED1BDEA033004C95EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DF81BDEA033004C95EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB1B6DD71BDEA033004C95EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1B6DE11BDEA033004C95EB /* ViewController.swift in Sources */,
+				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DEB1BDEA033004C95EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1B6DF61BDEA033004C95EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB1B6DF11BDEA033004C95EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB1B6DDA1BDEA033004C95EB /* horabella */;
+			targetProxy = BB1B6DF01BDEA033004C95EB /* PBXContainerItemProxy */;
+		};
+		BB1B6DFC1BDEA033004C95EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB1B6DDA1BDEA033004C95EB /* horabella */;
+			targetProxy = BB1B6DFB1BDEA033004C95EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB1B6DE21BDEA033004C95EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB1B6DE31BDEA033004C95EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB1B6DE81BDEA033004C95EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB1B6E011BDEA033004C95EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB1B6E021BDEA033004C95EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB1B6E041BDEA033004C95EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = horabella/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BB1B6E051BDEA033004C95EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = horabella/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BB1B6E071BDEA033004C95EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = horabellaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabellaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/horabella.app/horabella";
+			};
+			name = Debug;
+		};
+		BB1B6E081BDEA033004C95EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = horabellaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabellaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/horabella.app/horabella";
+			};
+			name = Release;
+		};
+		BB1B6E0A1BDEA033004C95EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = horabellaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabellaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = horabella;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BB1B6E0B1BDEA033004C95EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = horabellaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabellaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = horabella;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB1B6DD61BDEA033004C95EB /* Build configuration list for PBXProject "horabella" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1B6E011BDEA033004C95EB /* Debug */,
+				BB1B6E021BDEA033004C95EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB1B6E031BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabella" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1B6E041BDEA033004C95EB /* Debug */,
+				BB1B6E051BDEA033004C95EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB1B6E061BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1B6E071BDEA033004C95EB /* Debug */,
+				BB1B6E081BDEA033004C95EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB1B6E091BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1B6E0A1BDEA033004C95EB /* Debug */,
+				BB1B6E0B1BDEA033004C95EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB1B6DD31BDEA033004C95EB /* Project object */;
+}
