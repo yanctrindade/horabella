@@ -14,6 +14,7 @@
 		BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */; };
 		BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */; };
 		BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */; };
+		BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BB1B6DFA1BDEA033004C95EB /* horabellaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = horabellaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = horabellaUITests.swift; sourceTree = "<group>"; };
 		BB1B6E001BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
 				BB1B6DE01BDEA033004C95EB /* ViewController.swift */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
+				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
 				BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */,
 				BB1B6DEA1BDEA033004C95EB /* Info.plist */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */,
 				BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */,
 				BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */,
 				BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */,
