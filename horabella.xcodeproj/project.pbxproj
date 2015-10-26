@@ -15,6 +15,8 @@
 		BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */; };
 		BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */; };
 		BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */; };
+		BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C801BDEB63400F3A467 /* LogInViewController.swift */; };
+		BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = horabellaUITests.swift; sourceTree = "<group>"; };
 		BB1B6E001BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BB758C801BDEB63400F3A467 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
 				BB1B6DE01BDEA033004C95EB /* ViewController.swift */,
+				BB758C801BDEB63400F3A467 /* LogInViewController.swift */,
+				BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
 				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
@@ -262,6 +268,8 @@
 			files = (
 				BB1B6DE11BDEA033004C95EB /* ViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
+				BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */,
+				BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +494,7 @@
 				BB1B6E051BDEA033004C95EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB1B6E061BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +503,7 @@
 				BB1B6E081BDEA033004C95EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB1B6E091BDEA033004C95EB /* Build configuration list for PBXNativeTarget "horabellaUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +512,7 @@
 				BB1B6E0B1BDEA033004C95EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
