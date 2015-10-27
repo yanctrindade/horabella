@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
-		BB1B6DE11BDEA033004C95EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DE01BDEA033004C95EB /* ViewController.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
 		BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE51BDEA033004C95EB /* Assets.xcassets */; };
 		BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */; };
@@ -36,12 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewController.swift; sourceTree = "<group>"; };
+		0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewCell.swift; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DDB1BDEA033004C95EB /* horabella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horabella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB1B6DE01BDEA033004C95EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB1B6DE31BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB1B6DE51BDEA033004C95EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB1B6DE81BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
-				BB1B6DE01BDEA033004C95EB /* ViewController.swift */,
+				0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */,
+				0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
 				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
@@ -335,7 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB1B6DE11BDEA033004C95EB /* ViewController.swift in Sources */,
+				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
+				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
