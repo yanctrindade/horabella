@@ -31,63 +31,82 @@
         <scene sceneID="VXz-Rj-k4F">
             <objects>
                 <tableViewController id="7Ia-nT-94M" customClass="HBSalonListTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="228" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonCell" rowHeight="228" id="okw-21-cET" customClass="HBSalonListTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="228"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonCell" rowHeight="255" id="okw-21-cET" customClass="HBSalonListTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okw-21-cET" id="IWF-MQ-6F2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="228"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
-                                            <rect key="frame" x="8" y="176" width="584" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
+                                            <rect key="frame" x="8" y="196" width="584" height="18"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="UfE-1F-Yxt"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Terraço Shopping - 2 andar - loja 10" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-08-6rh">
-                                            <rect key="frame" x="8" y="206" width="584" height="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Terraço Shopping - 2 andar - loja 10  Terraço Shopping " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-08-6rh" userLabel="Salon Address">
+                                            <rect key="frame" x="8" y="219" width="474" height="14"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="ydb-t2-DW0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" customClass="HCSStarRatingView">
-                                            <rect key="frame" x="352" y="175" width="240" height="44"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" userLabel="Salon Evaluation" customClass="HCSStarRatingView">
+                                            <rect key="frame" x="492" y="215" width="100" height="23"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="cKE-aZ-LuB"/>
+                                                <constraint firstAttribute="width" constant="100" id="ddN-rN-avn"/>
+                                            </constraints>
                                         </view>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-3y-gGQ" userLabel="Salon Images Control">
+                                            <rect key="frame" x="8" y="151" width="584" height="37"/>
+                                            <animations/>
+                                        </pageControl>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="7px-mw-kDY" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="02c-wk-r5A"/>
+                                        <constraint firstItem="7px-mw-kDY" firstAttribute="leading" secondItem="0vu-08-6rh" secondAttribute="trailing" constant="10" id="0l4-hU-Pzl"/>
                                         <constraint firstItem="K2I-2K-N23" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leading" id="1Ww-8E-ka0"/>
-                                        <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="8" id="6H9-G4-YkO"/>
                                         <constraint firstItem="K2I-2K-N23" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="top" id="6l8-IN-kdO"/>
-                                        <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="60" id="Nwu-YI-FuS"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="7px-mw-kDY" secondAttribute="bottom" id="WIg-EL-HFR"/>
-                                        <constraint firstItem="0vu-08-6rh" firstAttribute="bottom" secondItem="IWF-MQ-6F2" secondAttribute="bottomMargin" id="dJI-G7-2Ov"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0vu-08-6rh" secondAttribute="trailing" id="fFp-Te-4zS"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="8" id="7GP-U2-FZY"/>
+                                        <constraint firstItem="0vu-08-6rh" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="ClU-ch-PsW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7px-mw-kDY" secondAttribute="trailing" id="MnG-7d-pmt"/>
+                                        <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="66.5" id="Nwu-YI-FuS"/>
+                                        <constraint firstItem="7px-mw-kDY" firstAttribute="centerY" secondItem="0vu-08-6rh" secondAttribute="centerY" id="OUG-hQ-rYd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Rma-3y-gGQ" secondAttribute="trailing" id="WM7-VZ-doM"/>
+                                        <constraint firstItem="0vu-08-6rh" firstAttribute="top" secondItem="S52-T1-cH9" secondAttribute="bottom" constant="5" id="h1v-MV-qRL"/>
                                         <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
-                                        <constraint firstItem="0vu-08-6rh" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="nrp-X2-ec0"/>
-                                        <constraint firstItem="7px-mw-kDY" firstAttribute="height" secondItem="0vu-08-6rh" secondAttribute="height" id="obL-LQ-lCy"/>
-                                        <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="uoe-A7-bjU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="S52-T1-cH9" secondAttribute="trailing" id="wV3-N7-9CN"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="Rma-3y-gGQ" secondAttribute="bottom" constant="8" id="tGo-cz-LiF"/>
+                                        <constraint firstItem="Rma-3y-gGQ" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="tZO-lZ-BTd"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="tgO-1E-4w8"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="zy2-OH-CrC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="salonAddress" destination="0vu-08-6rh" id="haS-Cx-Qpy"/>
+                                    <outlet property="salonEvaluation" destination="7px-mw-kDY" id="piC-TO-fZx"/>
                                     <outlet property="salonImage" destination="K2I-2K-N23" id="rRN-Ut-tRi"/>
+                                    <outlet property="salonImagesControl" destination="Rma-3y-gGQ" id="kEc-Fq-4Ya"/>
                                     <outlet property="salonName" destination="S52-T1-cH9" id="oHB-xD-JHD"/>
                                 </connections>
                             </tableViewCell>
