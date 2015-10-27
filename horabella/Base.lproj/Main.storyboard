@@ -62,8 +62,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" customClass="HCSStarRatingView">
-                                            <rect key="frame" x="408" y="189" width="163" height="22"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" customClass="HCSStarRatingView">
+                                            <rect key="frame" x="352" y="175" width="240" height="44"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
