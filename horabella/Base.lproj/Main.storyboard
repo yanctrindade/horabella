@@ -26,25 +26,61 @@
             </objects>
             <point key="canvasLocation" x="-178" y="551"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Salon List Table View Controller-->
         <scene sceneID="VXz-Rj-k4F">
             <objects>
-                <tableViewController id="7Ia-nT-94M" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
+                <tableViewController id="7Ia-nT-94M" customClass="HBSalonListTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="228" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="okw-21-cET">
-                                <rect key="frame" x="0.0" y="92" width="600" height="128"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonCell" rowHeight="228" id="okw-21-cET" customClass="HBSalonListTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="228"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okw-21-cET" id="IWF-MQ-6F2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
+                                            <rect key="frame" x="8" y="176" width="584" height="18"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terraço Shopping - 2 andar - loja 10" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-08-6rh">
+                                            <rect key="frame" x="8" y="206" width="584" height="14"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="K2I-2K-N23" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leading" id="1Ww-8E-ka0"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="8" id="6H9-G4-YkO"/>
+                                        <constraint firstItem="K2I-2K-N23" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="top" id="6l8-IN-kdO"/>
+                                        <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="60" id="Nwu-YI-FuS"/>
+                                        <constraint firstItem="0vu-08-6rh" firstAttribute="bottom" secondItem="IWF-MQ-6F2" secondAttribute="bottomMargin" id="dJI-G7-2Ov"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0vu-08-6rh" secondAttribute="trailing" id="fFp-Te-4zS"/>
+                                        <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
+                                        <constraint firstItem="0vu-08-6rh" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="nrp-X2-ec0"/>
+                                        <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="uoe-A7-bjU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="S52-T1-cH9" secondAttribute="trailing" id="wV3-N7-9CN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="salonImage" destination="K2I-2K-N23" id="rRN-Ut-tRi"/>
+                                    <outlet property="salonName" destination="S52-T1-cH9" id="oHB-xD-JHD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -239,4 +275,7 @@
             <point key="canvasLocation" x="802" y="1615"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TesteSalaoBackground" width="187" height="88"/>
+    </resources>
 </document>
