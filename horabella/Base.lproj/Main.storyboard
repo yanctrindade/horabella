@@ -41,7 +41,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okw-21-cET" id="IWF-MQ-6F2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="K2I-2K-N23" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leading" id="1Ww-8E-ka0"/>
+                                        <constraint firstItem="K2I-2K-N23" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="top" id="6l8-IN-kdO"/>
+                                        <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" id="Nwu-YI-FuS"/>
+                                        <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
@@ -238,4 +250,7 @@
             <point key="canvasLocation" x="802" y="1615"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TesteSalaoBackground" width="187" height="88"/>
+    </resources>
 </document>

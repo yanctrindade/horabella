@@ -8,6 +8,7 @@ pod 'HCSStarRatingView', :git => 'https://github.com/hugocampossousa/HCSStarRati
 pod 'FBSDKLoginKit'
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
+pod 'JSONWebToken'
 end
 
 target ‘horabellaTests’ do
