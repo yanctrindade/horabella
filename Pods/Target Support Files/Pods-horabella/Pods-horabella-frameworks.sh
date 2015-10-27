@@ -85,17 +85,21 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-horabella/Bolts.framework"
+  install_framework "Pods-horabella/CryptoSwift.framework"
   install_framework "Pods-horabella/FBSDKCoreKit.framework"
   install_framework "Pods-horabella/FBSDKLoginKit.framework"
   install_framework "Pods-horabella/FBSDKShareKit.framework"
   install_framework "Pods-horabella/HCSStarRatingView.framework"
+  install_framework "Pods-horabella/JWT.framework"
   install_framework "Pods-horabella/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-horabella/Bolts.framework"
+  install_framework "Pods-horabella/CryptoSwift.framework"
   install_framework "Pods-horabella/FBSDKCoreKit.framework"
   install_framework "Pods-horabella/FBSDKLoginKit.framework"
   install_framework "Pods-horabella/FBSDKShareKit.framework"
   install_framework "Pods-horabella/HCSStarRatingView.framework"
+  install_framework "Pods-horabella/JWT.framework"
   install_framework "Pods-horabella/Parse.framework"
 fi

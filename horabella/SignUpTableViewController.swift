@@ -15,6 +15,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var birthdateTextField: UITextField!
+    var birthdate: NSDate!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -121,11 +122,12 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         
         let dateFormatter = NSDateFormatter()
         
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         birthdateTextField.text = dateFormatter.stringFromDate(sender.date)
+        birthdate = sender.date
         
     }
     
