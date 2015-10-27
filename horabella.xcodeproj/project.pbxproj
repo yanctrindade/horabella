@@ -124,6 +124,8 @@
 				BB1B6DE01BDEA033004C95EB /* ViewController.swift */,
 				BB758C801BDEB63400F3A467 /* LogInViewController.swift */,
 				BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */,
+				0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */,
+				0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
 				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,

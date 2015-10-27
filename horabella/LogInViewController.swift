@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -30,6 +30,20 @@ class LogInViewController: UIViewController {
     @IBAction func logIn(sender: AnyObject) {
         
         print("faz login")
+        
+    }
+    
+    //MARK: - TextField
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField == emailTextField{
+            passwordTextField.becomeFirstResponder()
+        }else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+        }
+        
+        return true
         
     }
     
