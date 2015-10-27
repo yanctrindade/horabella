@@ -44,6 +44,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="228"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                            <animations/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
                                             <rect key="frame" x="8" y="176" width="584" height="18"/>
                                             <animations/>
@@ -58,21 +62,25 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" customClass="HCSStarRatingView">
+                                            <rect key="frame" x="429" y="202" width="163" height="22"/>
                                             <animations/>
-                                        </imageView>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="7px-mw-kDY" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="02c-wk-r5A"/>
                                         <constraint firstItem="K2I-2K-N23" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leading" id="1Ww-8E-ka0"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="8" id="6H9-G4-YkO"/>
                                         <constraint firstItem="K2I-2K-N23" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="top" id="6l8-IN-kdO"/>
                                         <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="60" id="Nwu-YI-FuS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7px-mw-kDY" secondAttribute="bottom" id="WIg-EL-HFR"/>
                                         <constraint firstItem="0vu-08-6rh" firstAttribute="bottom" secondItem="IWF-MQ-6F2" secondAttribute="bottomMargin" id="dJI-G7-2Ov"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0vu-08-6rh" secondAttribute="trailing" id="fFp-Te-4zS"/>
                                         <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
                                         <constraint firstItem="0vu-08-6rh" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="nrp-X2-ec0"/>
+                                        <constraint firstItem="7px-mw-kDY" firstAttribute="height" secondItem="0vu-08-6rh" secondAttribute="height" id="obL-LQ-lCy"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="uoe-A7-bjU"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="S52-T1-cH9" secondAttribute="trailing" id="wV3-N7-9CN"/>
                                     </constraints>
