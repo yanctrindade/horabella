@@ -77,6 +77,50 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
                                             <animations/>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-kI-JPg">
+                                            <rect key="frame" x="542" y="87" width="50" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.3 KM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXH-KF-7H0">
+                                                    <rect key="frame" x="7" y="1" width="36" height="49"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="TMr-TB-bGg"/>
+                                                        <constraint firstAttribute="height" constant="49" id="v2Y-1Y-3II"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="3rt-bi-uta"/>
+                                                <constraint firstItem="TXH-KF-7H0" firstAttribute="centerY" secondItem="yhe-kI-JPg" secondAttribute="centerY" id="HUL-yV-U2B"/>
+                                                <constraint firstAttribute="height" constant="50" id="Nhq-u2-YNf"/>
+                                                <constraint firstItem="TXH-KF-7H0" firstAttribute="centerX" secondItem="yhe-kI-JPg" secondAttribute="centerX" id="Vut-C4-745"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-lb-RUN">
+                                            <rect key="frame" x="542" y="8" width="50" height="50"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="iG5-Sf-oy6"/>
+                                                <constraint firstAttribute="width" constant="50" id="oeZ-G9-i3k"/>
+                                            </constraints>
+                                            <state key="normal" image="favorite_on"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
@@ -85,11 +129,15 @@
                                         <constraint firstItem="K2I-2K-N23" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="top" id="6l8-IN-kdO"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="8" id="7GP-U2-FZY"/>
                                         <constraint firstItem="0vu-08-6rh" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="ClU-ch-PsW"/>
+                                        <constraint firstItem="yhe-kI-JPg" firstAttribute="top" secondItem="ZYL-lb-RUN" secondAttribute="bottom" constant="29" id="I3e-Iv-BXi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="7px-mw-kDY" secondAttribute="trailing" id="MnG-7d-pmt"/>
                                         <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="66.5" id="Nwu-YI-FuS"/>
                                         <constraint firstItem="7px-mw-kDY" firstAttribute="centerY" secondItem="0vu-08-6rh" secondAttribute="centerY" id="OUG-hQ-rYd"/>
+                                        <constraint firstItem="ZYL-lb-RUN" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="fo6-j5-yMA"/>
                                         <constraint firstItem="0vu-08-6rh" firstAttribute="top" secondItem="S52-T1-cH9" secondAttribute="bottom" constant="5" id="h1v-MV-qRL"/>
                                         <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
+                                        <constraint firstItem="yhe-kI-JPg" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="imV-IU-9CD"/>
+                                        <constraint firstItem="ZYL-lb-RUN" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="topMargin" id="mDV-An-GmM"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="tgO-1E-4w8"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="zy2-OH-CrC"/>
                                     </constraints>
@@ -297,5 +345,6 @@
     </scenes>
     <resources>
         <image name="TesteSalaoBackground" width="187" height="88"/>
+        <image name="favorite_on" width="24" height="21"/>
     </resources>
 </document>
