@@ -9,5 +9,7 @@
 #ifndef HB_Bridge_h
 #define HB_Bridge_h
 
+#import <HCSStarRatingView/HCSStarRatingView.h>
+#import "HCSStarRatingView.h"
 
 #endif /* HB_Bridge_h */

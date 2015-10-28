@@ -31,7 +31,7 @@
         <scene sceneID="VXz-Rj-k4F">
             <objects>
                 <tableViewController id="7Ia-nT-94M" customClass="HBSalonListTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -44,10 +44,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
-                                            <animations/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
                                             <rect key="frame" x="8" y="196" width="584" height="18"/>
                                             <animations/>
@@ -77,10 +73,10 @@
                                                 <constraint firstAttribute="width" constant="100" id="ddN-rN-avn"/>
                                             </constraints>
                                         </view>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-3y-gGQ" userLabel="Salon Images Control">
-                                            <rect key="frame" x="8" y="151" width="584" height="37"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
                                             <animations/>
-                                        </pageControl>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
@@ -92,11 +88,8 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="7px-mw-kDY" secondAttribute="trailing" id="MnG-7d-pmt"/>
                                         <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="66.5" id="Nwu-YI-FuS"/>
                                         <constraint firstItem="7px-mw-kDY" firstAttribute="centerY" secondItem="0vu-08-6rh" secondAttribute="centerY" id="OUG-hQ-rYd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Rma-3y-gGQ" secondAttribute="trailing" id="WM7-VZ-doM"/>
                                         <constraint firstItem="0vu-08-6rh" firstAttribute="top" secondItem="S52-T1-cH9" secondAttribute="bottom" constant="5" id="h1v-MV-qRL"/>
                                         <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
-                                        <constraint firstItem="S52-T1-cH9" firstAttribute="top" secondItem="Rma-3y-gGQ" secondAttribute="bottom" constant="8" id="tGo-cz-LiF"/>
-                                        <constraint firstItem="Rma-3y-gGQ" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="tZO-lZ-BTd"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="leading" secondItem="IWF-MQ-6F2" secondAttribute="leadingMargin" id="tgO-1E-4w8"/>
                                         <constraint firstItem="S52-T1-cH9" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="zy2-OH-CrC"/>
                                     </constraints>
@@ -106,7 +99,6 @@
                                     <outlet property="salonAddress" destination="0vu-08-6rh" id="haS-Cx-Qpy"/>
                                     <outlet property="salonEvaluation" destination="7px-mw-kDY" id="piC-TO-fZx"/>
                                     <outlet property="salonImage" destination="K2I-2K-N23" id="rRN-Ut-tRi"/>
-                                    <outlet property="salonImagesControl" destination="Rma-3y-gGQ" id="kEc-Fq-4Ya"/>
                                     <outlet property="salonName" destination="S52-T1-cH9" id="oHB-xD-JHD"/>
                                 </connections>
                             </tableViewCell>

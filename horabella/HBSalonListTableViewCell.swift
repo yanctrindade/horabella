@@ -15,12 +15,9 @@ class HBSalonListTableViewCell: UITableViewCell {
     @IBOutlet weak var salonName: UILabel!
     @IBOutlet weak var salonAddress: UILabel!
     @IBOutlet weak var salonEvaluation: HCSStarRatingView!
-    @IBOutlet weak var salonImagesControl: UIPageControl!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
