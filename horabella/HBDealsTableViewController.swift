@@ -52,11 +52,13 @@ class HBDealsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 35
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "ae"
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableCellWithIdentifier("sectionHeader") as!HBSectionHeaderTableViewCell
+        headerView.salonNameLabel.text = "Helio Diff Instituto de Beleza"
+        return headerView;
     }
 
     /*

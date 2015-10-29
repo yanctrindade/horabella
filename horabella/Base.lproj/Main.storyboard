@@ -160,14 +160,16 @@
                             <outlet property="delegate" destination="7Ia-nT-94M" id="eC6-pm-y3h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cqY-IT-bQ1"/>
+                    <navigationItem key="navigationItem" id="cqY-IT-bQ1">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="n34-Wc-ftg"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iX-vY-rxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606" y="-468"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Agendamentos-->
         <scene sceneID="1kP-od-Swg">
             <objects>
                 <tableViewController id="z8p-n1-q8w" sceneMemberID="viewController">
@@ -193,14 +195,16 @@
                             <outlet property="delegate" destination="z8p-n1-q8w" id="QEF-Sz-Nei"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aUc-cs-gW3"/>
+                    <navigationItem key="navigationItem" title="Agendamentos" id="aUc-cs-gW3">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="vYs-EE-ue1"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xo-EX-Mju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606" y="239"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Perfil-->
         <scene sceneID="jsk-4K-gee">
             <objects>
                 <tableViewController id="fsK-t9-nIJ" sceneMemberID="viewController">
@@ -226,7 +230,9 @@
                             <outlet property="delegate" destination="fsK-t9-nIJ" id="bHW-p9-QZf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RLi-fl-5Kj"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="RLi-fl-5Kj">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="fat-GX-2s8"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="du5-Ng-Y29" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,14 +249,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="35" id="6vn-vN-wap">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="35" id="6vn-vN-wap" customClass="HBSectionHeaderTableViewCell" customModule="horabella" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vn-vN-wap" id="9ws-SU-bHn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Instituto de Beleza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-Mo-bmh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Instituto de Beleza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-Mo-bmh" userLabel="Salon Title Label">
                                             <rect key="frame" x="8" y="8" width="584" height="19"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
@@ -268,6 +274,9 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" red="0.48627450980392156" green="0.70980392156862748" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="salonNameLabel" destination="3dH-Mo-bmh" id="jxZ-6Y-os2"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="discountCell" rowHeight="71" id="ZE6-dG-R2V" customClass="HBDealsTableViewCell" customModule="horabella" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="127" width="600" height="71"/>
@@ -316,7 +325,9 @@
                             <outlet property="delegate" destination="oYk-22-Z7l" id="UF0-lp-25z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qwc-jY-byS"/>
+                    <navigationItem key="navigationItem" title="Promoções" id="qwc-jY-byS">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Kwz-9S-nWX"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlx-vf-MMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,6 +344,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="backgroundColor" red="0.25882352941176473" green="0.16862745098039217" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.25882352941176473" green="0.16862745098039217" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -393,6 +407,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="backgroundColor" red="0.2784313725" green="0.17254901959999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.25882352941176473" green="0.16862745098039217" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
