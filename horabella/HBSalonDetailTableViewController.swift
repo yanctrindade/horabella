@@ -12,6 +12,7 @@ class HBSalonDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var picturesScrollView: UIScrollView!
     @IBOutlet weak var segControl: UISegmentedControl!
+    @IBOutlet weak var pageControl: UIPageControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,7 @@ class HBSalonDetailTableViewController: UITableViewController {
         }else if segControl.selectedSegmentIndex == 1 {
             return 3
         }else{
-            return 0
+            return 4
         }
         
     }
@@ -70,7 +71,11 @@ class HBSalonDetailTableViewController: UITableViewController {
             }
             
         default:
-            return 100
+            if indexPath.row == 0 {
+                return 140
+            }else{
+                return 70
+            }
             
         }
         
@@ -116,9 +121,44 @@ class HBSalonDetailTableViewController: UITableViewController {
             }
             
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
             
-            return cell
+            if indexPath.row == 0 {
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("salonDescription", forIndexPath: indexPath) as! HBSalonDescriptionTableViewCell
+                
+                cell.name.text = "Helio Diff"
+                cell.salonDescription.text = "Descriçao do\nsalao\ntop"
+                
+                return cell
+                
+            }else if indexPath.row == 1 {
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
+                
+                cell.infoType.text = "Endereço"
+                cell.infoDescription.text = "edereço do\nsalao top"
+                
+                return cell
+                
+            }else if indexPath.row == 2 {
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
+                
+                cell.infoType.text = "Telefone"
+                cell.infoDescription.text = "(99) 9999-9999"
+                
+                return cell
+                
+            }else{
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
+                
+                cell.infoType.text = "Site"
+                cell.infoDescription.text = "www.heliodiff.com"
+                
+                return cell
+                
+            }
             
         }
         

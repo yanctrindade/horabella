@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; };
 		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; };
-		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; };
+		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; };
+		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
@@ -24,6 +24,8 @@
 		BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */; };
 		BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */; };
 		BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */; };
+		BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */; };
+		BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */; };
 		BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C801BDEB63400F3A467 /* LogInViewController.swift */; };
 		BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDetailTableViewController.swift; sourceTree = "<group>"; };
 		BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonEvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonInfoTableViewCell.swift; sourceTree = "<group>"; };
 		BB758C801BDEB63400F3A467 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +228,8 @@
 				BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */,
 				BB75187B1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift */,
 				BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */,
+				BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */,
+				BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */,
 			);
 			name = SalonDetail;
 			sourceTree = "<group>";
@@ -429,6 +435,8 @@
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
+				BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */,
+				BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */,
 				BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */,
 				BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */,
 			);
