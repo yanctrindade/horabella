@@ -10,6 +10,8 @@
 		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; };
 		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; };
 		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewCell.swift; sourceTree = "<group>"; };
 		0235A93E1BDF4A2E00355207 /* HB-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HB-Bridge.h"; sourceTree = "<group>"; };
 		025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBarViewController.swift; sourceTree = "<group>"; };
+		025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDealsTableViewController.swift; sourceTree = "<group>"; };
+		025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDealsTableViewCell.swift; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,15 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
+		025C47AF1BE29E2C00D247D7 /* Deals */ = {
+			isa = PBXGroup;
+			children = (
+				025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */,
+				025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */,
+			);
+			name = Deals;
+			sourceTree = "<group>";
+		};
 		856DC9708B54A42C4B930F4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +176,7 @@
 				BB75187A1BE19A8E00D2200A /* Login */,
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
+				025C47AF1BE29E2C00D247D7 /* Deals */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
 				BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */,
@@ -405,7 +419,9 @@
 				025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */,
 				BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */,
 				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,
+				025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */,
 				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
+				025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */,
 				BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */,
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,

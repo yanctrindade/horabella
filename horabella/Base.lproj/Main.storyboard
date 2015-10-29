@@ -232,25 +232,82 @@
             </objects>
             <point key="canvasLocation" x="1600" y="899"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Promoções Table View Controller-->
         <scene sceneID="TPa-NV-2zk">
             <objects>
-                <tableViewController id="oYk-22-Z7l" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ytz-2W-z8r">
+                <tableViewController id="oYk-22-Z7l" userLabel="Promoções Table View Controller" customClass="HBDealsTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="18" sectionHeaderHeight="28" sectionFooterHeight="28" id="ytz-2W-z8r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6vn-vN-wap">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="35" id="6vn-vN-wap">
+                                <rect key="frame" x="0.0" y="92" width="600" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vn-vN-wap" id="9ws-SU-bHn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Instituto de Beleza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-Mo-bmh">
+                                            <rect key="frame" x="8" y="8" width="584" height="19"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3dH-Mo-bmh" secondAttribute="bottom" id="0nt-gz-5Vq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3dH-Mo-bmh" secondAttribute="trailing" id="6Ts-mQ-wjI"/>
+                                        <constraint firstItem="3dH-Mo-bmh" firstAttribute="leading" secondItem="9ws-SU-bHn" secondAttribute="leadingMargin" id="nVB-Xk-Zx3"/>
+                                        <constraint firstItem="3dH-Mo-bmh" firstAttribute="top" secondItem="9ws-SU-bHn" secondAttribute="topMargin" id="vYQ-YX-yez"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.48627450980392156" green="0.70980392156862748" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="discountCell" rowHeight="71" id="ZE6-dG-R2V" customClass="HBDealsTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="127" width="600" height="71"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZE6-dG-R2V" id="O5h-ur-pv2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHJ-O9-6xs">
+                                            <rect key="frame" x="8" y="14" width="81" height="43"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="81" id="nzB-RB-zS3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="de desconto na terça-feira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqv-pD-mvF">
+                                            <rect key="frame" x="97" y="24" width="487" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="vHJ-O9-6xs" firstAttribute="leading" secondItem="O5h-ur-pv2" secondAttribute="leadingMargin" id="94s-st-w0t"/>
+                                        <constraint firstItem="Sqv-pD-mvF" firstAttribute="centerY" secondItem="O5h-ur-pv2" secondAttribute="centerY" id="Gkd-UK-RNM"/>
+                                        <constraint firstItem="Sqv-pD-mvF" firstAttribute="leading" secondItem="vHJ-O9-6xs" secondAttribute="trailing" constant="8" id="Jk6-0x-5k6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sqv-pD-mvF" secondAttribute="trailing" constant="8" id="TUX-fH-DcZ"/>
+                                        <constraint firstItem="vHJ-O9-6xs" firstAttribute="centerY" secondItem="O5h-ur-pv2" secondAttribute="centerY" id="g0q-ft-kPs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.62745098039215685" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="Sqv-pD-mvF" id="pZe-4m-pul"/>
+                                    <outlet property="percentageLabel" destination="vHJ-O9-6xs" id="fYL-nm-6h9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
