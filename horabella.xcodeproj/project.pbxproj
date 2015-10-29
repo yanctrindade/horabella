@@ -52,6 +52,10 @@
 		025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBarViewController.swift; sourceTree = "<group>"; };
 		025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDealsTableViewController.swift; sourceTree = "<group>"; };
 		025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDealsTableViewCell.swift; sourceTree = "<group>"; };
+		025C47B41BE2ABA200D247D7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		025C47B51BE2ABA200D247D7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		025C47B61BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		025C47B71BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,7 +324,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = BB1B6DD21BDEA033004C95EB;
@@ -467,6 +470,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				BB1B6DE31BDEA033004C95EB /* Base */,
+				025C47B41BE2ABA200D247D7 /* pt-BR */,
+				025C47B61BE2ABDE00D247D7 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -475,6 +480,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				BB1B6DE81BDEA033004C95EB /* Base */,
+				025C47B51BE2ABA200D247D7 /* pt-BR */,
+				025C47B71BE2ABDE00D247D7 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

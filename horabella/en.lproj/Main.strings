@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Av. Castanheiras 1983 - Águas Claras Ed. Águas Limpas, Térreo, loja 18"; ObjectID = "0vu-08-6rh"; */
+"0vu-08-6rh.text" = "Av. Castanheiras 1983 - Águas Claras Ed. Águas Limpas, Térreo, loja 18";
+
+/* Class = "UILabel"; text = "Helio Diff Instituto de Beleza"; ObjectID = "3dH-Mo-bmh"; */
+"3dH-Mo-bmh.text" = "Helio Diff Instituto de Beleza";
+
+/* Class = "UIButton"; normalTitle = "Comentar"; ObjectID = "4Tv-hu-C8B"; */
+"4Tv-hu-C8B.normalTitle" = "Comentar";
+
+/* Class = "UISegmentedControl"; 8BB-Ej-RDU.segmentTitles[0] = "Agendamento"; ObjectID = "8BB-Ej-RDU"; */
+"8BB-Ej-RDU.segmentTitles[0]" = "Agendamento";
+
+/* Class = "UISegmentedControl"; 8BB-Ej-RDU.segmentTitles[1] = "Avaliações"; ObjectID = "8BB-Ej-RDU"; */
+"8BB-Ej-RDU.segmentTitles[1]" = "Avaliações";
+
+/* Class = "UISegmentedControl"; 8BB-Ej-RDU.segmentTitles[2] = "Detalhes"; ObjectID = "8BB-Ej-RDU"; */
+"8BB-Ej-RDU.segmentTitles[2]" = "Detalhes";
+
+/* Class = "UILabel"; text = "X estrelas"; ObjectID = "B9Y-nY-BWi"; */
+"B9Y-nY-BWi.text" = "X estrelas";
+
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "CWH-95-2V9"; */
+"CWH-95-2V9.title" = "Perfil";
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "OJC-uj-ywO"; */
+"OJC-uj-ywO.text" = "Nome";
+
+/* Class = "UILabel"; text = "Data e hora"; ObjectID = "PdD-fx-hJV"; */
+"PdD-fx-hJV.text" = "Data e hora";
+
+/* Class = "UILabel"; text = "Helio Diff Hair Design"; ObjectID = "S52-T1-cH9"; */
+"S52-T1-cH9.text" = "Helio Diff Hair Design";
+
+/* Class = "UILabel"; text = "de desconto na terça-feira"; ObjectID = "Sqv-pD-mvF"; */
+"Sqv-pD-mvF.text" = "de desconto na terça-feira";
+
+/* Class = "UILabel"; text = "21.3 KM"; ObjectID = "TXH-KF-7H0"; */
+"TXH-KF-7H0.text" = "21.3 KM";
+
+/* Class = "UITabBarItem"; title = "Promoções"; ObjectID = "VUA-VT-vNv"; */
+"VUA-VT-vNv.title" = "Promoções";
+
+/* Class = "UILabel"; text = "X comentários"; ObjectID = "c9A-xP-M8N"; */
+"c9A-xP-M8N.text" = "X comentários";
+
+/* Class = "UITextField"; placeholder = "Escreva um comentario"; ObjectID = "daf-J0-ADk"; */
+"daf-J0-ADk.placeholder" = "Escreva um comentario";
+
+/* Class = "UITabBarItem"; title = "Agendamentos"; ObjectID = "nyw-nX-GJz"; */
+"nyw-nX-GJz.title" = "Agendamentos";
+
+/* Class = "UILabel"; text = "Comentario"; ObjectID = "rAH-Hz-JvO"; */
+"rAH-Hz-JvO.text" = "Comentario";
+
+/* Class = "UITabBarItem"; title = "Salões"; ObjectID = "vDE-hv-1yH"; */
+"vDE-hv-1yH.title" = "Salões";
+
+/* Class = "UILabel"; text = "40%"; ObjectID = "vHJ-O9-6xs"; */
+"vHJ-O9-6xs.text" = "40%";
+
+/* Class = "UILabel"; text = "X curtidas"; ObjectID = "zNi-Uc-T0A"; */
+"zNi-Uc-T0A.text" = "X curtidas";
