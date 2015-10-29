@@ -347,7 +347,7 @@
             <objects>
                 <tableViewController id="DpF-uD-Kxl" customClass="HBSalonDetailTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="213" sectionHeaderHeight="28" sectionFooterHeight="28" id="spv-U2-07e">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,10 +367,15 @@
                                         <segment title="Avaliações"/>
                                         <segment title="Detalhes"/>
                                     </segments>
+                                    <color key="tintColor" red="1" green="0.40784313725490196" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="indexChanged:" destination="DpF-uD-Kxl" eventType="valueChanged" id="swG-7U-aRV"/>
                                     </connections>
                                 </segmentedControl>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="O8g-1C-1wC">
+                                    <rect key="frame" x="280" y="218" width="39" height="37"/>
+                                    <animations/>
+                                </pageControl>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,7 +385,9 @@
                                 <constraint firstItem="8BB-Ej-RDU" firstAttribute="leading" secondItem="Gqr-uK-7fg" secondAttribute="leading" constant="10" id="R6s-fA-HLL"/>
                                 <constraint firstAttribute="bottom" secondItem="8BB-Ej-RDU" secondAttribute="bottom" constant="8" id="YZo-ve-p1o"/>
                                 <constraint firstItem="UVd-33-cy0" firstAttribute="top" secondItem="Gqr-uK-7fg" secondAttribute="top" id="cOH-cA-We0"/>
+                                <constraint firstItem="O8g-1C-1wC" firstAttribute="centerY" secondItem="Gqr-uK-7fg" secondAttribute="centerY" constant="90" id="dbw-3p-8nb"/>
                                 <constraint firstAttribute="trailing" secondItem="UVd-33-cy0" secondAttribute="trailing" id="gZf-D9-K60"/>
+                                <constraint firstItem="O8g-1C-1wC" firstAttribute="centerX" secondItem="Gqr-uK-7fg" secondAttribute="centerX" id="jCI-ga-kkH"/>
                                 <constraint firstAttribute="trailing" secondItem="8BB-Ej-RDU" secondAttribute="trailing" constant="10" id="lGI-HP-PV8"/>
                             </constraints>
                         </view>
@@ -467,7 +474,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.14509803921568626" green="0.050980392156862744" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="commentsLabel" destination="c9A-xP-M8N" id="LVg-bJ-ash"/>
                                     <outlet property="evaluationLabel" destination="B9Y-nY-BWi" id="Y16-UQ-PWC"/>
@@ -595,6 +602,8 @@
                             <outlet property="delegate" destination="DpF-uD-Kxl" id="sni-Jc-nz1"/>
                         </connections>
                     </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1000"/>
                     <connections>
                         <outlet property="picturesScrollView" destination="UVd-33-cy0" id="KcI-Yx-RNy"/>
                         <outlet property="segControl" destination="8BB-Ej-RDU" id="dbp-UI-U9t"/>
@@ -602,7 +611,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wH-I0-gVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="-468"/>
+            <point key="canvasLocation" x="2583" y="-540"/>
         </scene>
     </scenes>
     <resources>
