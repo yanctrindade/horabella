@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; };
+		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
@@ -17,6 +17,10 @@
 		BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */; };
 		BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */; };
 		BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */; };
+		BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187B1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift */; };
+		BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */; };
+		BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */; };
+		BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */; };
 		BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C801BDEB63400F3A467 /* LogInViewController.swift */; };
 		BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +62,10 @@
 		BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = horabellaUITests.swift; sourceTree = "<group>"; };
 		BB1B6E001BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BB75187B1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMakeCommentTableViewCell.swift; sourceTree = "<group>"; };
+		BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonCommentsTableViewCell.swift; sourceTree = "<group>"; };
+		BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDetailTableViewController.swift; sourceTree = "<group>"; };
+		BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonEvaluationTableViewCell.swift; sourceTree = "<group>"; };
 		BB758C801BDEB63400F3A467 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,13 +139,12 @@
 		BB1B6DDD1BDEA033004C95EB /* horabella */ = {
 			isa = PBXGroup;
 			children = (
+				BB7518831BE19AD800D2200A /* SalonDetail */,
+				BB75187A1BE19A8E00D2200A /* Login */,
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
-				BB758C801BDEB63400F3A467 /* LogInViewController.swift */,
-				BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */,
 				0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */,
 				0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
-				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
 				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
 				BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */,
 				BB1B6DEA1BDEA033004C95EB /* Info.plist */,
@@ -161,6 +168,27 @@
 				BB1B6E001BDEA033004C95EB /* Info.plist */,
 			);
 			path = horabellaUITests;
+			sourceTree = "<group>";
+		};
+		BB75187A1BE19A8E00D2200A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BB758C801BDEB63400F3A467 /* LogInViewController.swift */,
+				BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */,
+				BB1B6E0C1BDEAFD9004C95EB /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		BB7518831BE19AD800D2200A /* SalonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */,
+				BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */,
+				BB75187B1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift */,
+				BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */,
+			);
+			name = SalonDetail;
 			sourceTree = "<group>";
 		};
 		BC8FE6E4C509628A67AEAD07 /* Pods */ = {
@@ -355,6 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */,
+				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,
+				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
+				BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */,
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
