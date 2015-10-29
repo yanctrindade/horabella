@@ -6,15 +6,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="I1m-vt-s77">
             <objects>
-                <tabBarController id="5H8-H4-MlW" sceneMemberID="viewController">
+                <tabBarController id="5H8-H4-MlW" customClass="HBTabBarViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1sB-6G-mN7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.27843137254901962" green="0.17254901960784313" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="J6B-Dm-ssM" kind="relationship" relationship="viewControllers" id="9H1-0d-agH"/>
@@ -31,43 +32,34 @@
         <scene sceneID="VXz-Rj-k4F">
             <objects>
                 <tableViewController id="7Ia-nT-94M" customClass="HBSalonListTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qpl-KF-Z5B" userLabel="Salon List Table View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.23529411759999999" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.2196078431372549" green="0.23529411764705882" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonCell" rowHeight="255" id="okw-21-cET" customClass="HBSalonListTableViewCell" customModule="horabella" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonCell" rowHeight="255" id="okw-21-cET" userLabel="Salon Cell" customClass="HBSalonListTableViewCell" customModule="horabella" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okw-21-cET" id="IWF-MQ-6F2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="254.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helio Diff Hair Design" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-T1-cH9">
-                                            <rect key="frame" x="8" y="196" width="584" height="18"/>
+                                            <rect key="frame" x="8" y="196" width="584" height="20"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="UfE-1F-Yxt"/>
+                                                <constraint firstAttribute="height" constant="20" id="UfE-1F-Yxt"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.34901960784313724" green="0.23529411764705882" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Terraço Shopping - 2 andar - loja 10  Terraço Shopping " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-08-6rh" userLabel="Salon Address">
-                                            <rect key="frame" x="8" y="219" width="474" height="14"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="ydb-t2-DW0"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" userLabel="Salon Evaluation" customClass="HCSStarRatingView">
+                                        <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7px-mw-kDY" userLabel="Salon Evaluation" customClass="HCSStarRatingView">
                                             <rect key="frame" x="492" y="215" width="100" height="23"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="1" green="0.40784313725490196" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="cKE-aZ-LuB"/>
                                                 <constraint firstAttribute="width" constant="100" id="ddN-rN-avn"/>
@@ -77,7 +69,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
                                             <animations/>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-kI-JPg">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-kI-JPg" userLabel="Distance View">
                                             <rect key="frame" x="542" y="87" width="50" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.3 KM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXH-KF-7H0">
@@ -93,7 +85,7 @@
                                                 </label>
                                             </subviews>
                                             <animations/>
-                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.40784313725490196" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="3rt-bi-uta"/>
                                                 <constraint firstItem="TXH-KF-7H0" firstAttribute="centerY" secondItem="yhe-kI-JPg" secondAttribute="centerY" id="HUL-yV-U2B"/>
@@ -106,10 +98,10 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-lb-RUN">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-lb-RUN" userLabel="Like Button">
                                             <rect key="frame" x="542" y="8" width="50" height="50"/>
                                             <animations/>
-                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.40784313725490196" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="iG5-Sf-oy6"/>
                                                 <constraint firstAttribute="width" constant="50" id="oeZ-G9-i3k"/>
@@ -121,6 +113,16 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Av. Castanheiras 1983 - Águas Claras Ed. Águas Limpas, Térreo, loja 18" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-08-6rh" userLabel="Salon Address">
+                                            <rect key="frame" x="8" y="219" width="474" height="14"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="ydb-t2-DW0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.34901960780000002" green="0.23529411759999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
@@ -134,7 +136,7 @@
                                         <constraint firstAttribute="bottom" secondItem="K2I-2K-N23" secondAttribute="bottom" constant="66.5" id="Nwu-YI-FuS"/>
                                         <constraint firstItem="7px-mw-kDY" firstAttribute="centerY" secondItem="0vu-08-6rh" secondAttribute="centerY" id="OUG-hQ-rYd"/>
                                         <constraint firstItem="ZYL-lb-RUN" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="fo6-j5-yMA"/>
-                                        <constraint firstItem="0vu-08-6rh" firstAttribute="top" secondItem="S52-T1-cH9" secondAttribute="bottom" constant="5" id="h1v-MV-qRL"/>
+                                        <constraint firstItem="0vu-08-6rh" firstAttribute="top" secondItem="S52-T1-cH9" secondAttribute="bottom" constant="3" id="h1v-MV-qRL"/>
                                         <constraint firstAttribute="trailing" secondItem="K2I-2K-N23" secondAttribute="trailing" id="huC-Z2-HBt"/>
                                         <constraint firstItem="yhe-kI-JPg" firstAttribute="trailing" secondItem="IWF-MQ-6F2" secondAttribute="trailingMargin" id="imV-IU-9CD"/>
                                         <constraint firstItem="ZYL-lb-RUN" firstAttribute="top" secondItem="IWF-MQ-6F2" secondAttribute="topMargin" id="mDV-An-GmM"/>
@@ -143,6 +145,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.91394412878787878" green="0.91394412878787878" blue="0.91394412878787878" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="salonAddress" destination="0vu-08-6rh" id="haS-Cx-Qpy"/>
                                     <outlet property="salonEvaluation" destination="7px-mw-kDY" id="piC-TO-fZx"/>
@@ -266,7 +269,7 @@
         <scene sceneID="ojh-FU-MZL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J6B-Dm-ssM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Salões" id="vDE-hv-1yH"/>
+                    <tabBarItem key="tabBarItem" title="Salões" image="saloesTab_on" selectedImage="saloesTab_off" id="vDE-hv-1yH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wfx-xt-s2O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -286,7 +289,7 @@
         <scene sceneID="x41-be-ZKb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cO8-Q0-AX3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agendamentos" id="nyw-nX-GJz"/>
+                    <tabBarItem key="tabBarItem" title="Agendamentos" image="agendaTab_off" selectedImage="agendaTab_on" id="nyw-nX-GJz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e63-gB-Lt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -306,7 +309,7 @@
         <scene sceneID="8Kw-56-fx9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t9f-WU-jqK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" id="CWH-95-2V9"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="profileTab_off" selectedImage="profileTab_on" id="CWH-95-2V9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y8D-3q-fqh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -326,7 +329,7 @@
         <scene sceneID="cON-pL-W8m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ld-mN-WNT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Promoções" id="VUA-VT-vNv"/>
+                    <tabBarItem key="tabBarItem" title="Promoções" image="dealsTab_off" selectedImage="dealsTab_on" id="VUA-VT-vNv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XPA-3k-Zxj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -550,7 +553,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="qVU-ry-Qbi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -560,14 +563,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="Unk-9J-46N"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comentario" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAH-Hz-JvO">
                                             <rect key="frame" x="91" y="50" width="501" height="58"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -616,6 +619,14 @@
     </scenes>
     <resources>
         <image name="TesteSalaoBackground" width="187" height="88"/>
+        <image name="agendaTab_off" width="26" height="27"/>
+        <image name="agendaTab_on" width="26" height="27"/>
+        <image name="dealsTab_off" width="27" height="28"/>
+        <image name="dealsTab_on" width="30" height="31"/>
         <image name="favorite_on" width="24" height="21"/>
+        <image name="profileTab_off" width="19" height="26"/>
+        <image name="profileTab_on" width="17" height="25"/>
+        <image name="saloesTab_off" width="40" height="18"/>
+        <image name="saloesTab_on" width="39" height="18"/>
     </resources>
 </document>
