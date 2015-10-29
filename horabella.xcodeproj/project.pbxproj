@@ -13,6 +13,9 @@
 		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; };
+		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; };
+		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
