@@ -29,7 +29,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func logIn(sender: AnyObject) {
         
-        print("faz login")
+        Smoke().loginWithEmailAndPassword("iando@gmail.com", password: "secret") { (response) -> Void in
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+            
+        }
         
     }
     
