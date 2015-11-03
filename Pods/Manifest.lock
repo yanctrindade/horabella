@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.1.0)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -26,6 +27,7 @@ PODS:
     - Bolts/Tasks (>= 1.4.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -43,6 +45,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/hugocampossousa/HCSStarRatingView.git
 
 SPEC CHECKSUMS:
+  Alamofire: 415bd7f56197722978759078486689f7ef913dce
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   CryptoSwift: 5a6b725e2ad65a789f5f435dd434d38eb2c40b46
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
