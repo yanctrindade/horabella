@@ -29,12 +29,24 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func logIn(sender: AnyObject) {
         
-        Smoke().loginWithEmailAndPassword("iando@gmail.com", password: "secret") { (response) -> Void in
+        let email = emailTextField.text! as String
+        let password = passwordTextField.text! as String
+        
+        SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
+                print("login passou")
             
+            }) { (response) -> Void in
+                
+                let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                    alert .dismissViewControllerAnimated(true, completion: nil)
+                }))
+                
+                self.presentViewController(alert, animated: true, completion: { () -> Void in
+                    self.passwordTextField.text = nil
+                })
+                
         }
         
     }

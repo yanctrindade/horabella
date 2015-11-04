@@ -10,6 +10,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'JSONWebToken'
 pod ‘Alamofire’
+pod 'SimpleKeychain'
 end
 
 target ‘horabellaTests’ do

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.1.0)
+  - Alamofire (3.1.1)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -25,6 +25,7 @@ PODS:
     - CryptoSwift (= 0.0.14)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
+  - SimpleKeychain (0.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - HCSStarRatingView (from `https://github.com/hugocampossousa/HCSStarRatingView.git`)
   - JSONWebToken
   - Parse
+  - SimpleKeychain
 
 EXTERNAL SOURCES:
   HCSStarRatingView:
@@ -45,7 +47,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/hugocampossousa/HCSStarRatingView.git
 
 SPEC CHECKSUMS:
-  Alamofire: 415bd7f56197722978759078486689f7ef913dce
+  Alamofire: 9b0a7188b961a03914a99304488bd226b0e46c0e
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   CryptoSwift: 5a6b725e2ad65a789f5f435dd434d38eb2c40b46
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
@@ -54,5 +56,6 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   JSONWebToken: cf8b58850dc4cf38ce777a08753a2ea1620d960e
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  SimpleKeychain: 150d76f3b9200de58f033228f6e976c6241a221c
 
 COCOAPODS: 0.39.0

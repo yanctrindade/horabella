@@ -28,6 +28,7 @@
 		BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */; };
 		BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */; };
 		BB7518911BE91FDC00D2200A /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7518901BE91FDC00D2200A /* Smoke.swift */; };
+		BB7518931BEA6BDA00D2200A /* SmokeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7518921BEA6BDA00D2200A /* SmokeUser.swift */; };
 		BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C801BDEB63400F3A467 /* LogInViewController.swift */; };
 		BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonInfoTableViewCell.swift; sourceTree = "<group>"; };
 		BB7518901BE91FDC00D2200A /* Smoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
+		BB7518921BEA6BDA00D2200A /* SmokeUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmokeUser.swift; sourceTree = "<group>"; };
 		BB758C801BDEB63400F3A467 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 			children = (
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
 				BB7518901BE91FDC00D2200A /* Smoke.swift */,
+				BB7518921BEA6BDA00D2200A /* SmokeUser.swift */,
 				BB75187A1BE19A8E00D2200A /* Login */,
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
@@ -436,6 +439,7 @@
 				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,
 				025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */,
 				025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */,
+				BB7518931BEA6BDA00D2200A /* SmokeUser.swift in Sources */,
 				BB7518911BE91FDC00D2200A /* Smoke.swift in Sources */,
 				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
 				025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */,
