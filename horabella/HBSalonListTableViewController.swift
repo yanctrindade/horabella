@@ -9,14 +9,48 @@
 import UIKit
 import HCSStarRatingView
 
-class HBSalonListTableViewController: UITableViewController {
-
+class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    var searchController = UISearchController(searchResultsController: nil)
+    var salaoNome = "Helio Diff Hair Design"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //NavBarSettings
         navigationController!.navigationBar.barTintColor = UIColor(netHex: 0x472C44) //background color
         
+        //NavBar Button
+        let filterButton = UIBarButtonItem(image: UIImage(named: "filterButtonOFF"), style: .Plain, target: self, action: Selector("FilterBarButton"))
+        navigationItem.setRightBarButtonItem(filterButton, animated: true)
+        
+        //Search Controller Settings
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.definesPresentationContext = true
+        navigationItem.titleView = searchController.searchBar
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    //MARK: Search Bar Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchString = searchController.searchBar.text
+        salaoNome = searchString!
+        self.tableView.reloadData()
+    }
+    
+    
+    //MARK: Filter Bar Button
+    func FilterBarButton() {
+        //print("Filter button presssed")
+        self.performSegueWithIdentifier("feedToFilter", sender: self)
     }
     
     // MARK: - Table view data source
@@ -37,6 +71,7 @@ class HBSalonListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("salonCell", forIndexPath: indexPath) as! HBSalonListTableViewCell
 
         // Configure the cell...
+        cell.salonName.text = salaoNome
 
         return cell
     }

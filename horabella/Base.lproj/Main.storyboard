@@ -164,6 +164,9 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="n34-Wc-ftg"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="JcR-Ur-xt1" kind="show" identifier="feedToFilter" id="Mt8-sJ-2Eh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iX-vY-rxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,11 +182,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1aa-Mk-N4o">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="agendamentoCell" id="1aa-Mk-N4o">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1aa-Mk-N4o" id="1xQ-Io-WoA">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -214,11 +217,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iEj-PT-2Kz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" id="iEj-PT-2Kz">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iEj-PT-2Kz" id="10N-G6-VLH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -423,6 +426,73 @@
             </objects>
             <point key="canvasLocation" x="802" y="1615"/>
         </scene>
+        <!--Filter Collection View Controller-->
+        <scene sceneID="vfZ-J5-xVk">
+            <objects>
+                <collectionViewController storyboardIdentifier="filterView" hidesBottomBarWhenPushed="YES" id="JcR-Ur-xt1" customClass="HBFilterCollectionViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BtF-MS-0Bv" userLabel="Filter Collection View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ece-26-udG">
+                            <size key="itemSize" width="118" height="143"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6Y9-pv-Fkd" userLabel="Filter Cell" customClass="FilterCollectionViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="118" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="118" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="filtro_cabeloON" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-Jl-R2T" userLabel="Filter Icon">
+                                            <rect key="frame" x="34" y="15" width="50" height="80"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="V4Y-Mt-K7p"/>
+                                                <constraint firstAttribute="width" constant="50" id="gZf-YR-bs2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CABELO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GD-7x-tZw" userLabel="Filter Label">
+                                            <rect key="frame" x="8" y="104" width="102" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="H7J-Jl-R2T" firstAttribute="centerX" secondItem="6Y9-pv-Fkd" secondAttribute="centerX" id="0AE-Ho-sgB"/>
+                                    <constraint firstItem="8GD-7x-tZw" firstAttribute="leading" secondItem="6Y9-pv-Fkd" secondAttribute="leadingMargin" id="Vik-Ix-7zK"/>
+                                    <constraint firstItem="8GD-7x-tZw" firstAttribute="bottom" secondItem="6Y9-pv-Fkd" secondAttribute="bottomMargin" constant="-10" id="WYC-n1-CzT"/>
+                                    <constraint firstItem="8GD-7x-tZw" firstAttribute="top" secondItem="H7J-Jl-R2T" secondAttribute="bottom" constant="10" id="dLa-VF-xf9"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="8GD-7x-tZw" secondAttribute="trailing" id="djP-hV-E7g"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="filterNameLabel" destination="8GD-7x-tZw" id="gc2-iK-I7o"/>
+                                    <outlet property="imageView" destination="H7J-Jl-R2T" id="rp6-h8-zdv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="JcR-Ur-xt1" id="ud6-oT-mQ0"/>
+                            <outlet property="delegate" destination="JcR-Ur-xt1" id="xZy-Gq-yNG"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOv-kZ-jCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="-870"/>
+        </scene>
         <!--Salon Detail Table View Controller-->
         <scene sceneID="W2d-xh-G9T">
             <objects>
@@ -477,7 +547,7 @@
                                 <rect key="frame" x="0.0" y="385" width="600" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6U-25-f0q" id="tDT-TS-Ka1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="75.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starPinkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rWr-ET-skH">
@@ -566,7 +636,7 @@
                                 <rect key="frame" x="0.0" y="461" width="600" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJs-5v-AbB" id="ni6-sk-csT">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8s-OM-8jJ">
@@ -615,7 +685,7 @@
                                 <rect key="frame" x="0.0" y="506" width="600" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcy-GP-AD1" id="AeP-HO-4L5">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="115.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QmQ-u4-VeX">
@@ -682,7 +752,7 @@
                                 <rect key="frame" x="0.0" y="622" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mn2-xF-MEe" id="Cj4-ip-sB6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do salao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pup-gd-ADh">
@@ -728,7 +798,7 @@ sofnaof</string>
                                 <rect key="frame" x="0.0" y="762" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVE-Bq-QSe" id="a4F-ja-drq">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biF-qo-jaA">
@@ -783,7 +853,7 @@ sofnaof</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wH-I0-gVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="-540"/>
+            <point key="canvasLocation" x="2675" y="90"/>
         </scene>
     </scenes>
     <resources>
@@ -796,6 +866,7 @@ sofnaof</string>
         <image name="dealsTab_on" width="30" height="31"/>
         <image name="favoritePinkIcon" width="30" height="26"/>
         <image name="favorite_on" width="24" height="21"/>
+        <image name="filtro_cabeloON" width="42" height="60"/>
         <image name="profileTab_off" width="19" height="26"/>
         <image name="profileTab_on" width="17" height="25"/>
         <image name="saloesTab_off" width="40" height="18"/>
