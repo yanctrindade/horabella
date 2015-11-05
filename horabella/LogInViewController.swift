@@ -17,7 +17,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +28,38 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func logIn(sender: AnyObject) {
         
-        print("faz login")
+        let email = emailTextField.text! as String
+        let password = passwordTextField.text! as String
+        
+        SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
+            
+                print("login passou")
+            
+            }) { (response) -> Void in
+                
+                let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                    alert .dismissViewControllerAnimated(true, completion: nil)
+                }))
+                
+                self.presentViewController(alert, animated: true, completion: { () -> Void in
+                    self.passwordTextField.text = nil
+                })
+                
+        }
         
     }
+    
+    @IBAction func getCurrentUser(sender: AnyObject) {
+        
+        if (SmokeUser().currentUser() != nil) {
+            print("usuario logado")
+        }else{
+            print("sem usuario")
+        }
+        
+    }
+    
     
     //MARK: - TextField
     
