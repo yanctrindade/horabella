@@ -16,8 +16,8 @@ class HBTabBarViewController: UITabBarController {
         //Tab Bar Color Contorno ativado
         self.tabBar.tintColor = UIColor.whiteColor()
         
-        let tabBarON = ["saloesTab_on","agendaTab_on","dealsTab_on","profileTab_on"]
-        let tabBarOFF = ["saloesTab_off","agendaTab_off","dealsTab_off","profileTab_off"]
+        let tabBarON = ["saloesTab_on","agendaTab_on","profileTab_on","dealsTab_on"]
+        let tabBarOFF = ["saloesTab_off","agendaTab_off","profileTab_off","dealsTab_off"]
         
         //TabBar Icons White
         for var i: Int = 0; i<4; i++ {
