@@ -17,7 +17,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +49,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+    
+    @IBAction func getCurrentUser(sender: AnyObject) {
+        
+        if (SmokeUser().currentUser() != nil) {
+            print("usuario logado")
+        }else{
+            print("sem usuario")
+        }
+        
+    }
+    
     
     //MARK: - TextField
     

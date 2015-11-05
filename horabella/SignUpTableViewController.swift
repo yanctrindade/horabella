@@ -96,6 +96,19 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             
         }else{
             
+            
+            let newUser = SmokeUser()
+            newUser.firstName = "erick"
+            newUser.lastName = "leal"
+            newUser.email = "erickleal94@gmail.com"
+            newUser.password = "senhadoida"
+            
+            newUser.signUp({ (response) -> Void in
+                print("deeeeu")
+                }, errorBlock: { (response) -> Void in
+                    print("nao deeeu")
+            })
+            
             print("faz cadastro")
             
         }

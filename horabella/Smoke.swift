@@ -30,7 +30,6 @@ class Smoke: NSObject {
         
         return true
     }
-    
 
 
 }

@@ -188,8 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */,
-				BB7518901BE91FDC00D2200A /* Smoke.swift */,
-				BB7518921BEA6BDA00D2200A /* SmokeUser.swift */,
+				BB7518941BEAC26F00D2200A /* Smoke */,
 				BB75187A1BE19A8E00D2200A /* Login */,
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
@@ -241,6 +240,15 @@
 				BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */,
 			);
 			name = SalonDetail;
+			sourceTree = "<group>";
+		};
+		BB7518941BEAC26F00D2200A /* Smoke */ = {
+			isa = PBXGroup;
+			children = (
+				BB7518901BE91FDC00D2200A /* Smoke.swift */,
+				BB7518921BEA6BDA00D2200A /* SmokeUser.swift */,
+			);
+			name = Smoke;
 			sourceTree = "<group>";
 		};
 		BC8FE6E4C509628A67AEAD07 /* Pods */ = {
