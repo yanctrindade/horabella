@@ -13,10 +13,12 @@
 		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; };
 		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; };
 		025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */; };
+		02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */; };
+		02A1484F1BEA700B00BFA08D /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484E1BEA700B00BFA08D /* FilterCollectionViewCell.swift */; };
+		02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
-		BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE51BDEA033004C95EB /* Assets.xcassets */; };
 		BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */; };
 		BB1B6DF41BDEA033004C95EB /* horabellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DF31BDEA033004C95EB /* horabellaTests.swift */; };
 		BB1B6DFF1BDEA033004C95EB /* horabellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DFE1BDEA033004C95EB /* horabellaUITests.swift */; };
@@ -62,13 +64,15 @@
 		025C47B61BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		025C47B71BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilterCollectionViewController.swift; sourceTree = "<group>"; };
+		02A1484E1BEA700B00BFA08D /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DDB1BDEA033004C95EB /* horabella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horabella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB1B6DE31BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BB1B6DE51BDEA033004C95EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB1B6DE81BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1B6DEA1BDEA033004C95EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1B6DEF1BDEA033004C95EB /* horabellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = horabellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 			children = (
 				0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */,
 				0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */,
+				02A1484B1BE9416000BFA08D /* Filter */,
 				BB7518831BE19AD800D2200A /* SalonDetail */,
 			);
 			name = SalonList;
@@ -151,6 +156,15 @@
 				025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */,
 			);
 			name = Deals;
+			sourceTree = "<group>";
+		};
+		02A1484B1BE9416000BFA08D /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */,
+				02A1484E1BEA700B00BFA08D /* FilterCollectionViewCell.swift */,
+			);
+			name = Filter;
 			sourceTree = "<group>";
 		};
 		856DC9708B54A42C4B930F4E /* Frameworks */ = {
@@ -193,8 +207,8 @@
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
 				025C47AF1BE29E2C00D247D7 /* Deals */,
+				02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
-				BB1B6DE51BDEA033004C95EB /* Assets.xcassets */,
 				BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */,
 				BB1B6DEA1BDEA033004C95EB /* Info.plist */,
 			);
@@ -368,7 +382,7 @@
 			files = (
 				BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */,
 				BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */,
-				BB1B6DE61BDEA033004C95EB /* Assets.xcassets in Resources */,
+				02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */,
 				BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,9 +467,11 @@
 				025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */,
 				BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */,
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
+				02A1484F1BEA700B00BFA08D /* FilterCollectionViewCell.swift in Sources */,
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
 				BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */,
+				02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */,
 				BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */,
 				BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */,
 				BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */,
