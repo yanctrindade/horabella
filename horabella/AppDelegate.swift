@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        if (SmokeUser().getToken() != nil){
+            SmokeUser().fetch()
+        }
+        
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
         return true
