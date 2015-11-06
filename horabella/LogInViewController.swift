@@ -16,6 +16,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 
     }
 
@@ -54,6 +57,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         if (SmokeUser().currentUser() != nil) {
             print("usuario logado")
+            print(SmokeUser.sharedInstance.firstName)
+            print(SmokeUser.sharedInstance.lastName)
+            print(SmokeUser.sharedInstance.email)
+            print(SmokeUser.sharedInstance.gender)
+            print(SmokeUser.sharedInstance.phone)
+            //print(SmokeUser.sharedInstance.birthDate)
         }else{
             print("sem usuario")
         }
