@@ -164,7 +164,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="JcR-Ur-xt1" kind="show" identifier="feedToFilter" id="Mt8-sJ-2Eh"/>
+                        <segue destination="zbu-xA-8Re" kind="presentation" identifier="feedToFilter" modalPresentationStyle="overCurrentContext" id="Mt8-sJ-2Eh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iX-vY-rxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +429,7 @@
         <scene sceneID="vfZ-J5-xVk">
             <objects>
                 <collectionViewController storyboardIdentifier="filterView" hidesBottomBarWhenPushed="YES" id="JcR-Ur-xt1" customClass="HBFilterCollectionViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BtF-MS-0Bv" userLabel="Filter Collection View">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" dataMode="prototypes" id="BtF-MS-0Bv" userLabel="Filter Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -488,10 +488,18 @@
                             <outlet property="delegate" destination="JcR-Ur-xt1" id="xZy-Gq-yNG"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="eR4-Al-2pk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TFr-zz-ah7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="doneButtonBarItem:" destination="JcR-Ur-xt1" id="ry3-hO-xI0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOv-kZ-jCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450" y="-870"/>
+            <point key="canvasLocation" x="3262" y="-870"/>
         </scene>
         <!--Salon Detail Table View Controller-->
         <scene sceneID="W2d-xh-G9T">
@@ -854,6 +862,25 @@ sofnaof</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wH-I0-gVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2675" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TQy-km-DnK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zbu-xA-8Re" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="480-Um-uDS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JcR-Ur-xt1" kind="relationship" relationship="rootViewController" id="64E-Zu-Qbn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFd-kq-f0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="-870"/>
         </scene>
     </scenes>
     <resources>

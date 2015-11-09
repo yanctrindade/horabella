@@ -27,8 +27,10 @@ class HBFilterCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         //NavBarSettings
+        navigationController!.navigationBar.barTintColor = UIColor(netHex: 0x472C44) //background color
         self.navigationItem.title = "Filtros"
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         
         //Collection view settings
         self.collectionView?.delegate = self
@@ -41,7 +43,20 @@ class HBFilterCollectionViewController: UICollectionViewController {
         layout.scrollDirection = .Vertical
         self.collectionView?.collectionViewLayout = layout
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.hidden = false
+    }
 
+    @IBAction func doneButtonBarItem(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: UICollectionViewDataSource
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
@@ -75,8 +90,10 @@ class HBFilterCollectionViewController: UICollectionViewController {
         let numberOfColumns = 3
         let numberOfRows = 3
         let itemWidth = (CGRectGetWidth(self.collectionView!.frame) - CGFloat(numberOfColumns - 1)) / CGFloat(numberOfColumns);
-        let NavPlusStatusBar = UIApplication.sharedApplication().statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.size.height)!
-        let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - NavPlusStatusBar - CGFloat(numberOfRows - 1)) / CGFloat(numberOfRows);
+        let navPlusStatusBar = UIApplication.sharedApplication().statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.size.height)!
+        let tabBarHeight = CGFloat(50)
+        let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - navPlusStatusBar - tabBarHeight - CGFloat(numberOfRows - 1)) / CGFloat(numberOfRows)
+        //let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - CGFloat(10) - CGFloat(numberOfRows - 1)) / CGFloat(numberOfRows)
         
         return CGSizeMake(itemWidth, itemHeight)
     }
