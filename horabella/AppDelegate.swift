@@ -25,7 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SmokeUser().fetch()
         }
         
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        //UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        //authenticatedUser: check is User is logged in or present login view
+        if (SmokeUser.sharedInstance.isCurrentUser == true) {
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateInitialViewController()
+        } else {
+            let rootViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
+            //let navigation = UINavigationController(rootViewController: rootViewController)
+           self.window?.rootViewController = rootViewController
+        }
         
         //Facebook Credentials
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

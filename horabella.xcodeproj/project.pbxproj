@@ -15,6 +15,9 @@
 		025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */; };
 		02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */; };
 		02A1484F1BEA700B00BFA08D /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484E1BEA700B00BFA08D /* FilterCollectionViewCell.swift */; };
+		02A6C6951BF111B6001FA056 /* profileTeste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6941BF111B6001FA056 /* profileTeste.jpg */; };
+		02A6C6971BF111BF001FA056 /* tste.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6961BF111BF001FA056 /* tste.png */; };
+		02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */; };
 		02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
@@ -67,6 +70,9 @@
 		025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilterCollectionViewController.swift; sourceTree = "<group>"; };
 		02A1484E1BEA700B00BFA08D /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		02A6C6941BF111B6001FA056 /* profileTeste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profileTeste.jpg; sourceTree = "<group>"; };
+		02A6C6961BF111BF001FA056 /* tste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tste.png; sourceTree = "<group>"; };
+		02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,23 @@
 			name = Filter;
 			sourceTree = "<group>";
 		};
+		02A6C6911BF11175001FA056 /* ImagemTeste */ = {
+			isa = PBXGroup;
+			children = (
+				02A6C6961BF111BF001FA056 /* tste.png */,
+				02A6C6941BF111B6001FA056 /* profileTeste.jpg */,
+			);
+			name = ImagemTeste;
+			sourceTree = "<group>";
+		};
+		02A6C6981BF11C01001FA056 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		856DC9708B54A42C4B930F4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +203,7 @@
 		BB1B6DD21BDEA033004C95EB = {
 			isa = PBXGroup;
 			children = (
+				02A6C6911BF11175001FA056 /* ImagemTeste */,
 				0235A93C1BDF49DB00355207 /* Bridge */,
 				BB1B6DDD1BDEA033004C95EB /* horabella */,
 				BB1B6DF21BDEA033004C95EB /* horabellaTests */,
@@ -209,6 +233,7 @@
 				BB75187A1BE19A8E00D2200A /* Login */,
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
+				02A6C6981BF11C01001FA056 /* Profile */,
 				025C47AF1BE29E2C00D247D7 /* Deals */,
 				02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */,
 				BB1B6DE21BDEA033004C95EB /* Main.storyboard */,
@@ -385,8 +410,10 @@
 			files = (
 				BB1B6E0D1BDEAFD9004C95EB /* Login.storyboard in Resources */,
 				BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */,
+				02A6C6951BF111B6001FA056 /* profileTeste.jpg in Resources */,
 				02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */,
 				BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */,
+				02A6C6971BF111BF001FA056 /* tste.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */,
 				025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */,
 				BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */,
 				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,
