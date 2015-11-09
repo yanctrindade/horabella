@@ -35,14 +35,16 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    // MARK: - SignUp
-    
-    
-    @IBAction func facebookSignUp(sender: AnyObject) {
+    override func viewWillAppear(animated: Bool) {
         
-        print("cadastro com facebook")
+        firstNameTextField.text = SmokeUser.sharedInstance.firstName
+        lastNameTextField.text = SmokeUser.sharedInstance.lastName
+        emailTextField.text = SmokeUser.sharedInstance.email
+        birthdateTextField.text = SmokeUser.sharedInstance.birthDate
         
     }
+    
+    // MARK: - SignUp
     
     @IBAction func signUp(sender: AnyObject) {
         
@@ -98,10 +100,10 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             
             
             let newUser = SmokeUser()
-            newUser.firstName = "erick"
-            newUser.lastName = "leal"
-            newUser.email = "erickleal94@gmail.com"
-            newUser.password = "senhadoida"
+            newUser.firstName = firstNameTextField.text
+            newUser.lastName = lastNameTextField.text
+            newUser.email = emailTextField.text
+            newUser.password = passwordTextField.text
             
             newUser.signUp({ (response) -> Void in
                 print("deeeeu")
@@ -121,7 +123,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func dateEditing(sender: UITextField) {
         
         let datePickerView:UIDatePicker = UIDatePicker()
-        
+
         datePickerView.datePickerMode = UIDatePickerMode.Date
         datePickerView.maximumDate = NSDate()
         
@@ -135,9 +137,11 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         
         let dateFormatter = NSDateFormatter()
         
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+//        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+//        
+//        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         birthdateTextField.text = dateFormatter.stringFromDate(sender.date)
         birthdate = sender.date
