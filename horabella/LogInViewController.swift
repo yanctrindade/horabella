@@ -44,40 +44,64 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let email = emailTextField.text! as String
         let password = passwordTextField.text! as String
         
-        SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
-            
+        if email.characters.count == 0 || password.characters.count == 0{
+            let alert = UIAlertController(title: "Erro", message: "Insira email e senha para entrar!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+                self.emailTextField.becomeFirstResponder()
+            }))
+            presentViewController(alert, animated: true, completion: nil)
+        }else{
+        
+            SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
+                
                 print("login passou")
+                
+                }) { (response) -> Void in
+                    
+                    let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                        alert .dismissViewControllerAnimated(true, completion: nil)
+                    }))
+                    
+                    self.presentViewController(alert, animated: true, completion: { () -> Void in
+                        self.passwordTextField.text = nil
+                    })
+                    
+            }
             
-            }) { (response) -> Void in
-                
-                let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
-                    alert .dismissViewControllerAnimated(true, completion: nil)
-                }))
-                
-                self.presentViewController(alert, animated: true, completion: { () -> Void in
-                    self.passwordTextField.text = nil
-                })
-                
         }
         
     }
     
-    @IBAction func getCurrentUser(sender: AnyObject) {
+    @IBAction func forgotPassword(sender: AnyObject) {
         
-        if (SmokeUser().currentUser() != nil) {
-            print("usuario logado")
-            print(SmokeUser.sharedInstance.firstName)
-            print(SmokeUser.sharedInstance.lastName)
-            print(SmokeUser.sharedInstance.email)
-            print(SmokeUser.sharedInstance.gender)
-            print(SmokeUser.sharedInstance.phone)
-            //print(SmokeUser.sharedInstance.birthDate)
+        let email = emailTextField.text! as String
+        
+        if email.characters.count < 6 {
+            let alert = UIAlertController(title: "Erro", message: "Insira um email para recuperar sua senha!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+                self.emailTextField.becomeFirstResponder()
+            }))
+            presentViewController(alert, animated: true, completion: nil)
         }else{
-            print("sem usuario")
+            
+            SmokeUser().resetPassword(email, successBlock: { (response) -> Void in
+                
+                let alert = UIAlertController(title: "Sucesso", message: "Um email foi enviado para redefinir a senha!", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                print("pediu pra recuperar senha")
+                }, errorBlock: { (response) -> Void in
+                    print("erro para recuperar")
+            })
+            
         }
         
     }
+    
     
     //MARK: - Facebook
     
@@ -158,6 +182,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     
                     SmokeUser.sharedInstance.birthDate = userDob
                     print("Nascimento obtido com sucesso! : \(SmokeUser.sharedInstance.birthDate)")
+                }
+                
+                if let picture = result.valueForKey("") as? String{
+                    SmokeUser.sharedInstance.pictureURL = picture
+                    print("URL da imagem obtido: \(SmokeUser.sharedInstance.pictureURL)")
                 }
                 
                 IJProgressView.shared.hideProgressView()

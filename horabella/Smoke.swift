@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SimpleKeychain
 
 class Smoke: NSObject {
     
@@ -20,7 +21,6 @@ class Smoke: NSObject {
                 switch response.result {
                 case .Success:
                     successBlock(response)
-                    print("Validation Successful")
                 case .Failure(let error):
                     errorBlock(response)
                     print(error)
@@ -52,7 +52,6 @@ class Smoke: NSObject {
                 switch response.result {
                 case .Success:
                     successBlock(response)
-                    print("Validation Successful")
                 case .Failure(let error):
                     errorBlock(response)
                     print(error)
