@@ -44,11 +44,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let email = emailTextField.text! as String
         let password = passwordTextField.text! as String
         
-        SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
-            
+        SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock:
+            //bloco de sucesso
+            { (response) -> Void in
                 print("login passou")
-            
-            }) { (response) -> Void in
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let myVC = storyboard.instantiateViewControllerWithIdentifier("startView") as! UITabBarController
+                self.presentViewController(myVC, animated: true, completion: nil)
+            })
+            //bloco de erro
+            { (response) -> Void in
                 
                 let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
@@ -57,8 +63,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 
                 self.presentViewController(alert, animated: true, completion: { () -> Void in
                     self.passwordTextField.text = nil
-                })
-                
+            })
         }
         
     }

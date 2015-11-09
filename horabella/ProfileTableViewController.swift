@@ -24,7 +24,16 @@ class ProfileTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //loading user info
+        if (SmokeUser.sharedInstance.isCurrentUser!) {
+            userNameLabel.text = SmokeUser.sharedInstance.firstName + " " + SmokeUser.sharedInstance.lastName
+            userLoyaltyPoints.text = "0 Pontos"
+            userHistoryLabel.text = "0 Agendamentos"
+            //backgroundImage.image = UIImage(named: "")
+            //profilePicture.image = UIImage(named: "")
+        }
         
+        print(SmokeUser.sharedInstance.isCurrentUser)
     }
 
     override func didReceiveMemoryWarning() {
