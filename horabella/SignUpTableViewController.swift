@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import VMaskTextField
 
 class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phoneTextField: VMaskTextField!
     @IBOutlet weak var birthdateTextField: UITextField!
     var birthdate: NSDate!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,8 +27,10 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         lastNameTextField.delegate = self
         emailTextField.delegate = self
         phoneTextField.delegate = self
+        phoneTextField.mask = "(##)####-####"
         birthdateTextField.delegate = self
         passwordTextField.delegate = self
+    
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -189,6 +192,16 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == phoneTextField {
+            return phoneTextField.shouldChangeCharactersInRange(range, replacementString: string)
+        }else{
+            return true
+        }
+    
     }
     
 

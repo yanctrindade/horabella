@@ -21,6 +21,8 @@ class SmokeUser: NSObject {
     var birthDate: String!
     var pictureURL: String!
     var password: String!
+    
+    //flag para indicar quando o usuario está sendo atualizado
     var isCurrentUser: Bool! = false
     
     
@@ -81,7 +83,7 @@ class SmokeUser: NSObject {
     
     //MARK: - User
     
-    func loginWithEmailAndPassword(email: String, password: String, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Bool {
+    func loginWithEmailAndPassword(email: String, password: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Bool {
         
         Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/login", parameters: ["email": email, "password": password], successBlock: { (response) -> Void in
             
@@ -100,11 +102,17 @@ class SmokeUser: NSObject {
                 
             }
 
-            successBlock(response)
+            //executa bloco caso exista
+            if let block = successBlock {
+                block(response)
+            }
             
             }) { (response) -> Void in
                 
-                errorBlock(response)
+                //executa bloco caso exista
+                if let block = errorBlock {
+                    block(response)
+                }
                 
         }
         
@@ -158,6 +166,11 @@ class SmokeUser: NSObject {
             }
             }) { (response) -> Void in
                 
+                //executa bloco caso exista
+                if let block = errorBlock {
+                    block(response)
+                }
+                
                 SmokeUser().removeToken()
                 
         }
@@ -177,15 +190,21 @@ class SmokeUser: NSObject {
         }
     }
     
-    func resetPassword(email: String, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
+    func resetPassword(email: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Void {
         
         Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/password/email", parameters: ["email": email], successBlock: { (response) -> Void in
             
-            successBlock(response)
+            //executa bloco caso exista
+            if let block = successBlock {
+                block(response)
+            }
             
             }) { (response) -> Void in
                 
-                errorBlock(response)
+                //executa bloco caso exista
+                if let block = errorBlock {
+                    block(response)
+                }
                 
         }
     }
