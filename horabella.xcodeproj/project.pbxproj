@@ -19,6 +19,7 @@
 		02A6C6971BF111BF001FA056 /* tste.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6961BF111BF001FA056 /* tste.png */; };
 		02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */; };
 		02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */; };
+		02CE010A1BF1313000EE0793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CE01091BF1313000EE0793 /* CoreLocation.framework */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		02A6C6961BF111BF001FA056 /* tste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tste.png; sourceTree = "<group>"; };
 		02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02CE01091BF1313000EE0793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CE010A1BF1313000EE0793 /* CoreLocation.framework in Frameworks */,
 				9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +198,7 @@
 		856DC9708B54A42C4B930F4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02CE01091BF1313000EE0793 /* CoreLocation.framework */,
 				99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */,
 			);
 			name = Frameworks;
