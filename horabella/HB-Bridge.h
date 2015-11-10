@@ -11,5 +11,6 @@
 
 #import <HCSStarRatingView/HCSStarRatingView.h>
 #import "HCSStarRatingView.h"
+#import "VMaskTextField.h"
 
 #endif /* HB_Bridge_h */

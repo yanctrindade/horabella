@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import VMaskTextField
 
 class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phoneTextField: VMaskTextField!
     @IBOutlet weak var birthdateTextField: UITextField!
     var birthdate: NSDate!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var genderSegControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,10 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         lastNameTextField.delegate = self
         emailTextField.delegate = self
         phoneTextField.delegate = self
+        phoneTextField.mask = "(##)####-####"
         birthdateTextField.delegate = self
         passwordTextField.delegate = self
+    
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,6 +45,11 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         lastNameTextField.text = SmokeUser.sharedInstance.lastName
         emailTextField.text = SmokeUser.sharedInstance.email
         birthdateTextField.text = SmokeUser.sharedInstance.birthDate
+        if SmokeUser.sharedInstance.gender == "female"{
+            genderSegControl.selectedSegmentIndex = 1
+        }else{
+            genderSegControl.selectedSegmentIndex = 0
+        }
         
     }
     
@@ -48,10 +57,11 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func signUp(sender: AnyObject) {
         
+        //validaçao dos campos
         if firstNameTextField.text!.characters.count < 3 {
             
             let alert = UIAlertController(title: "Erro", message: "Nome muito curto!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.firstNameTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
@@ -59,7 +69,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }else if lastNameTextField.text!.characters.count < 3 {
             
             let alert = UIAlertController(title: "Erro", message: "Sobrenome muito curto!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.lastNameTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
@@ -67,7 +77,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }else if emailTextField.text!.characters.count < 6 {
             
             let alert = UIAlertController(title: "Erro", message: "Email muito curto!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.emailTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
@@ -75,7 +85,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }else if phoneTextField.text!.characters.count < 8 {
             
             let alert = UIAlertController(title: "Erro", message: "Telefone muito curto!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.phoneTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
@@ -83,7 +93,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }else if birthdateTextField.text!.characters.count < 1 {
             
             let alert = UIAlertController(title: "Erro", message: "Insira sua data de nascimento!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.birthdateTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
@@ -91,24 +101,43 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }else if passwordTextField.text!.characters.count < 6 {
             
             let alert = UIAlertController(title: "Erro", message: "Senha muito curta!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 self.passwordTextField.becomeFirstResponder()
             }))
             presentViewController(alert, animated: true, completion: nil)
             
         }else{
             
-            
             let newUser = SmokeUser()
             newUser.firstName = firstNameTextField.text
             newUser.lastName = lastNameTextField.text
             newUser.email = emailTextField.text
             newUser.password = passwordTextField.text
+            if genderSegControl.selectedSegmentIndex == 0{
+                newUser.gender = "male"
+            }else{
+                newUser.gender = "female"
+            }
             
             newUser.signUp({ (response) -> Void in
-                print("deeeeu")
+                
+                let alert = UIAlertController(title: "Sucesso", message: "Cadastro realizado com sucesso!", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                }))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
                 }, errorBlock: { (response) -> Void in
-                    print("nao deeeu")
+                    
+                    //tratar os erros
+                    let alert = UIAlertController(title: "Erro", message: "Falha na realização do cadastro!", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                    }))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
             })
             
             print("faz cadastro")
@@ -163,6 +192,16 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == phoneTextField {
+            return phoneTextField.shouldChangeCharactersInRange(range, replacementString: string)
+        }else{
+            return true
+        }
+    
     }
     
 

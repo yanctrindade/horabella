@@ -13,21 +13,27 @@ import SimpleKeychain
 
 class SmokeUser: NSObject {
     
-    class var sharedInstance: SmokeUser {
-        struct Singleton {
-            static let instance = SmokeUser()
-        }
-        return Singleton.instance
-    }
-    
     var firstName: String!
     var lastName: String!
     var email: String!
     var gender: String!
     var phone: String!
     var birthDate: String!
+    var pictureURL: String!
     var password: String!
+    
+    //flag para indicar quando o usuario está sendo atualizado
     var isCurrentUser: Bool! = false
+    
+    
+    //MARK: - Singleton
+    
+    class var sharedInstance: SmokeUser {
+        struct Singleton {
+            static let instance = SmokeUser()
+        }
+        return Singleton.instance
+    }
     
     //retorna infos do usuario
     func currentUser() -> SmokeUser? {
@@ -40,10 +46,15 @@ class SmokeUser: NSObject {
         
     }
     
+    //MARK: - Token
+    
     //retorna token de autenticaçao
     func getToken() -> String? {
         
-        if let token = A0SimpleKeychain().stringForKey("userToken"){
+        let kc = A0SimpleKeychain()
+        kc.useAccessControl = true
+        
+        if let token = kc.stringForKey("userToken"){
             return token
         }else{
             return nil
@@ -53,14 +64,26 @@ class SmokeUser: NSObject {
     
     //guarda token
     func saveToken(token: String) -> Void{
-        A0SimpleKeychain().setString(token, forKey:"userToken")
-        if let token = A0SimpleKeychain().stringForKey("userToken"){
-            print(token)
-        }
+        
+        let kc = A0SimpleKeychain()
+        kc.useAccessControl = true
+        
+        kc.setString(token, forKey:"userToken")
+
+    }
+    
+    //remove token
+    func removeToken() -> Void {
+        let kc = A0SimpleKeychain()
+        kc.useAccessControl = true
+        
+        kc.deleteEntryForKey("userToken")
     }
     
     
-    func loginWithEmailAndPassword(email: String, password: String, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Bool {
+    //MARK: - User
+    
+    func loginWithEmailAndPassword(email: String, password: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Bool {
         
         Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/login", parameters: ["email": email, "password": password], successBlock: { (response) -> Void in
             
@@ -79,11 +102,17 @@ class SmokeUser: NSObject {
                 
             }
 
-            successBlock(response)
+            //executa bloco caso exista
+            if let block = successBlock {
+                block(response)
+            }
             
             }) { (response) -> Void in
                 
-                errorBlock(response)
+                //executa bloco caso exista
+                if let block = errorBlock {
+                    block(response)
+                }
                 
         }
         
@@ -126,6 +155,7 @@ class SmokeUser: NSObject {
 //                    if let info = user["birthdate"]{
 //                        SmokeUser.sharedInstance.birthDate = info as! String
 //                    }
+                    
                 }
                 
             }
@@ -135,9 +165,14 @@ class SmokeUser: NSObject {
                 block(response)
             }
             }) { (response) -> Void in
+                
+                //executa bloco caso exista
                 if let block = errorBlock {
                     block(response)
                 }
+                
+                SmokeUser().removeToken()
+                
         }
         
     }
@@ -154,6 +189,45 @@ class SmokeUser: NSObject {
         
         }
     }
+    
+    func resetPassword(email: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Void {
+        
+        Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/password/email", parameters: ["email": email], successBlock: { (response) -> Void in
+            
+            //executa bloco caso exista
+            if let block = successBlock {
+                block(response)
+            }
+            
+            }) { (response) -> Void in
+                
+                //executa bloco caso exista
+                if let block = errorBlock {
+                    block(response)
+                }
+                
+        }
+    }
+    
+    func logOut() -> Void{
+        
+        SmokeUser().removeToken()
+        SmokeUser().removeUser()
+        
+    }
+    
+    func removeUser(){
+        SmokeUser.sharedInstance.firstName = nil
+        SmokeUser.sharedInstance.lastName = nil
+        SmokeUser.sharedInstance.email = nil
+        SmokeUser.sharedInstance.gender = nil
+        SmokeUser.sharedInstance.phone = nil
+        SmokeUser.sharedInstance.birthDate = nil
+        SmokeUser.sharedInstance.password = nil
+        SmokeUser.sharedInstance.isCurrentUser = false
+    }
+    
+    //MARK: - Data to Dictionary
     
     func dataToDictionary(data: NSData) -> NSDictionary? {
         do{ //transforma data JSON recebido em dicionario para guardar o token

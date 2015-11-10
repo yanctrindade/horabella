@@ -11,6 +11,7 @@ pod 'FBSDKShareKit'
 pod 'JSONWebToken'
 pod ‘Alamofire’
 pod 'SimpleKeychain'
+pod 'VMaskTextField'
 end
 
 target ‘horabellaTests’ do

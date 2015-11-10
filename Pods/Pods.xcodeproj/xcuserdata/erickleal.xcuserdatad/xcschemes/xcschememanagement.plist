@@ -59,15 +59,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>VMaskTextField-VMaskTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VMaskTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0CF48B61D5DB86C4805E8BAB966CF861</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>4DA5AC3C1B549565E20220F77D296F4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51E61CCF5F5E318C062B2EC3043246FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +107,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77FE4AF3E8AF008F5C0A6F424ECEC074</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>94A50FB884552F1E25589DD6EA641782</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>989C83646B376120165FCB123E7C0C05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +118,16 @@
 			<true/>
 		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BAF1C622F8591A98AB33AFA8BB818B78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8EEF56F10C71D67471120A0F2CDAB79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
