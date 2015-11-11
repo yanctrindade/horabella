@@ -102,30 +102,62 @@ class HBFilterCollectionViewController: UICollectionViewController {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterCollectionViewCell
         //cell.imageView.image = UIImage(named: filterArrayOFF[indexPath.row])
         let toImage = UIImage(named:filterArrayOFF[indexPath.row])
-        UIView.transitionWithView(cell.imageView,
-            duration:1.2,
-            options: UIViewAnimationOptions.TransitionFlipFromBottom,
-            animations: {
+//        UIView.transitionWithView(cell.imageView,
+//            duration:1.2,
+//            options: UIViewAnimationOptions.TransitionFlipFromBottom,
+//            animations: {
+//                cell.imageView.image = toImage
+//                cell.backgroundColor = UIColor.whiteColor()
+//                cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
+//            },
+//            completion: nil)
+        
+        UIView.animateWithDuration(0.4) { () -> Void in
+            cell.backgroundColor = UIColor.whiteColor()
+            cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            }) { (Bool) -> Void in
                 cell.imageView.image = toImage
-                cell.backgroundColor = UIColor.whiteColor()
-                cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
-            },
-            completion: nil)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: nil)
+        
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterCollectionViewCell
        // cell.imageView.image = UIImage(named: filterArrayON[indexPath.row])
         let toImage = UIImage(named:filterArrayON[indexPath.row])
-        UIView.transitionWithView(cell.imageView,
-            duration:1.2,
-            options: UIViewAnimationOptions.TransitionFlipFromTop,
-            animations: {
+//        UIView.transitionWithView(cell.imageView,
+//            duration:1.2,
+//            options: UIViewAnimationOptions.TransitionFlipFromTop,
+//            animations: {
+//                cell.imageView.image = toImage
+//                cell.filterNameLabel.textColor = UIColor.whiteColor()
+//                cell.backgroundColor = UIColor(hex: 0xff687a)
+//            },
+//            completion: nil)
+        
+        UIView.animateWithDuration(0.4) { () -> Void in
+            cell.backgroundColor = UIColor(hex: 0xff687a)
+            cell.filterNameLabel.textColor = UIColor.whiteColor()
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            }) { (Bool) -> Void in
                 cell.imageView.image = toImage
-                cell.filterNameLabel.textColor = UIColor.whiteColor()
-                cell.backgroundColor = UIColor(hex: 0xff687a)
-            },
-            completion: nil)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: nil)
+        
     }
     
 }

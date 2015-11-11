@@ -51,10 +51,10 @@ class SmokeUser: NSObject {
     //retorna token de autenticaçao
     func getToken() -> String? {
         
-        let kc = A0SimpleKeychain()
-        kc.useAccessControl = true
+        //let kc = A0SimpleKeychain()
+        //kc.useAccessControl = true
         
-        if let token = kc.stringForKey("userToken"){
+        if let token = A0SimpleKeychain().stringForKey("horabella_user_token"){
             return token
         }else{
             return nil
@@ -65,19 +65,21 @@ class SmokeUser: NSObject {
     //guarda token
     func saveToken(token: String) -> Void{
         
-        let kc = A0SimpleKeychain()
-        kc.useAccessControl = true
+        //let kc = A0SimpleKeychain()
+        //kc.useAccessControl = true
         
-        kc.setString(token, forKey:"userToken")
+        A0SimpleKeychain().setString(token, forKey:"horabella_user_token")
+        
+        print(A0SimpleKeychain().stringForKey("horabella_user_token"))
 
     }
     
     //remove token
     func removeToken() -> Void {
         let kc = A0SimpleKeychain()
-        kc.useAccessControl = true
+        //kc.useAccessControl = true
         
-        kc.deleteEntryForKey("userToken")
+        kc.deleteEntryForKey("horabella_user_token")
     }
     
     

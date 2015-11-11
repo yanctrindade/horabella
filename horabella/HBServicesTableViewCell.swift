@@ -41,6 +41,14 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("serviceCell", forIndexPath: indexPath) as!  HBServiceCollectionViewCell
         
         cell.image.image = UIImage(named: "\(filterArrayON[indexPath.row])")
+        cell.image.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        
+        var delay = Double(indexPath.row)
+        delay = delay/10
+        
+        UIView.animateWithDuration(0.5, delay: delay, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            }, completion: nil)
         
         return cell
     }
@@ -49,26 +57,30 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBServiceCollectionViewCell
         
-        UIView.transitionWithView(cell.image,
-            duration:0.6,
-            options: UIViewAnimationOptions.TransitionCrossDissolve,
-            animations: {
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.image.transform = CGAffineTransformMakeScale(0.35, 0.35)
+            }) { (Bool) -> Void in
                 cell.image.image = UIImage(named: "\(self.filterArrayOFF[indexPath.row])")
-            },
-            completion: nil)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            }, completion: nil)
         
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBServiceCollectionViewCell
         
-        UIView.transitionWithView(cell.image,
-            duration:0.6,
-            options: UIViewAnimationOptions.TransitionCrossDissolve,
-            animations: {
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.image.transform = CGAffineTransformMakeScale(0.35, 0.35)
+            }) { (Bool) -> Void in
                 cell.image.image = UIImage(named: "\(self.filterArrayON[indexPath.row])")
-            },
-            completion: nil)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            }, completion: nil)
     }
 
 }
