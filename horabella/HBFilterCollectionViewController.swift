@@ -27,7 +27,7 @@ class HBFilterCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         //NavBarSettings
-        navigationController!.navigationBar.barTintColor = UIColor(netHex: 0x472C44) //background color
+        //navigationController!.navigationBar.barTintColor = UIColor(netHex: 0x472C44) //background color
         self.navigationItem.title = "Filtros"
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
