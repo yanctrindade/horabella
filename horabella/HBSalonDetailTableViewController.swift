@@ -13,7 +13,7 @@ class HBSalonDetailTableViewController: UITableViewController {
     @IBOutlet weak var picturesScrollView: UIScrollView!
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,7 +45,7 @@ class HBSalonDetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if segControl.selectedSegmentIndex == 0 {
-            return 0
+            return 1
         }else if segControl.selectedSegmentIndex == 1 {
             return 3
         }else{
@@ -59,7 +59,11 @@ class HBSalonDetailTableViewController: UITableViewController {
         switch segControl.selectedSegmentIndex {
             
         case 0:
-            return 100
+            if indexPath.row == 0{
+                return 90
+            }else{
+                return 100
+            }
             
         case 1:
             if indexPath.row == 0 {
@@ -86,10 +90,16 @@ class HBSalonDetailTableViewController: UITableViewController {
         switch segControl.selectedSegmentIndex {
             
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-            
-            return cell
-            
+            if indexPath.row == 0{
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("servicesCell", forIndexPath: indexPath) as! HBServicesTableViewCell
+                return cell
+                
+            }else{
+                let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+                return cell
+            }
+                
         case 1:
             if indexPath.row == 0 {
                 
@@ -163,6 +173,8 @@ class HBSalonDetailTableViewController: UITableViewController {
         }
         
     }
+    
+
 
     /*
     // Override to support conditional editing of the table view.
