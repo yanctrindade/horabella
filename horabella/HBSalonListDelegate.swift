@@ -36,21 +36,23 @@ class HBSalonList: NSObject {
             let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
             print(shopArray?.count)
             
-            for shop in shopArray! {
-                let address = shop["address"]! as String
-                let comment = Int(shop["comments"]!)
-                let evaluations = Int(shop["evaluations"]!)
-                let id = Int(shop["id"]!)
-                let likes = Int(shop["likes"]!)
-                let location = self.stringToCLLocation(shop["location"]!)
-                let name = shop["name"]! as String
-                let phone = shop["phone"]! as String
-                let rate = Double(shop["rate"]!)
-                let website = shop["website"]! as String
-                
-                let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website)
-                
-                CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
+            if shopArray != nil {
+                for shop in shopArray! {
+                    let address = shop["address"]! as String
+                    let comment = Int(shop["comments"]!)
+                    let evaluations = Int(shop["evaluations"]!)
+                    let id = Int(shop["id"]!)
+                    let likes = Int(shop["likes"]!)
+                    let location = self.stringToCLLocation(shop["location"]!)
+                    let name = shop["name"]! as String
+                    let phone = shop["phone"]! as String
+                    let rate = Double(shop["rate"]!)
+                    let website = shop["website"]! as String
+                    
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website)
+                    
+                    CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
+                }
             }
             
             print(" ------- Encontrados: \(CurrentHBSalonList.sharedInstance.HBSalonArray.count) salões -------")
