@@ -96,16 +96,13 @@ class HBFilterCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBFilterCollectionViewCell
         
+        if HBFilter.sharedInstance.filtersArray.contains("\(indexPath.row)"){
+            HBFilter.sharedInstance.filtersArray.removeAtIndex(indexPath.row)
+        }
+        
+        print(HBFilter.sharedInstance.filtersArray)
+        
         let toImage = UIImage(named:filterArrayOFF[indexPath.row])
-//        UIView.transitionWithView(cell.imageView,
-//            duration:1.2,
-//            options: UIViewAnimationOptions.TransitionFlipFromBottom,
-//            animations: {
-//                cell.imageView.image = toImage
-//                cell.backgroundColor = UIColor.whiteColor()
-//                cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
-//            },
-//            completion: nil)
         
         UIView.animateWithDuration(0.4) { () -> Void in
             cell.backgroundColor = UIColor.whiteColor()
@@ -126,17 +123,11 @@ class HBFilterCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBFilterCollectionViewCell
+    
+        HBFilter.sharedInstance.filtersArray.append("\(indexPath.row)")
+        print(HBFilter.sharedInstance.filtersArray)
         
         let toImage = UIImage(named:filterArrayON[indexPath.row])
-//        UIView.transitionWithView(cell.imageView,
-//            duration:1.2,
-//            options: UIViewAnimationOptions.TransitionFlipFromTop,
-//            animations: {
-//                cell.imageView.image = toImage
-//                cell.filterNameLabel.textColor = UIColor.whiteColor()
-//                cell.backgroundColor = UIColor(hex: 0xff687a)
-//            },
-//            completion: nil)
         
         UIView.animateWithDuration(0.4) { () -> Void in
             cell.backgroundColor = UIColor(hex: 0xff687a)
