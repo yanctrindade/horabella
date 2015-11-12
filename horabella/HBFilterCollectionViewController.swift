@@ -26,15 +26,10 @@ class HBFilterCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //NavBarSettings
-        //navigationController!.navigationBar.barTintColor = UIColor(netHex: 0x472C44) //background color
-        self.navigationItem.title = "Filtros"
-        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        
         //Collection view settings
         self.collectionView?.delegate = self
         self.collectionView?.allowsMultipleSelection = true
+        self.collectionView?.allowsSelection = true
 
         //layoutViewFlow
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -63,17 +58,18 @@ class HBFilterCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FilterCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! HBFilterCollectionViewCell
         
         //configure cell
         cell.filterNameLabel.text = filterName[indexPath.row]
         cell.backgroundColor = UIColor.clearColor()
-        if (cell.selected) {
+        //cell.selected
+        if (HBFilter.sharedInstance.filtersArray.contains(String(indexPath.row))) {
             let imageName = filterArrayON[indexPath.row]
             cell.imageView.image = UIImage(named: imageName)
             cell.filterNameLabel.textColor = UIColor.whiteColor()
             cell.layer.borderWidth = 0.5
-            cell.layer.borderColor = UIColor.blackColor().CGColor
+            cell.backgroundColor = UIColor(hex: 0xff687a)
         } else {
             let imageName = filterArrayOFF[indexPath.row]
             cell.imageView.image = UIImage(named: imageName)
@@ -93,14 +89,13 @@ class HBFilterCollectionViewController: UICollectionViewController {
         let navPlusStatusBar = UIApplication.sharedApplication().statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.size.height)!
         let tabBarHeight = CGFloat(50)
         let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - navPlusStatusBar - tabBarHeight - CGFloat(numberOfRows - 1)) / CGFloat(numberOfRows)
-        //let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - CGFloat(10) - CGFloat(numberOfRows - 1)) / CGFloat(numberOfRows)
         
         return CGSizeMake(itemWidth, itemHeight)
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterCollectionViewCell
-        //cell.imageView.image = UIImage(named: filterArrayOFF[indexPath.row])
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBFilterCollectionViewCell
+        
         let toImage = UIImage(named:filterArrayOFF[indexPath.row])
         UIView.transitionWithView(cell.imageView,
             duration:1.2,
@@ -109,13 +104,21 @@ class HBFilterCollectionViewController: UICollectionViewController {
                 cell.imageView.image = toImage
                 cell.backgroundColor = UIColor.whiteColor()
                 cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
+                //removing from array
+                for var i: Int = 0; i<HBFilter.sharedInstance.filtersArray.count; i++ {
+                    if HBFilter.sharedInstance.filtersArray[i] == String(indexPath.row) {
+                        HBFilter.sharedInstance.filtersArray.removeAtIndex(i)
+                    }
+                }
+                
             },
             completion: nil)
+        print(HBFilter.sharedInstance.filtersArray)
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterCollectionViewCell
-       // cell.imageView.image = UIImage(named: filterArrayON[indexPath.row])
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBFilterCollectionViewCell
+        
         let toImage = UIImage(named:filterArrayON[indexPath.row])
         UIView.transitionWithView(cell.imageView,
             duration:1.2,
@@ -124,9 +127,14 @@ class HBFilterCollectionViewController: UICollectionViewController {
                 cell.imageView.image = toImage
                 cell.filterNameLabel.textColor = UIColor.whiteColor()
                 cell.backgroundColor = UIColor(hex: 0xff687a)
+                //adding the filter in the array filter
+                HBFilter.sharedInstance.filtersArray.append(String(indexPath.row))
             },
             completion: nil)
+        print(HBFilter.sharedInstance.filtersArray)
     }
+    
+    
     
 }
 

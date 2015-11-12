@@ -10,13 +10,18 @@ import UIKit
 import HCSStarRatingView
 import CoreLocation
 
-class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate, UIAlertViewDelegate {
+class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate, HBSalonListDelegate {
     
-    private var searchController = UISearchController(searchResultsController: nil)
-    private var salaoNome = "Helio Diff Hair Design"
+    var salonArray = Array<HBSalon>()
+    
+    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop"
+    var searchController = UISearchController(searchResultsController: nil)
+    var salaoNome = "Helio Diff Hair Design"
     //LocationManager variables
-    private var locationManager = CLLocationManager()
-    private var coordinates: CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
+    var locationManager = CLLocationManager()
+    var coordinates: CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
+    //Request Class Variable
+    var salonList: HBSalonList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +39,20 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //clear array
+        CurrentHBSalonList.sharedInstance.HBSalonArray.removeAll()
+        salonArray.removeAll()
+        
         //configurações de localização
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 20
+        
+        //carregar lista de saloes
+        self.salonList = HBSalonList(latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+        self.salonList?.delegate = self
         
         //NavBar Button depends if the filters are ON or OFF
         if (1 == 2) {
@@ -50,6 +63,8 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             self.navigationItem.rightBarButtonItem = filterButton
         }
         
+        //atualiza a tabela
+        self.tableView.reloadData()
     }
     
     //MARK: Search Bar Delegate
@@ -66,16 +81,13 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     }
     
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
+        return salonArray.count
     }
 
     
@@ -83,8 +95,14 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         let cell = tableView.dequeueReusableCellWithIdentifier("salonCell", forIndexPath: indexPath) as! HBSalonListTableViewCell
 
         // Configure the cell...
-        cell.salonName.text = salaoNome
-
+        
+        if salonArray.count > 0 {
+            let salon = salonArray[indexPath.row]
+            cell.salonName.text = salon.name
+            cell.salonAddress.text = salon.address
+            cell.salonEvaluation.value = CGFloat(salon.rate!)
+        }
+        
         return cell
     }
     
@@ -130,7 +148,14 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         print("\(coreLocationStatus)")
     }
 
-    
+    //MARK: Salon List Delegate Methods
+    func reloadDataOfTable() {
+        print("------- Salon List Delegate Method Accessed -------")
+        
+        salonArray = CurrentHBSalonList.sharedInstance.HBSalonArray
+        
+        self.tableView.reloadData()
+    }
 }
 
 

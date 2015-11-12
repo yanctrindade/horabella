@@ -61,7 +61,33 @@ class Smoke: NSObject {
         
     }
     
+    //MARK: data to dictionary
+    func dataToDictionary(data: NSData) -> NSDictionary? {
+        do{ //transforma data JSON recebido em dicionario
+            if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary{
+                
+                return jsonDictionary
+                
+            }
+        }catch{
+            print("erro para transformar JSON em dicionario")
+        }
+        return nil
+    }
     
+    //MARK: data to array of dictionaries
+    func dataToArrayOfDictionaries(data: NSData) -> Array<Dictionary<String,String>>? {
+        do{ //transforma data JSON recebido em array de dicionario
+            if let jsonArrayOfDictionaries = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? Array<Dictionary<String,String>>{
+                
+                return jsonArrayOfDictionaries
+                
+            }
+        }catch{
+            print("erro para transformar JSON em array")
+        }
+        return nil
+    }
 
 
 }
