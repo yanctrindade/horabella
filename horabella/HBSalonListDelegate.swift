@@ -19,7 +19,6 @@ class HBSalonList: NSObject {
 
     init(latitude: Double, longitude: Double) {
         super.init()
-        print("\(latitude) \(longitude)")
         //faz a requisição e monta o array
         print(" -------  Requisição Feeds de Salões START ----------- ")
         
@@ -61,6 +60,7 @@ class HBSalonList: NSObject {
             }) {
                 (response) -> Void in
                 print(response)
+                print(" ------- Falha na Busca de Salões END -------")
         }
         
     }
