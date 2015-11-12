@@ -139,7 +139,8 @@ class HBSalonDetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if segControl.selectedSegmentIndex == 0 {
-            return 1
+            //1 + quantidade de serviços
+            return 2
         }else if segControl.selectedSegmentIndex == 1 {
             return 3
         }else{
@@ -156,7 +157,7 @@ class HBSalonDetailTableViewController: UITableViewController {
             if indexPath.row == 0{
                 return 70
             }else{
-                return 100
+                return 50
             }
             
         case 1:
@@ -192,7 +193,13 @@ class HBSalonDetailTableViewController: UITableViewController {
                 return cell
                 
             }else{
-                let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+                
+                //carrega uma celula pra cada serviço do salao
+                let cell = tableView.dequeueReusableCellWithIdentifier("serviceCell", forIndexPath: indexPath) as! HBServiceTableViewCell
+                
+                cell.serviceLabel.text = "Corte masculino"
+                cell.priceLabel.text = "R$100,00"
+                
                 return cell
             }
                 
@@ -216,6 +223,7 @@ class HBSalonDetailTableViewController: UITableViewController {
                 
             }else{
                 
+                //carrega os comentarios
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonComment", forIndexPath: indexPath) as! HBSalonCommentsTableViewCell
                 
                 cell.userName.text = "Yan"

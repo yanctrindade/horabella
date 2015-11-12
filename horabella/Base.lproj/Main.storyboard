@@ -1142,6 +1142,50 @@ sofnaof</string>
                                     <outlet property="collectionView" destination="GeM-J9-fDE" id="K7u-vK-k0d"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="serviceCell" rowHeight="50" id="Axr-kQ-hwW" customClass="HBServiceTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="902" width="600" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Axr-kQ-hwW" id="N6E-uC-1Za">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-8G-c8i">
+                                            <rect key="frame" x="8" y="14" width="490" height="22"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="JU9-PE-sEm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$1000,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-0C-mIC">
+                                            <rect key="frame" x="508" y="14" width="84" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="84" id="88N-Oq-dWp"/>
+                                                <constraint firstAttribute="height" constant="21" id="MDe-ea-Bnd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="3jU-0C-mIC" firstAttribute="trailing" secondItem="N6E-uC-1Za" secondAttribute="trailingMargin" id="3Am-JM-ZcO"/>
+                                        <constraint firstItem="3jU-0C-mIC" firstAttribute="leading" secondItem="cbJ-8G-c8i" secondAttribute="trailing" constant="10" id="ZCC-NC-N3G"/>
+                                        <constraint firstItem="cbJ-8G-c8i" firstAttribute="centerY" secondItem="N6E-uC-1Za" secondAttribute="centerY" id="ckU-JB-gp3"/>
+                                        <constraint firstItem="3jU-0C-mIC" firstAttribute="centerY" secondItem="N6E-uC-1Za" secondAttribute="centerY" id="hAN-um-krE"/>
+                                        <constraint firstItem="cbJ-8G-c8i" firstAttribute="leading" secondItem="N6E-uC-1Za" secondAttribute="leadingMargin" id="hPm-bA-PD5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="priceLabel" destination="3jU-0C-mIC" id="o9V-S1-kLZ"/>
+                                    <outlet property="serviceLabel" destination="cbJ-8G-c8i" id="43m-Bu-5sc"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="DpF-uD-Kxl" id="lFb-S6-iYX"/>
