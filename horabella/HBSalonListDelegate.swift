@@ -34,6 +34,7 @@ class HBSalonList: NSObject {
             
             //print(response)
             let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
+            print(shopArray?.count)
             
             for shop in shopArray! {
                 let address = shop["address"]! as String

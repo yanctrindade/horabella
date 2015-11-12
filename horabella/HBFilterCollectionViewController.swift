@@ -116,18 +116,12 @@ class HBFilterCollectionViewController: UICollectionViewController {
             cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5)
             }) { (Bool) -> Void in
                 cell.imageView.image = toImage
-                cell.backgroundColor = UIColor.whiteColor()
-                cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
-                //removing from array
-                for var i: Int = 0; i<HBFilter.sharedInstance.filtersArray.count; i++ {
-                    if HBFilter.sharedInstance.filtersArray[i] == String(indexPath.row) {
-                        HBFilter.sharedInstance.filtersArray.removeAtIndex(i)
-                    }
-                }
-                
-            },
-            completion: nil)
-        print(HBFilter.sharedInstance.filtersArray)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: nil)
+        
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -153,13 +147,12 @@ class HBFilterCollectionViewController: UICollectionViewController {
             cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5)
             }) { (Bool) -> Void in
                 cell.imageView.image = toImage
-                cell.filterNameLabel.textColor = UIColor.whiteColor()
-                cell.backgroundColor = UIColor(hex: 0xff687a)
-                //adding the filter in the array filter
-                HBFilter.sharedInstance.filtersArray.append(String(indexPath.row))
-            },
-            completion: nil)
-        print(HBFilter.sharedInstance.filtersArray)
+        }
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            cell.imageView.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: nil)
+        
     }
     
     
