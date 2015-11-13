@@ -48,7 +48,11 @@ class HBFilterCollectionViewController: UICollectionViewController {
         self.tabBarController?.tabBar.hidden = false
     }
 
+
     @IBAction func doneButtonBarItem(sender: AnyObject) {
+        //avisa o observer que view vai sair
+        NSNotificationCenter.defaultCenter().postNotificationName("didDismissFilterViewControlller", object: nil)
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
