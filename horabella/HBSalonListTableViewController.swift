@@ -9,6 +9,8 @@
 import UIKit
 import HCSStarRatingView
 import CoreLocation
+import AlamofireImage
+import Alamofire
 
 class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate, HBSalonListDelegate {
     
@@ -101,6 +103,21 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             cell.salonName.text = salon.name
             cell.salonAddress.text = salon.address
             cell.salonEvaluation.value = CGFloat(salon.rate!)
+            
+            //download the salon image 0
+            Alamofire.request(.GET, salon.images![0])
+                .responseImage { response in
+                    debugPrint(response)
+                    
+                    print(response.request)
+                    print(response.response)
+                    debugPrint(response.result)
+                    
+                    if let image = response.result.value {
+                        print("image downloaded: \(image)")
+                        cell.salonImage.image = image
+                    }
+            }
         }
         
         return cell
@@ -154,7 +171,7 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         
         salonArray = CurrentHBSalonList.sharedInstance.HBSalonArray
         
-        self.tableView.reloadData()
+        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
 }
 

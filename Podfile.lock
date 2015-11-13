@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (3.1.2)
+  - AlamofireImage (2.1.0):
+    - Alamofire (~> 3.1)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -7,18 +9,18 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.4.0)
   - CryptoSwift (0.0.14)
-  - FBSDKCoreKit (4.7.1):
+  - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.7.1)
-    - FBSDKCoreKit/no-arc (= 4.7.1)
-  - FBSDKCoreKit/arc (4.7.1):
+    - FBSDKCoreKit/arc (= 4.8.0)
+    - FBSDKCoreKit/no-arc (= 4.8.0)
+  - FBSDKCoreKit/arc (4.8.0):
     - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.7.1):
+  - FBSDKCoreKit/no-arc (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.7.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.7.1):
+  - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
   - HCSStarRatingView (1.4.3)
   - JSONWebToken (1.4.1):
@@ -30,6 +32,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -50,11 +53,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
+  AlamofireImage: 97e00995920d85b5cb23ee4c3b7f92605f5dc74b
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   CryptoSwift: 5a6b725e2ad65a789f5f435dd434d38eb2c40b46
-  FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
+  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
-  FBSDKShareKit: 213adf63e073f41a346b0e7a689805880dc5150e
+  FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   JSONWebToken: cf8b58850dc4cf38ce777a08753a2ea1620d960e
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b

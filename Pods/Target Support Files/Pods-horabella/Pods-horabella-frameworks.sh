@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-horabella/Alamofire.framework"
+  install_framework "Pods-horabella/AlamofireImage.framework"
   install_framework "Pods-horabella/Bolts.framework"
   install_framework "Pods-horabella/CryptoSwift.framework"
   install_framework "Pods-horabella/FBSDKCoreKit.framework"
@@ -98,6 +99,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-horabella/Alamofire.framework"
+  install_framework "Pods-horabella/AlamofireImage.framework"
   install_framework "Pods-horabella/Bolts.framework"
   install_framework "Pods-horabella/CryptoSwift.framework"
   install_framework "Pods-horabella/FBSDKCoreKit.framework"

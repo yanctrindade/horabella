@@ -10,6 +10,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'JSONWebToken'
 pod ‘Alamofire’
+pod 'AlamofireImage'
 pod 'SimpleKeychain'
 pod 'VMaskTextField'
 end

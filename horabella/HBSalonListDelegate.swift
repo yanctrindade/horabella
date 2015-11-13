@@ -23,7 +23,7 @@ class HBSalonList: NSObject {
         print(" -------  Requisição Feeds de Salões START ----------- ")
         
         var parameters = Dictionary<String,String>()
-        parameters["radius"] = "50"
+        parameters["radius"] = "100"
         parameters["latitude"] = String(latitude)
         parameters["longitude"] = String(longitude)
         
@@ -31,24 +31,31 @@ class HBSalonList: NSObject {
         Smoke().getWithParameters(false, endpoint: endPoint, parameters: parameters, successBlock: {
             (response) -> Void in
             
-            //print(response)
+            print(response)
             let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
             print(shopArray?.count)
             
             if shopArray != nil {
                 for shop in shopArray! {
-                    let address = shop["address"]! as String
-                    let comment = Int(shop["comments"]!)
-                    let evaluations = Int(shop["evaluations"]!)
-                    let id = Int(shop["id"]!)
-                    let likes = Int(shop["likes"]!)
-                    let location = self.stringToCLLocation(shop["location"]!)
-                    let name = shop["name"]! as String
-                    let phone = shop["phone"]! as String
-                    let rate = Double(shop["rate"]!)
-                    let website = shop["website"]! as String
+                    let address = shop["address"] as! String
+                    let comment = Int(shop["comments"]! as! String)
+                    let evaluations = Int(shop["evaluations"]! as! String)
+                    let id = Int(shop["id"]! as! String)
+                    let likes = Int(shop["likes"]! as! String)
+                    let location = self.stringToCLLocation(shop["location"]! as! String)
+                    let name = shop["name"]! as! String
+                    let phone = shop["phone"]! as! String
+                    let rate = Double(shop["rate"]! as! String)
+                    let website = shop["website"]! as! String
+                    let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                   
+                    var imagesArray = Array<String>()
+                    for dictionary in arrayDictionaryImage {
+                        let url = dictionary["url"]! as String
+                        imagesArray.append(url)
+                    }
                     
-                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website)
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
                     
                     CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
                 }

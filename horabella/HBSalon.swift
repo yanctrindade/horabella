@@ -21,8 +21,9 @@ class HBSalon: NSObject {
     var phone: String?
     var rate: Double?
     var website: String?
+    var images: Array<String>?
     
-    init(address: String, comments: Int, evaluations: Int,id: Int, likes: Int, location: CLLocation, name: String, phone: String, rate: Double, website: String) {
+    init(address: String, comments: Int, evaluations: Int,id: Int, likes: Int, location: CLLocation, name: String, phone: String, rate: Double, website: String, images: Array<String>) {
         self.address = address
         self.comments = comments
         self.evaluations = evaluations
@@ -32,6 +33,7 @@ class HBSalon: NSObject {
         self.phone = phone
         self.rate = rate
         self.website = website
+        self.images = images
     }
     
 
