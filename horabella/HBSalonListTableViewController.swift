@@ -79,7 +79,18 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     
     //MARK: Filter Bar Button
     func FilterBarButton() {
+        //observer pra quando a tela de filtro sumir
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("didDismissFilterViewControlller:"),
+            name: "didDismissFilterViewControlller",
+            object: nil)
+        
         self.performSegueWithIdentifier("feedToFilter", sender: self)
+    }
+    
+    func didDismissFilterViewControlller(sender: NSNotification){
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
