@@ -45,6 +45,9 @@ class HBFilterCollectionViewController: UICollectionViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        //limpa array de filtros
+        HBFilter.sharedInstance.filtersArray.removeAll()
+        
         self.tabBarController?.tabBar.hidden = false
     }
 
@@ -67,20 +70,12 @@ class HBFilterCollectionViewController: UICollectionViewController {
         //configure cell
         cell.filterNameLabel.text = filterName[indexPath.row]
         cell.backgroundColor = UIColor.clearColor()
-        //cell.selected
-        if (HBFilter.sharedInstance.filtersArray.contains(String(indexPath.row))) {
-            let imageName = filterArrayON[indexPath.row]
-            cell.imageView.image = UIImage(named: imageName)
-            cell.filterNameLabel.textColor = UIColor.whiteColor()
-            cell.layer.borderWidth = 0.5
-            cell.backgroundColor = UIColor(hex: 0xff687a)
-        } else {
-            let imageName = filterArrayOFF[indexPath.row]
-            cell.imageView.image = UIImage(named: imageName)
-            cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
-            cell.layer.borderWidth = 0.5
-            cell.layer.borderColor = UIColor(hex: 0xff687a).CGColor
-        }
+
+        let imageName = filterArrayOFF[indexPath.row]
+        cell.imageView.image = UIImage(named: imageName)
+        cell.filterNameLabel.textColor = UIColor(hex: 0xff687a)
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor(hex: 0xff687a).CGColor
         
         return cell;
     }
@@ -100,9 +95,10 @@ class HBFilterCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBFilterCollectionViewCell
         
-        if HBFilter.sharedInstance.filtersArray.contains("\(indexPath.row)"){
-            HBFilter.sharedInstance.filtersArray.removeAtIndex(indexPath.row)
-        }
+        //remove filtro da singleton
+        let newFilterArray = HBFilter.sharedInstance.filtersArray.filter { $0 != "\(indexPath.row)" }
+        
+        HBFilter.sharedInstance.filtersArray = newFilterArray
         
         print(HBFilter.sharedInstance.filtersArray)
         
