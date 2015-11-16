@@ -108,12 +108,14 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         let cell = tableView.dequeueReusableCellWithIdentifier("salonCell", forIndexPath: indexPath) as! HBSalonListTableViewCell
 
         // Configure the cell...
-        
         if salonArray.count > 0 {
             let salon = salonArray[indexPath.row]
             cell.salonName.text = salon.name
             cell.salonAddress.text = salon.address
             cell.salonEvaluation.value = CGFloat(salon.rate!)
+            let str = String(format: "%.1f", salon.distanceToUser!/1000)
+            cell.salonDistance.text = str + " KM"
+            cell.salonFavorite.selected = false
             
             //download the salon image 0
             Alamofire.request(.GET, salon.images![0])
@@ -180,9 +182,34 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     func reloadDataOfTable() {
         print("------- Salon List Delegate Method Accessed -------")
         
-        salonArray = CurrentHBSalonList.sharedInstance.HBSalonArray
+        let mySalonArray = CurrentHBSalonList.sharedInstance.HBSalonArray
+        
+        //calculate the distance between user and salon
+        for salon in mySalonArray {
+            let distancia = self.calculateDistanceToUser(salon.location!)
+            salon.distanceToUser = distancia
+        }
+        
+        //sort by distance
+        self.salonArray = mySalonArray.sort({$0.distanceToUser < $1.distanceToUser})
         
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+    }
+    
+    //MARK: Calculate Distance Between Salon x User Location
+    func calculateDistanceToUser(location: CLLocation) -> Double {
+        let distanceMeters = location.distanceFromLocation(self.coordinates)
+        let distanceKM = distanceMeters / 1000
+        let roundedOneDigit = distanceKM.roundedOneDigit
+        return roundedOneDigit
+    }
+}
+
+extension Double{
+    var roundedOneDigit:Double{
+        
+        return Double(round(10*self)/10)
+        
     }
 }
 

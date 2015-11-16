@@ -15,6 +15,8 @@ class HBSalonListTableViewCell: UITableViewCell {
     @IBOutlet weak var salonName: UILabel!
     @IBOutlet weak var salonAddress: UILabel!
     @IBOutlet weak var salonEvaluation: HCSStarRatingView!
+    @IBOutlet weak var salonDistance: UILabel!
+    @IBOutlet weak var salonFavorite: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

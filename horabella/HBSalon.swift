@@ -22,6 +22,7 @@ class HBSalon: NSObject {
     var rate: Double?
     var website: String?
     var images: Array<String>?
+    var distanceToUser: Double?
     
     init(address: String, comments: Int, evaluations: Int,id: Int, likes: Int, location: CLLocation, name: String, phone: String, rate: Double, website: String, images: Array<String>) {
         self.address = address
@@ -34,6 +35,7 @@ class HBSalon: NSObject {
         self.rate = rate
         self.website = website
         self.images = images
+        self.distanceToUser = 0.0
     }
     
 
