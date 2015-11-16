@@ -159,7 +159,7 @@
                                     <outlet property="salonEvaluation" destination="7px-mw-kDY" id="piC-TO-fZx"/>
                                     <outlet property="salonImage" destination="K2I-2K-N23" id="rRN-Ut-tRi"/>
                                     <outlet property="salonName" destination="S52-T1-cH9" id="oHB-xD-JHD"/>
-                                    <segue destination="DpF-uD-Kxl" kind="show" id="Sob-Oa-fqK"/>
+                                    <segue destination="DpF-uD-Kxl" kind="show" identifier="salonDetailSegue" id="Sob-Oa-fqK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1061,7 +1061,7 @@ sofnaof</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-N6-mNo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-N6-mNo">
                                             <rect key="frame" x="116" y="8" width="466" height="54"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>

@@ -184,6 +184,24 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "salonDetailSegue" {
+            
+            let vc = segue.destinationViewController as! HBSalonDetailTableViewController
+            
+            //passa index do salao clicado para tela de detalhes
+            if let indexPath = self.tableView.indexPathForSelectedRow{
+                vc.salonIndex = indexPath
+            }
+            
+        }
+        
+    }
 }
 
 
