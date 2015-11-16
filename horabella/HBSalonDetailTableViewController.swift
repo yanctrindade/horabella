@@ -14,11 +14,20 @@ class HBSalonDetailTableViewController: UITableViewController {
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var salon: HBSalon!
+    var salonIndex: NSIndexPath!
     var salonImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        salon = CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row]
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        if let info = salon.name {
+            title = info
+        }
         
         //seta array com imagens do salao
         salonImages = [UIImage(named: "TesteSalaoBackground")!, UIImage(named: "TesteSalaoBackground")!, UIImage(named: "TesteSalaoBackground")!]
@@ -208,9 +217,17 @@ class HBSalonDetailTableViewController: UITableViewController {
                 
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonEvaluation", forIndexPath: indexPath) as! HBSalonEvaluationTableViewCell
                 
-                cell.evaluationLabel.text = "5 estrelas"
-                cell.likesLabel.text = "10 curtidas"
-                cell.commentsLabel.text = "2 comentarios"
+                if let info = salon.rate{
+                    cell.evaluationLabel.text = "\(info) estrelas"
+                }
+                
+                if let info = salon.likes{
+                    cell.likesLabel.text = "\(info) curtidas"
+                }
+                
+                if let info = salon.comments{
+                    cell.commentsLabel.text = "\(info) comentários"
+                }
                 
                 return cell
                 
@@ -240,7 +257,10 @@ class HBSalonDetailTableViewController: UITableViewController {
                 
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonDescription", forIndexPath: indexPath) as! HBSalonDescriptionTableViewCell
                 
-                cell.name.text = "Helio Diff"
+                if let info = salon.name{
+                    cell.name.text = info
+                }
+                
                 cell.salonDescription.text = "Descriçao do\nsalao\ntop"
                 
                 return cell
@@ -250,7 +270,10 @@ class HBSalonDetailTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Endereço"
-                cell.infoDescription.text = "edereço do\nsalao top"
+                
+                if let info = salon.address{
+                    cell.infoDescription.text = info
+                }
                 
                 return cell
                 
@@ -259,7 +282,10 @@ class HBSalonDetailTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Telefone"
-                cell.infoDescription.text = "(99) 9999-9999"
+                
+                if let info = salon.phone{
+                    cell.infoDescription.text = info
+                }
                 
                 return cell
                 
@@ -268,7 +294,10 @@ class HBSalonDetailTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Site"
-                cell.infoDescription.text = "www.heliodiff.com"
+                
+                if let info = salon.website{
+                    cell.infoDescription.text = info
+                }
                 
                 return cell
                 
