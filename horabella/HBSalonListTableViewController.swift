@@ -148,12 +148,12 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         print("Falha na localização")
         
         //AlertView se o GPS estiver off e abre a tela de Configurações
-        let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
+        /*let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
         let defaultAction = UIAlertAction(title: "Configurações", style: .Cancel) { (alert: UIAlertAction!) -> Void in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
         }
         alert.addAction(defaultAction)
-        presentViewController(alert, animated: true, completion:nil)
+        presentViewController(alert, animated: true, completion:nil)*/
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -192,6 +192,7 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         
         //sort by distance
         self.salonArray = mySalonArray.sort({$0.distanceToUser < $1.distanceToUser})
+        CurrentHBSalonList.sharedInstance.HBSalonArray = self.salonArray
         
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
@@ -202,6 +203,22 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         let distanceKM = distanceMeters / 1000
         let roundedOneDigit = distanceKM.roundedOneDigit
         return roundedOneDigit
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "salonDetailSegue" {
+            
+            let vc = segue.destinationViewController as! HBSalonDetailTableViewController
+            
+            //passa index do salao clicado para tela de detalhes
+            if let indexPath = self.tableView.indexPathForSelectedRow{
+                vc.salonIndex = indexPath
+            }
+            
+        }
+        
     }
 }
 
