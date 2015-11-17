@@ -13,6 +13,7 @@ pod ‘Alamofire’
 pod 'AlamofireImage'
 pod 'SimpleKeychain'
 pod 'VMaskTextField'
+pod 'CVCalendar', '~> 1.2.7'
 end
 
 target ‘horabellaTests’ do
