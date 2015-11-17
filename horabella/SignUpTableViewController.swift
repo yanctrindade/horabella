@@ -45,10 +45,12 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         lastNameTextField.text = SmokeUser.sharedInstance.lastName
         emailTextField.text = SmokeUser.sharedInstance.email
         birthdateTextField.text = SmokeUser.sharedInstance.birthDate
-        if SmokeUser.sharedInstance.gender == "female"{
-            genderSegControl.selectedSegmentIndex = 1
-        }else{
-            genderSegControl.selectedSegmentIndex = 0
+        if let userGender = SmokeUser.sharedInstance.gender {
+            if userGender == "female"{
+                genderSegControl.selectedSegmentIndex = 1
+            }else{
+                genderSegControl.selectedSegmentIndex = 0
+            }
         }
         
     }

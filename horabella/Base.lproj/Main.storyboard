@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5H8-H4-MlW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5H8-H4-MlW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -747,23 +747,30 @@
             <objects>
                 <tableViewController id="DpF-uD-Kxl" customClass="HBSalonDetailTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="213" sectionHeaderHeight="28" sectionFooterHeight="28" id="spv-U2-07e">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="a9p-nf-bu1">
-                            <rect key="frame" x="0.0" y="64" width="600" height="293"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="259"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-hg-66j">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
                                     <animations/>
                                     <connections>
                                         <outlet property="delegate" destination="DpF-uD-Kxl" id="089-IZ-gyZ"/>
                                     </connections>
                                 </scrollView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="p9T-fi-5Hw">
+                                    <rect key="frame" x="-5" y="184" width="610" height="80"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="d9S-si-ayf"/>
+                                    </constraints>
+                                </imageView>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="35w-AN-yU8">
-                                    <rect key="frame" x="10" y="257" width="580" height="29"/>
+                                    <rect key="frame" x="10" y="223" width="580" height="29"/>
                                     <animations/>
                                     <segments>
                                         <segment title="Agendamento"/>
@@ -776,27 +783,34 @@
                                     </connections>
                                 </segmentedControl>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lDx-e7-mPr">
-                                    <rect key="frame" x="280" y="218" width="39" height="37"/>
+                                    <rect key="frame" x="281" y="195" width="39" height="37"/>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="39" id="PaW-mf-BNA"/>
+                                        <constraint firstAttribute="height" constant="37" id="q9A-7h-UA4"/>
+                                    </constraints>
                                 </pageControl>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" red="0.1450980392" green="0.050980392159999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="hJa-hg-66j" firstAttribute="leading" secondItem="a9p-nf-bu1" secondAttribute="leading" id="Ahg-7Q-bLH"/>
-                                <constraint firstItem="lDx-e7-mPr" firstAttribute="centerY" secondItem="a9p-nf-bu1" secondAttribute="centerY" constant="90" id="J5q-XI-RdM"/>
-                                <constraint firstAttribute="trailing" secondItem="hJa-hg-66j" secondAttribute="trailing" id="Kny-jw-4f2"/>
-                                <constraint firstItem="hJa-hg-66j" firstAttribute="top" secondItem="a9p-nf-bu1" secondAttribute="top" id="LPo-RC-j4N"/>
-                                <constraint firstAttribute="trailing" secondItem="35w-AN-yU8" secondAttribute="trailing" constant="10" id="ME9-R3-94B"/>
-                                <constraint firstAttribute="bottom" secondItem="35w-AN-yU8" secondAttribute="bottom" constant="8" id="Ufw-DL-b8p"/>
-                                <constraint firstItem="35w-AN-yU8" firstAttribute="leading" secondItem="a9p-nf-bu1" secondAttribute="leading" constant="10" id="W2d-bD-HfF"/>
-                                <constraint firstItem="35w-AN-yU8" firstAttribute="top" secondItem="hJa-hg-66j" secondAttribute="bottom" constant="8" id="hse-Vm-P8I"/>
-                                <constraint firstItem="lDx-e7-mPr" firstAttribute="centerX" secondItem="a9p-nf-bu1" secondAttribute="centerX" id="zxb-Q8-hXf"/>
+                                <constraint firstAttribute="trailing" secondItem="35w-AN-yU8" secondAttribute="trailing" constant="10" id="6UW-0y-n1M"/>
+                                <constraint firstItem="p9T-fi-5Hw" firstAttribute="leading" secondItem="a9p-nf-bu1" secondAttribute="leading" constant="-5" id="780-VT-iHa"/>
+                                <constraint firstAttribute="bottom" secondItem="p9T-fi-5Hw" secondAttribute="bottom" constant="-5" id="8L3-s7-Zu1"/>
+                                <constraint firstAttribute="bottom" secondItem="hJa-hg-66j" secondAttribute="bottom" id="CVI-Jk-80b"/>
+                                <constraint firstItem="lDx-e7-mPr" firstAttribute="centerX" secondItem="a9p-nf-bu1" secondAttribute="centerX" id="GgK-PL-xOS"/>
+                                <constraint firstAttribute="bottom" secondItem="lDx-e7-mPr" secondAttribute="bottom" constant="27" id="QZk-Wr-O0m"/>
+                                <constraint firstAttribute="trailing" secondItem="p9T-fi-5Hw" secondAttribute="trailing" constant="-5" id="be6-k6-X3W"/>
+                                <constraint firstItem="35w-AN-yU8" firstAttribute="leading" secondItem="a9p-nf-bu1" secondAttribute="leading" constant="10" id="cYW-nJ-VXj"/>
+                                <constraint firstAttribute="trailing" secondItem="hJa-hg-66j" secondAttribute="trailing" id="gDp-OH-G8f"/>
+                                <constraint firstItem="hJa-hg-66j" firstAttribute="leading" secondItem="a9p-nf-bu1" secondAttribute="leading" id="ncB-SD-rM6"/>
+                                <constraint firstAttribute="bottom" secondItem="35w-AN-yU8" secondAttribute="bottom" constant="8" id="vjN-Vu-UDZ"/>
+                                <constraint firstItem="hJa-hg-66j" firstAttribute="top" secondItem="a9p-nf-bu1" secondAttribute="top" id="xlS-bU-138"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonEvaluation" rowHeight="76" id="X6U-25-f0q" customClass="HBSalonEvaluationTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="385" width="600" height="76"/>
+                                <rect key="frame" x="0.0" y="351" width="600" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6U-25-f0q" id="tDT-TS-Ka1">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
@@ -885,7 +899,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="makeComment" rowHeight="45" id="lJs-5v-AbB" customClass="HBMakeCommentTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="461" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="427" width="600" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJs-5v-AbB" id="ni6-sk-csT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
@@ -934,7 +948,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonComment" rowHeight="116" id="dcy-GP-AD1" customClass="HBSalonCommentsTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="506" width="600" height="116"/>
+                                <rect key="frame" x="0.0" y="472" width="600" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcy-GP-AD1" id="AeP-HO-4L5">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
@@ -1001,7 +1015,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="salonDescription" rowHeight="140" id="Mn2-xF-MEe" customClass="HBSalonDescriptionTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="622" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="588" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mn2-xF-MEe" id="Cj4-ip-sB6">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
@@ -1047,7 +1061,7 @@ sofnaof</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="70" id="oVE-Bq-QSe" customClass="HBSalonInfoTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="762" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="728" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVE-Bq-QSe" id="a4F-ja-drq">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
@@ -1090,7 +1104,7 @@ sofnaof</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="servicesCell" rowHeight="70" id="X2D-S5-ldb" customClass="HBServicesTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="832" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="798" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2D-S5-ldb" id="SlJ-il-sam">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
@@ -1101,21 +1115,21 @@ sofnaof</string>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eWx-bB-IuO">
-                                                <size key="itemSize" width="56" height="61"/>
+                                                <size key="itemSize" width="53" height="61"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="serviceCell" id="LMY-iF-up4" customClass="HBServiceCollectionViewCell" customModule="horabella" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="5" width="56" height="61"/>
+                                                    <rect key="frame" x="0.0" y="5" width="53" height="61"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="61"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="61"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filtro_cabeloON" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-uc-fuF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="61"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="filtro_cabeloON" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-uc-fuF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="52" height="61"/>
                                                                 <animations/>
                                                             </imageView>
                                                         </subviews>
@@ -1155,7 +1169,7 @@ sofnaof</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="serviceCell" rowHeight="50" id="Axr-kQ-hwW" customClass="HBServiceTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="902" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="868" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Axr-kQ-hwW" id="N6E-uC-1Za">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
@@ -1196,6 +1210,7 @@ sofnaof</string>
                                 <connections>
                                     <outlet property="priceLabel" destination="3jU-0C-mIC" id="o9V-S1-kLZ"/>
                                     <outlet property="serviceLabel" destination="cbJ-8G-c8i" id="43m-Bu-5sc"/>
+                                    <segue destination="OUb-vy-Zys" kind="show" id="Ee9-vK-jSD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1205,7 +1220,7 @@ sofnaof</string>
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1200"/>
+                    <size key="freeformSize" width="600" height="1000"/>
                     <connections>
                         <outlet property="pageControl" destination="lDx-e7-mPr" id="B0W-uI-VuR"/>
                         <outlet property="picturesScrollView" destination="hJa-hg-66j" id="cyK-LU-PXE"/>
@@ -1215,6 +1230,37 @@ sofnaof</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wH-I0-gVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2450" y="96"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="UWU-7l-pDy">
+            <objects>
+                <tableViewController id="OUb-vy-Zys" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Myq-Df-70u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SND-yM-dsR">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SND-yM-dsR" id="zwc-zT-8ns">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OUb-vy-Zys" id="CtU-TY-RWu"/>
+                            <outlet property="delegate" destination="OUb-vy-Zys" id="KC2-mA-Mog"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qND-j5-e93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3235" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TQy-km-DnK">
@@ -1253,6 +1299,7 @@ sofnaof</string>
         <image name="favorite_off" width="24" height="21"/>
         <image name="favorite_on" width="24" height="21"/>
         <image name="filtro_cabeloON" width="42" height="60"/>
+        <image name="gradient" width="375" height="88"/>
         <image name="profileNoPicture" width="123" height="123"/>
         <image name="profileTab_off" width="19" height="26"/>
         <image name="profileTab_on" width="17" height="25"/>

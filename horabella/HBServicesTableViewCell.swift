@@ -47,7 +47,7 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         delay = delay/10
         
         UIView.animateWithDuration(0.5, delay: delay, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
             }, completion: nil)
         
         return cell
@@ -58,13 +58,13 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBServiceCollectionViewCell
         
         UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.35, 0.35)
+            cell.image.transform = CGAffineTransformMakeScale(0.3, 0.3)
             }) { (Bool) -> Void in
                 cell.image.image = UIImage(named: "\(self.filterArrayOFF[indexPath.row])")
         }
         
         UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
             }, completion: nil)
         
     }
@@ -73,13 +73,13 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HBServiceCollectionViewCell
         
         UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.35, 0.35)
+            cell.image.transform = CGAffineTransformMakeScale(0.3, 0.3)
             }) { (Bool) -> Void in
                 cell.image.image = UIImage(named: "\(self.filterArrayON[indexPath.row])")
         }
         
         UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
             }, completion: nil)
     }
 

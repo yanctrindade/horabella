@@ -21,15 +21,24 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        navigationController?.navigationBarHidden = true
+        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
     }
     
     override func viewWillAppear(animated: Bool) {
-        navigationController?.navigationBarHidden = true
+        
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.navigationController?.navigationBarHidden = true
+        }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
-        navigationController?.navigationBarHidden = false
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.navigationController?.navigationBarHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

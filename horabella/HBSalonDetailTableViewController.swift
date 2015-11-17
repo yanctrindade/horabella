@@ -164,7 +164,7 @@ class HBSalonDetailTableViewController: UITableViewController {
             
         case 0:
             if indexPath.row == 0{
-                return 70
+                return 60
             }else{
                 return 50
             }
