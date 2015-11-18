@@ -1210,7 +1210,7 @@ sofnaof</string>
                                 <connections>
                                     <outlet property="priceLabel" destination="3jU-0C-mIC" id="o9V-S1-kLZ"/>
                                     <outlet property="serviceLabel" destination="cbJ-8G-c8i" id="43m-Bu-5sc"/>
-                                    <segue destination="OUb-vy-Zys" kind="show" id="Ee9-vK-jSD"/>
+                                    <segue destination="1oa-rv-QF3" kind="show" identifier="scheduleSegue" id="diT-by-vet"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1231,36 +1231,232 @@ sofnaof</string>
             </objects>
             <point key="canvasLocation" x="2450" y="96"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="UWU-7l-pDy">
+        <!--Scheluding Table View Controller-->
+        <scene sceneID="Qbm-MV-VJD">
             <objects>
-                <tableViewController id="OUb-vy-Zys" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Myq-Df-70u">
+                <tableViewController id="1oa-rv-QF3" customClass="HBScheludingTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ew0-Bn-vH8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pIT-wn-beA">
+                            <rect key="frame" x="0.0" y="64" width="600" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNV-lO-vdz">
+                                    <rect key="frame" x="10" y="14" width="490" height="21"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="KcQ-v5-Bbt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$1000,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj5-vZ-4b6">
+                                    <rect key="frame" x="508" y="14" width="84" height="21"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="XIb-CZ-sgt"/>
+                                        <constraint firstAttribute="width" constant="84" id="qsf-Ma-Vl4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Wj5-vZ-4b6" secondAttribute="trailing" constant="8" id="5ZC-xd-trY"/>
+                                <constraint firstItem="WNV-lO-vdz" firstAttribute="centerY" secondItem="pIT-wn-beA" secondAttribute="centerY" id="IKS-ic-T8Z"/>
+                                <constraint firstItem="Wj5-vZ-4b6" firstAttribute="centerY" secondItem="pIT-wn-beA" secondAttribute="centerY" id="OKS-c4-hFX"/>
+                                <constraint firstItem="WNV-lO-vdz" firstAttribute="leading" secondItem="pIT-wn-beA" secondAttribute="leading" constant="10" id="vzS-O6-crM"/>
+                                <constraint firstItem="Wj5-vZ-4b6" firstAttribute="leading" secondItem="WNV-lO-vdz" secondAttribute="trailing" constant="8" id="xGa-Cs-vVP"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SND-yM-dsR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" id="KRY-5s-f8V" customClass="HBHeaderTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="141" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SND-yM-dsR" id="zwc-zT-8ns">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KRY-5s-f8V" id="3vr-lv-cSi">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrS-8W-S25">
+                                            <rect key="frame" x="8" y="12" width="584" height="20"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="FrS-8W-S25" secondAttribute="trailing" id="BKW-Rc-g5h"/>
+                                        <constraint firstItem="FrS-8W-S25" firstAttribute="centerY" secondItem="3vr-lv-cSi" secondAttribute="centerY" id="QvS-CF-UWi"/>
+                                        <constraint firstItem="FrS-8W-S25" firstAttribute="leading" secondItem="3vr-lv-cSi" secondAttribute="leadingMargin" id="hLR-s9-7Zo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.55294117647058827" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="sectionTitle" destination="FrS-8W-S25" id="MUd-DC-cif"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="professionalCell" rowHeight="50" id="cR1-z2-IJZ" customClass="HBProfessinalTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="185" width="600" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cR1-z2-IJZ" id="WZi-Vp-hta">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7A3-ED-6sF">
+                                            <rect key="frame" x="18" y="7" width="36" height="36"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="0Bl-fP-522"/>
+                                                <constraint firstAttribute="width" constant="36" id="wKO-nV-qb6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do profissional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2F-oI-Sac">
+                                            <rect key="frame" x="84" y="15" width="498" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="t2F-oI-Sac" secondAttribute="trailing" constant="10" id="H2S-ZG-yN7"/>
+                                        <constraint firstItem="7A3-ED-6sF" firstAttribute="centerY" secondItem="WZi-Vp-hta" secondAttribute="centerY" id="PXJ-ir-nyn"/>
+                                        <constraint firstItem="7A3-ED-6sF" firstAttribute="leading" secondItem="WZi-Vp-hta" secondAttribute="leadingMargin" constant="10" id="Uze-O3-lLH"/>
+                                        <constraint firstItem="t2F-oI-Sac" firstAttribute="leading" secondItem="7A3-ED-6sF" secondAttribute="trailing" constant="30" id="Vr6-K0-9ze"/>
+                                        <constraint firstItem="t2F-oI-Sac" firstAttribute="centerY" secondItem="WZi-Vp-hta" secondAttribute="centerY" id="ZSq-Uq-qWI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="name" destination="t2F-oI-Sac" id="ijd-BX-kti"/>
+                                    <outlet property="photo" destination="7A3-ED-6sF" id="xFO-cL-cWj"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" rowHeight="400" id="IKV-ct-Ofb" customClass="HBCalendarTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="235" width="600" height="400"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IKV-ct-Ofb" id="NpA-vf-uDE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-ia-RIu" customClass="CVCalendarView" customModule="CVCalendar">
+                                            <rect key="frame" x="8" y="58" width="584" height="334"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <outlet property="calendarAppearanceDelegate" destination="IKV-ct-Ofb" id="eW1-Ob-1sB"/>
+                                                <outlet property="calendarDelegate" destination="IKV-ct-Ofb" id="f54-xQ-eOq"/>
+                                            </connections>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-sM-Tzs" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                            <rect key="frame" x="8" y="8" width="584" height="40"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="jen-9H-qxh"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="menuViewDelegate" destination="IKV-ct-Ofb" id="rT3-lQ-lho"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="9rI-ia-RIu" firstAttribute="leading" secondItem="NpA-vf-uDE" secondAttribute="leadingMargin" id="Pm7-sZ-B7g"/>
+                                        <constraint firstItem="9rI-ia-RIu" firstAttribute="bottom" secondItem="NpA-vf-uDE" secondAttribute="bottomMargin" id="SBk-Xl-Jf9"/>
+                                        <constraint firstItem="MWh-sM-Tzs" firstAttribute="top" secondItem="NpA-vf-uDE" secondAttribute="topMargin" id="SQj-2M-chu"/>
+                                        <constraint firstItem="9rI-ia-RIu" firstAttribute="top" secondItem="MWh-sM-Tzs" secondAttribute="bottom" constant="10" id="WQs-dS-lai"/>
+                                        <constraint firstItem="MWh-sM-Tzs" firstAttribute="leading" secondItem="NpA-vf-uDE" secondAttribute="leadingMargin" id="drM-HI-084"/>
+                                        <constraint firstItem="MWh-sM-Tzs" firstAttribute="trailing" secondItem="NpA-vf-uDE" secondAttribute="trailingMargin" id="fzu-v8-Gdo"/>
+                                        <constraint firstItem="9rI-ia-RIu" firstAttribute="trailing" secondItem="NpA-vf-uDE" secondAttribute="trailingMargin" id="n3i-kz-Ju1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="calendarView" destination="9rI-ia-RIu" id="1Db-ar-z9p"/>
+                                    <outlet property="menuView" destination="MWh-sM-Tzs" id="ztc-ZL-sv1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="availableScheduleCell" id="Fqk-Ea-F07" customClass="HBAvailableScheduleTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="635" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fqk-Ea-F07" id="jOs-ni-Jaj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hora disponivel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrx-gt-c7g">
+                                            <rect key="frame" x="18" y="12" width="564" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="qrx-gt-c7g" firstAttribute="centerY" secondItem="jOs-ni-Jaj" secondAttribute="centerY" id="P2Y-F5-a0P"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qrx-gt-c7g" secondAttribute="trailing" constant="10" id="XWn-cx-1lX"/>
+                                        <constraint firstItem="qrx-gt-c7g" firstAttribute="leading" secondItem="jOs-ni-Jaj" secondAttribute="leadingMargin" constant="10" id="ZJ6-s5-0DP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="timeLabel" destination="qrx-gt-c7g" id="ag8-ad-dt1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="confirmCell" id="lH7-ZB-eIo" customClass="HBHeaderTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="679" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lH7-ZB-eIo" id="Y5G-we-1bL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-3x-vs4">
+                                            <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                            <animations/>
+                                            <state key="normal" image="confirmButton"/>
+                                            <connections>
+                                                <action selector="confirmSchedule:" destination="1oa-rv-QF3" eventType="touchUpInside" id="DDj-3L-cZk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1Xb-3x-vs4" secondAttribute="bottom" id="2oQ-Ym-3lR"/>
+                                        <constraint firstItem="1Xb-3x-vs4" firstAttribute="leading" secondItem="Y5G-we-1bL" secondAttribute="leadingMargin" id="aHS-vK-ap4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1Xb-3x-vs4" secondAttribute="trailing" id="nA6-D0-jW3"/>
+                                        <constraint firstItem="1Xb-3x-vs4" firstAttribute="top" secondItem="Y5G-we-1bL" secondAttribute="topMargin" id="uAy-Zv-6IC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="OUb-vy-Zys" id="CtU-TY-RWu"/>
-                            <outlet property="delegate" destination="OUb-vy-Zys" id="KC2-mA-Mog"/>
+                            <outlet property="dataSource" destination="1oa-rv-QF3" id="YgT-X3-Apo"/>
+                            <outlet property="delegate" destination="1oa-rv-QF3" id="Gfe-bd-bTs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="priceLabel" destination="Wj5-vZ-4b6" id="Lxz-uK-qha"/>
+                        <outlet property="serviceLabel" destination="WNV-lO-vdz" id="rot-dO-rK2"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qND-j5-e93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXW-yK-9rs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3235" y="96"/>
+            <point key="canvasLocation" x="3171" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TQy-km-DnK">
@@ -1293,6 +1489,7 @@ sofnaof</string>
         <image name="commentIcon" width="28" height="21"/>
         <image name="commentPinkIcon" width="26" height="19"/>
         <image name="configPinkIcon" width="30" height="31"/>
+        <image name="confirmButton" width="33" height="33"/>
         <image name="dealsTab_off" width="27" height="28"/>
         <image name="dealsTab_on" width="30" height="31"/>
         <image name="favoritePinkIcon" width="30" height="26"/>

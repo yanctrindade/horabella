@@ -22,6 +22,8 @@ class HBSalonDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.allowsSelection = true
+        
         salon = CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row]
         
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
@@ -135,6 +137,13 @@ class HBSalonDetailTableViewController: UITableViewController {
     // MARK: - Segmented Control
     
     @IBAction func indexChanged(sender: AnyObject) {
+        
+        //se for a primeira aba, abilita seleçao para escolher serviço
+        if sender.selectedSegmentIndex == 0 {
+            tableView.allowsSelection = true
+        }else{
+            tableView.allowsSelection = false
+        }
         tableView.reloadData()
     }
 
