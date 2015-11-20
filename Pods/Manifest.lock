@@ -26,8 +26,8 @@ PODS:
   - HCSStarRatingView (1.4.3)
   - JSONWebToken (1.4.1):
     - CryptoSwift (= 0.0.14)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
   - SimpleKeychain (0.6.1)
   - VMaskTextField (1.0.4)
 
@@ -64,7 +64,7 @@ SPEC CHECKSUMS:
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   JSONWebToken: cf8b58850dc4cf38ce777a08753a2ea1620d960e
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   SimpleKeychain: 150d76f3b9200de58f033228f6e976c6241a221c
   VMaskTextField: 633dfde6182fb3ea6604abb675e05cdc108006df
 

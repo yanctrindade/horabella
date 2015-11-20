@@ -57,13 +57,8 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         self.salonList?.delegate = self
         
         //NavBar Button depends if the filters are ON or OFF
-        if (1 == 2) {
-            let filterButton = UIBarButtonItem(image: UIImage(named: "filterButtonON")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: Selector("FilterBarButton"))
-            self.navigationItem.rightBarButtonItem = filterButton
-        } else {
-            let filterButton = UIBarButtonItem(image: UIImage(named: "filterButtonOFF")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: Selector("FilterBarButton"))
-            self.navigationItem.rightBarButtonItem = filterButton
-        }
+        let filterButton = UIBarButtonItem(image: UIImage(named: "filterButtonOFF")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: Selector("FilterBarButton"))
+        self.navigationItem.rightBarButtonItem = filterButton
         
         //atualiza a tabela
         self.tableView.reloadData()

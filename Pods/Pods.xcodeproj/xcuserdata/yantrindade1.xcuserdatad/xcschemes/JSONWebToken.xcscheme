@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '96A3EBBF5369D69752361C3E'
+               BlueprintIdentifier = 'EB7A2E47115237C8EF13A0AE'
                BlueprintName = 'JSONWebToken'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'JWT.framework'>

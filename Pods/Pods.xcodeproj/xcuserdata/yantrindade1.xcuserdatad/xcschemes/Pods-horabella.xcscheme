@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '28CD99B07A74251A4F9047B0'
+               BlueprintIdentifier = '03E6712AD4C585E1BCEC33DE'
                BlueprintName = 'Pods-horabella'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_horabella.framework'>
