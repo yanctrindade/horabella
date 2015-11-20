@@ -23,7 +23,7 @@ class HBSalonList: NSObject {
         print(" -------  Requisição Feeds de Salões START ----------- ")
         
         var parameters = Dictionary<String,String>()
-        parameters["radius"] = "100"
+        parameters["radius"] = "10000"
         parameters["latitude"] = String(latitude)
         parameters["longitude"] = String(longitude)
         
