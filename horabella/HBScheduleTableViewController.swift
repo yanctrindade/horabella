@@ -14,6 +14,12 @@ class HBScheduleTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -64,6 +64,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             SmokeUser().loginWithEmailAndPassword(email, password: password, successBlock: { (response) -> Void in
                 
                 print("login passou")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("initialView") as! HBTabBarViewController
+                self.presentViewController(vc, animated: true, completion: nil)
                 
                 }) { (response) -> Void in
                     

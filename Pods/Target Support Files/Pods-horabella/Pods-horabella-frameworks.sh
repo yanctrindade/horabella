@@ -96,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-horabella/JWT.framework"
   install_framework "Pods-horabella/Parse.framework"
   install_framework "Pods-horabella/SimpleKeychain.framework"
+  install_framework "Pods-horabella/SwiftyJSON.framework"
   install_framework "Pods-horabella/VMaskTextField.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -111,5 +112,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-horabella/JWT.framework"
   install_framework "Pods-horabella/Parse.framework"
   install_framework "Pods-horabella/SimpleKeychain.framework"
+  install_framework "Pods-horabella/SwiftyJSON.framework"
   install_framework "Pods-horabella/VMaskTextField.framework"
 fi

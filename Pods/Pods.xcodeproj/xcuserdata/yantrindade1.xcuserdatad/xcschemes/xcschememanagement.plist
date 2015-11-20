@@ -69,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VMaskTextField-VMaskTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,22 +87,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21FE47E51DC80337DF9DEEB4CC4BDBB9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3E3985358885D5A217D77EB23460B91B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>42BAF865AC3D50B4B9D171D02E4A4A00</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47971C5BC8460CB67557D49B49C3DC03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,22 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FC1F7D3F471F9508B91184DE7F651C4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>511B536F0DE06D9C3BD65397A91990C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>54EF698754900C46655EA22356F12554</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>56B943C276E26DDA05692D0391F3BD0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EF5F1B53DD978519091F8666B45EA0E</key>
+		<key>5DD04B47F9F4AA26031262F7C0AE83D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73FFF788096F05B28FF4851F340E8A3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,12 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE0B6F31D359F6F86C97DF93DA646D80</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<key>AFA657EC51E1AE1E48043A8D10E3C82B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,7 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9F526266136F6D0923D77A0BED3FD6E</key>
+		<key>DFA7CD5914EF4F559C46D457F7C5C951</key>
 		<dict>
 			<key>primary</key>
 			<true/>

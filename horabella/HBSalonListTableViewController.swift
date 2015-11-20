@@ -115,11 +115,11 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             //download the salon image 0
             Alamofire.request(.GET, salon.images![0])
                 .responseImage { response in
-                    debugPrint(response)
+                    //debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
-                    debugPrint(response.result)
+                    //print(response.request)
+                    //print(response.response)
+                    //debugPrint(response.result)
                     
                     if let image = response.result.value {
                         print("image downloaded: \(image)")

@@ -16,6 +16,7 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     let filterArrayOFF = ["filtro_cabeloOFF", "filtro_unhaOFF", "filtro_maquiagemOFF",
         "filtro_depilacaoOFF", "filtro_massagemOFF", "filtro_esteticaOFF",
         "filtro_popularidadeOFF", "filtro_localizacaoOFF", "filtro_favoritoOFF"]
+    var categoriesArray:Array<HBServiceCategory> = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -34,21 +35,25 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     //MARK: - CollectionView
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return categoriesArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("serviceCell", forIndexPath: indexPath) as!  HBServiceCollectionViewCell
         
-        cell.image.image = UIImage(named: "\(filterArrayON[indexPath.row])")
-        cell.image.transform = CGAffineTransformMakeScale(0.1, 0.1)
-        
-        var delay = Double(indexPath.row)
-        delay = delay/10
-        
-        UIView.animateWithDuration(0.5, delay: delay, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
-            }, completion: nil)
+        if categoriesArray.count > 0 {
+            let category = categoriesArray[indexPath.row]
+            cell.image.image = UIImage(named: "\(filterArrayON[category.id!-1])")
+            cell.tag = category.id!
+            cell.image.transform = CGAffineTransformMakeScale(0.1, 0.1)
+            
+            var delay = Double(indexPath.row)
+            delay = delay/10
+            
+            UIView.animateWithDuration(0.5, delay: delay, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+                cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
+                }, completion: nil)
+        }
         
         return cell
     }
@@ -60,7 +65,7 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             cell.image.transform = CGAffineTransformMakeScale(0.3, 0.3)
             }) { (Bool) -> Void in
-                cell.image.image = UIImage(named: "\(self.filterArrayOFF[indexPath.row])")
+                cell.image.image = UIImage(named: "\(self.filterArrayOFF[cell.tag-1])")
         }
         
         UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
@@ -75,7 +80,7 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             cell.image.transform = CGAffineTransformMakeScale(0.3, 0.3)
             }) { (Bool) -> Void in
-                cell.image.image = UIImage(named: "\(self.filterArrayON[indexPath.row])")
+                cell.image.image = UIImage(named: "\(self.filterArrayON[cell.tag-1])")
         }
         
         UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in

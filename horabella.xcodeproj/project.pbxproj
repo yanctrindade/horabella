@@ -25,6 +25,8 @@
 		02BF943F1BFF450A005C9940 /* HBScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */; };
 		02BF94411BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */; };
 		02BF94431BFF453D005C9940 /* HBScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */; };
+		02C37F601BFF4E0D0087B97C /* HBSalonDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */; };
+		02C37F621BFF54460087B97C /* HBServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F611BFF54460087B97C /* HBServiceCategory.swift */; };
 		02CE010A1BF1313000EE0793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CE01091BF1313000EE0793 /* CoreLocation.framework */; };
 		02CE010C1BF26B6100EE0793 /* HBFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE010B1BF26B6100EE0793 /* HBFilter.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
@@ -96,6 +98,8 @@
 		02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleTableViewController.swift; sourceTree = "<group>"; };
 		02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDetailDelegate.swift; sourceTree = "<group>"; };
+		02C37F611BFF54460087B97C /* HBServiceCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceCategory.swift; sourceTree = "<group>"; };
 		02CE01091BF1313000EE0793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		02CE010B1BF26B6100EE0793 /* HBFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilter.swift; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */,
+				02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */,
+				02C37F611BFF54460087B97C /* HBServiceCategory.swift */,
 				02BF94441BFF490D005C9940 /* Evaluation */,
 				BBBCBB291BFB9C5100063173 /* Scheduling */,
 				BBD90E311BF267A3009C19D1 /* HBServicesTableViewCell.swift */,
@@ -561,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */,
+				02C37F601BFF4E0D0087B97C /* HBSalonDetailDelegate.swift in Sources */,
 				025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */,
 				BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */,
 				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,
@@ -574,6 +581,7 @@
 				0215E5361BF4FFDD00DF6A2F /* CurrentHBSalonList.swift in Sources */,
 				02174E631BF3C97800AF3337 /* HBSalon.swift in Sources */,
 				BB7518911BE91FDC00D2200A /* Smoke.swift in Sources */,
+				02C37F621BFF54460087B97C /* HBServiceCategory.swift in Sources */,
 				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
 				025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */,
 				BBBCBB351BFCEF3A00063173 /* HBCalendarTableViewCell.swift in Sources */,

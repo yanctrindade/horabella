@@ -31,9 +31,9 @@ class HBSalonList: NSObject {
         Smoke().getWithParameters(false, endpoint: endPoint, parameters: parameters, successBlock: {
             (response) -> Void in
             
-            print(response)
+            //print(response)
             let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
-            print(shopArray?.count)
+            //print(shopArray?.count)
             
             if shopArray != nil {
                 for shop in shopArray! {

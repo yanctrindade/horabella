@@ -35,6 +35,7 @@ class HBSalon: NSObject {
         self.rate = rate
         self.website = website
         self.images = images
+        self.id = id
         self.distanceToUser = 0.0
     }
     
