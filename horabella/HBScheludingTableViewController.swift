@@ -8,32 +8,40 @@
 
 import UIKit
 
-class HBScheludingTableViewController: UITableViewController {
+class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate {
 
     @IBOutlet weak var serviceLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    var professionalArray = Array<String>()
+    var professionalArray = Array<HBProfessional>()
     var availableSchedulesArray = Array<String>()
     
     var calendarCell: HBCalendarTableViewCell!
     
+    var isProfessionalSelected = false
+    
+    var hbSchedule:HBSchedule?
+    var serviceName: String?
+    var servicePrice: String?
+    var serviceId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        professionalArray = ["Ian Ferreira", "Yan Trindade"]
-        availableSchedulesArray = ["09:00", "10:00", "11:00"]
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        availableSchedulesArray = ["9:00","10:00","11:00"]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isProfessionalSelected = false
+        
+        //protocol request
+        hbSchedule = HBSchedule(idService: self.serviceId!)
+        hbSchedule?.delegate = self
+        
+        //outlets
+        serviceLabel.text = serviceName
+        priceLabel.text = servicePrice!
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,19 +51,16 @@ class HBScheludingTableViewController: UITableViewController {
     }
     
     // MARK: - Schedule
-    
     @IBAction func confirmSchedule(sender: AnyObject) {
         print("faz agendamento")
     }
     
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 4
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
@@ -69,16 +74,17 @@ class HBScheludingTableViewController: UITableViewController {
             return 1
         }
     }
-
+    
+    //CELL FOR ROW
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("professionalCell", forIndexPath: indexPath) as! HBProfessinalTableViewCell
-            cell.name.text = professionalArray[indexPath.row]
+            cell.name.text = professionalArray[indexPath.row].firstName! + " " + professionalArray[indexPath.row].lastName!
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("calendarCell", forIndexPath: indexPath) as! HBCalendarTableViewCell
+            cell.selectionStyle = .None
             calendarCell = cell
             return cell
         case 2:
@@ -92,24 +98,47 @@ class HBScheludingTableViewController: UITableViewController {
         
     }
     
+    //DID SELECT ROW
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            isProfessionalSelected = true
+            self.tableView.reloadData()
+            self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Middle)
+        }
+    }
+    
+    //INDEX UNICO POR SECTION
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if let array = tableView.indexPathsForSelectedRows {
+            for selectedIndexPath in array {
+                if selectedIndexPath.section == indexPath.section {
+                    tableView.deselectRowAtIndexPath(selectedIndexPath, animated: false)
+                }
+            }
+        }
+        return indexPath
+    }
+    
+    
+    //VIEW FOR HEADER IN SECTION
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! HBHeaderTableViewCell
         
         switch section {
         case 0:
-            header.sectionTitle.text = "Profissional"
+            header.sectionTitle.text = "1. Profissional"
         case 1:
-            header.sectionTitle.text = "Data"
+            header.sectionTitle.text = "2. Data"
         case 2:
-            header.sectionTitle.text = "Horário"
+            header.sectionTitle.text = "3. Horário"
         default:
             return nil
         }
         
         return header
-        
     }
     
+    //HEIGHT FOR ROW
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -120,50 +149,13 @@ class HBScheludingTableViewController: UITableViewController {
             return 50
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    //MARK: Schedule Delegate Method
+    func reloadDataOfTable() {
+        print("--- Schedule Delegate Method Accessed ---")
+        
+        self.professionalArray = (self.hbSchedule?.professionalsArray)!
+        
+        self.tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

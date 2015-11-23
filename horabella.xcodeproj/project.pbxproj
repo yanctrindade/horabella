@@ -11,6 +11,9 @@
 		0215E5381BF50A1100DF6A2F /* HBFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215E5371BF50A1100DF6A2F /* HBFilterCollectionViewCell.swift */; };
 		02174E611BF3AC4F00AF3337 /* HBSalonListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02174E601BF3AC4F00AF3337 /* HBSalonListDelegate.swift */; };
 		02174E631BF3C97800AF3337 /* HBSalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02174E621BF3C97800AF3337 /* HBSalon.swift */; };
+		0231B1231C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */; };
+		0231B1271C036C900098E1B0 /* HBScheduleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */; };
+		0231B1291C0374C20098E1B0 /* HBProfessional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1281C0374C20098E1B0 /* HBProfessional.swift */; };
 		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; };
 		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; };
 		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; };
@@ -26,7 +29,7 @@
 		02BF94411BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */; };
 		02BF94431BFF453D005C9940 /* HBScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */; };
 		02C37F601BFF4E0D0087B97C /* HBSalonDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */; };
-		02C37F621BFF54460087B97C /* HBServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F611BFF54460087B97C /* HBServiceCategory.swift */; };
+		02C37F641BFF6FA10087B97C /* HBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F631BFF6FA10087B97C /* HBService.swift */; };
 		02CE010A1BF1313000EE0793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CE01091BF1313000EE0793 /* CoreLocation.framework */; };
 		02CE010C1BF26B6100EE0793 /* HBFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE010B1BF26B6100EE0793 /* HBFilter.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
@@ -79,6 +82,9 @@
 		0215E5371BF50A1100DF6A2F /* HBFilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		02174E601BF3AC4F00AF3337 /* HBSalonListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListDelegate.swift; sourceTree = "<group>"; };
 		02174E621BF3C97800AF3337 /* HBSalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalon.swift; sourceTree = "<group>"; };
+		0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleDelegate.swift; sourceTree = "<group>"; };
+		0231B1281C0374C20098E1B0 /* HBProfessional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBProfessional.swift; sourceTree = "<group>"; };
 		0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewController.swift; sourceTree = "<group>"; };
 		0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewCell.swift; sourceTree = "<group>"; };
 		0235A93E1BDF4A2E00355207 /* HB-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HB-Bridge.h"; sourceTree = "<group>"; };
@@ -99,7 +105,7 @@
 		02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDetailDelegate.swift; sourceTree = "<group>"; };
-		02C37F611BFF54460087B97C /* HBServiceCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceCategory.swift; sourceTree = "<group>"; };
+		02C37F631BFF6FA10087B97C /* HBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBService.swift; sourceTree = "<group>"; };
 		02CE01091BF1313000EE0793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		02CE010B1BF26B6100EE0793 /* HBFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilter.swift; sourceTree = "<group>"; };
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0231B1241C0368B10098E1B0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */,
+				BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		0235A93C1BDF49DB00355207 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,14 +248,14 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		02BF943D1BFF40D3005C9940 /* Schedule */ = {
+		02BF943D1BFF40D3005C9940 /* My Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */,
 				02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */,
 				02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */,
 			);
-			name = Schedule;
+			name = "My Schedule";
 			sourceTree = "<group>";
 		};
 		02BF94441BFF490D005C9940 /* Evaluation */ = {
@@ -295,7 +310,7 @@
 				BB75187A1BE19A8E00D2200A /* Login */,
 				025C47AE1BE28A8200D247D7 /* TabBar */,
 				025C47AB1BE2853900D247D7 /* SalonList */,
-				02BF943D1BFF40D3005C9940 /* Schedule */,
+				02BF943D1BFF40D3005C9940 /* My Schedule */,
 				02A6C6981BF11C01001FA056 /* Profile */,
 				025C47AF1BE29E2C00D247D7 /* Deals */,
 				02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */,
@@ -339,14 +354,14 @@
 			children = (
 				BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */,
 				02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */,
-				02C37F611BFF54460087B97C /* HBServiceCategory.swift */,
-				02BF94441BFF490D005C9940 /* Evaluation */,
-				BBBCBB291BFB9C5100063173 /* Scheduling */,
+				02C37F631BFF6FA10087B97C /* HBService.swift */,
 				BBD90E311BF267A3009C19D1 /* HBServicesTableViewCell.swift */,
 				BBD90E351BF268EE009C19D1 /* HBServiceCollectionViewCell.swift */,
-				BB75188C1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift */,
-				BB75188E1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift */,
 				BBBCBB201BF5028900063173 /* HBServiceTableViewCell.swift */,
+				0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */,
+				0231B1241C0368B10098E1B0 /* Detail */,
+				02BF94441BFF490D005C9940 /* Evaluation */,
+				BBBCBB291BFB9C5100063173 /* Service Schedule */,
 			);
 			name = SalonDetail;
 			sourceTree = "<group>";
@@ -360,16 +375,18 @@
 			name = Smoke;
 			sourceTree = "<group>";
 		};
-		BBBCBB291BFB9C5100063173 /* Scheduling */ = {
+		BBBCBB291BFB9C5100063173 /* Service Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				BBBCBB2E1BFCE99500063173 /* HBScheludingTableViewController.swift */,
+				0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */,
+				0231B1281C0374C20098E1B0 /* HBProfessional.swift */,
 				BBBCBB301BFCEF1600063173 /* HBProfessinalTableViewCell.swift */,
 				BBBCBB321BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift */,
 				BBBCBB341BFCEF3A00063173 /* HBCalendarTableViewCell.swift */,
 				BBBCBB361BFCFE8F00063173 /* HBHeaderTableViewCell.swift */,
 			);
-			name = Scheduling;
+			name = "Service Schedule";
 			sourceTree = "<group>";
 		};
 		BC8FE6E4C509628A67AEAD07 /* Pods */ = {
@@ -452,7 +469,7 @@
 				TargetAttributes = {
 					BB1B6DDA1BDEA033004C95EB = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 955Z9AWD99;
+						DevelopmentTeam = 3QEMLNUCL2;
 					};
 					BB1B6DEE1BDEA033004C95EB = {
 						CreatedOnToolsVersion = 7.1;
@@ -577,11 +594,13 @@
 				BB7518931BEA6BDA00D2200A /* SmokeUser.swift in Sources */,
 				0215E5381BF50A1100DF6A2F /* HBFilterCollectionViewCell.swift in Sources */,
 				BBBCBB311BFCEF1600063173 /* HBProfessinalTableViewCell.swift in Sources */,
+				02C37F641BFF6FA10087B97C /* HBService.swift in Sources */,
+				0231B1291C0374C20098E1B0 /* HBProfessional.swift in Sources */,
+				0231B1231C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift in Sources */,
 				BBBCBB2F1BFCE99500063173 /* HBScheludingTableViewController.swift in Sources */,
 				0215E5361BF4FFDD00DF6A2F /* CurrentHBSalonList.swift in Sources */,
 				02174E631BF3C97800AF3337 /* HBSalon.swift in Sources */,
 				BB7518911BE91FDC00D2200A /* Smoke.swift in Sources */,
-				02C37F621BFF54460087B97C /* HBServiceCategory.swift in Sources */,
 				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
 				025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */,
 				BBBCBB351BFCEF3A00063173 /* HBCalendarTableViewCell.swift in Sources */,
@@ -602,6 +621,7 @@
 				BBBCBB331BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift in Sources */,
 				02BF943F1BFF450A005C9940 /* HBScheduleTableViewController.swift in Sources */,
 				BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */,
+				0231B1271C036C900098E1B0 /* HBScheduleDelegate.swift in Sources */,
 				BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */,
 				BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */,
 			);
@@ -751,7 +771,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = horabella/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -768,7 +788,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = horabella/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
 				PRODUCT_NAME = "$(TARGET_NAME)";

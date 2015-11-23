@@ -16,30 +16,32 @@ protocol HBSalonDetailDelegate {
 class HBSalonDetail: NSObject {
     var delegate: HBSalonDetailDelegate?
     var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/"
-    var categoriesArray = Array<HBServiceCategory>()
+    var servicesArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
+    
     
     init(idSalon: Int) {
         super.init()
         
         print(" ----- HBSALONDETAIL DELEGATE START ------")
         
-        Smoke().getWithParameters(endpoint: endPoint + String(idSalon), successBlock: {
+        Smoke().getWithParameters(endpoint: endPoint + String(idSalon) + "/services", successBlock: {
             (response) -> Void in
             let json = JSON(data: response.data!)
             
-            //array de json
-            let categoriasJSONArray = json["categories"].arrayValue
-            
-            for category in categoriasJSONArray {
-                //manda um pedaço de json que será resolvido/quebrado pelo SwiftyJSON framework
-                let newCategory = HBServiceCategory(json: category)
-                self.categoriesArray.append(newCategory)
+            //novo request
+            for (key, subJson):(String,JSON) in json {
+                let subJsonArray = subJson.arrayValue //array de json de servicos
+                for service in subJsonArray {
+                    let newService = HBService(json: service)
+                    self.servicesArray[Int(key)!-1].append(newService)
+                }
             }
+            
             print(" ----- HBSALONDETAIL DELEGATE END ------")
             self.delegate?.reloadDataOfTable()
             //error block
             }) { (response) -> Void in
-                print("deu erro")
+                print("---- ERRO NA BUSCA DE SERVIÇOS DO SALÃO ----")
             }
         
         

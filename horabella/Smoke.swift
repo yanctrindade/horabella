@@ -56,7 +56,6 @@ class Smoke: NSObject {
                     errorBlock(response)
                     print(error)
                 }
-                
         }
         
     }

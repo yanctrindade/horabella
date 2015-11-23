@@ -113,18 +113,21 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             cell.salonFavorite.selected = false
             
             //download the salon image 0
-            Alamofire.request(.GET, salon.images![0])
-                .responseImage { response in
-                    //debugPrint(response)
-                    
-                    //print(response.request)
-                    //print(response.response)
-                    //debugPrint(response.result)
-                    
-                    if let image = response.result.value {
-                        print("image downloaded: \(image)")
-                        cell.salonImage.image = image
-                    }
+            if salon.images?.count > 0 {
+                Alamofire.request(.GET, salon.images![0])
+                    .responseImage { response in
+                        //debugPrint(response)
+                        
+                        //print(response.request)
+                        //print(response.response)
+                        //debugPrint(response.result)
+                        
+                        if let image = response.result.value {
+                            //print("image downloaded: \(image)")
+                            cell.salonImage.image = image
+                        }
+                }
+
             }
         }
         

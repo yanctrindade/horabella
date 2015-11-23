@@ -15,7 +15,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     @IBOutlet weak var pageControl: UIPageControl!
     
     var hbSalonDetail: HBSalonDetail?
-    var arrayCategories: Array<HBServiceCategory> = []
+    var servicesByCategoryArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
     
     var salon: HBSalon!
     var salonIndex: NSIndexPath!
@@ -61,8 +61,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     //MARK: Will Appear - Delegate Request
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        arrayCategories = []
         
         hbSalonDetail = HBSalonDetail(idSalon: CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row].id!)
         hbSalonDetail?.delegate = self
@@ -155,36 +153,43 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            return 1+self.servicesByCategoryArray.count
+        case 1:
+            return 1
+        default:
+            return 1
+        }
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if segControl.selectedSegmentIndex == 0 {
-            //1 + quantidade de serviços
-            return 2
-        }else if segControl.selectedSegmentIndex == 1 {
-            return 3
-        }else{
-            return 4
+        if section == 0 {
+            if segControl.selectedSegmentIndex == 0 {
+                return 1
+            }else if segControl.selectedSegmentIndex == 1 {
+                return 3
+            }else{
+                return 4
+            }
+        } else {
+            return servicesByCategoryArray[section-1].count
         }
         
     }
     
+    //HEIGHT FOR ROW
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
+
         switch segControl.selectedSegmentIndex {
-            
         case 0:
-            if indexPath.row == 0{
+            if indexPath.section == 0{
                 return 60
             }else{
                 return 50
             }
-            
         case 1:
             if indexPath.row == 0 {
                 return 50
@@ -193,7 +198,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             }else{
                 return 116
             }
-            
         default:
             if indexPath.row == 0 {
                 return 110
@@ -202,30 +206,46 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             }else{
                 return 50
             }
-            
         }
         
     }
     
     //CELL FOR ROW
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+
         switch segControl.selectedSegmentIndex {
-            
         case 0:
-            if indexPath.row == 0{
+            if indexPath.row == 0 && indexPath.section == 0{
                 let cell = tableView.dequeueReusableCellWithIdentifier("servicesCell", forIndexPath: indexPath) as! HBServicesTableViewCell
-                cell.categoriesArray = self.arrayCategories
+                
+                //saber quais categorias possuem serviços
+                var arrayIndex = [] as Array<Int>
+                for var i: Int = 0; i<self.servicesByCategoryArray.count; i++ {
+                    if self.servicesByCategoryArray[i].count > 0 {
+                        arrayIndex.append(i)
+                    }
+                }
+                
+                cell.categoriesArray = arrayIndex
                 cell.collectionView.reloadData()
                 return cell
                 
             }else{
-                
+                print("\(indexPath.section) \(indexPath.row)")
                 //carrega uma celula pra cada serviço do salao
                 let cell = tableView.dequeueReusableCellWithIdentifier("serviceCell", forIndexPath: indexPath) as! HBServiceTableViewCell
                 
-                cell.serviceLabel.text = "Corte masculino"
-                cell.priceLabel.text = "R$100,00"
+                let service = servicesByCategoryArray[indexPath.section-1][indexPath.row]
+                
+                if indexPath.row % 2 == 0 {
+                    cell.backgroundColor = UIColor.whiteColor()
+                    cell.serviceLabel.textColor = UIColor.blackColor()
+                    cell.priceLabel.textColor = UIColor.blackColor()
+                }
+                
+                cell.serviceLabel.text = service.name
+                let str = NSString(format: "%.2f", service.price!)
+                cell.priceLabel.text = "R$ " + (str as String)
                 
                 return cell
             }
@@ -250,14 +270,10 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 return cell
                 
             }else if indexPath.row == 1 {
-                
                 let cell = tableView.dequeueReusableCellWithIdentifier("makeComment", forIndexPath: indexPath) as! HBMakeCommentTableViewCell
                 
-                
                 return cell
-                
             }else{
-                
                 //carrega os comentarios
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonComment", forIndexPath: indexPath) as! HBSalonCommentsTableViewCell
                 
@@ -266,13 +282,9 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 cell.comment.text = "Adorei o corte amigaaaaa"
                 
                 return cell
-                
             }
-            
         default:
-            
             if indexPath.row == 0 {
-                
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonDescription", forIndexPath: indexPath) as! HBSalonDescriptionTableViewCell
                 
                 if let info = salon.name{
@@ -280,11 +292,9 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 }
                 
                 cell.salonDescription.text = "Descriçao do\nsalao\ntop"
-                
                 return cell
                 
-            }else if indexPath.row == 1 {
-                
+            } else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Endereço"
@@ -295,8 +305,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 
                 return cell
                 
-            }else if indexPath.row == 2 {
-                
+            } else if indexPath.row == 2 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Telefone"
@@ -307,8 +316,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 
                 return cell
                 
-            }else{
-                
+            } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! HBSalonInfoTableViewCell
                 
                 cell.infoType.text = "Site"
@@ -318,20 +326,63 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 }
                 
                 return cell
-                
             }
-            
         }
         
     }
     
+    //HEIGHT FOR HEADER
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return servicesByCategoryArray[section-1].count > 0 ? 35 : 0
+        }
+    }
+    
+    
+    //VIEW FOR HEADER
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableCellWithIdentifier("sectionHeader") as! HBServiceHeaderTableViewCell
+        switch (section) {
+        case 1:
+            headerView.categoryLabel.text = "Cabelo"
+        case 2:
+            headerView.categoryLabel.text = "Unha"
+        case 3:
+            headerView.categoryLabel.text = "Maquiagem"
+        case 4:
+            headerView.categoryLabel.text = "Depilação"
+        case 5:
+            headerView.categoryLabel.text = "Massagem"
+        case 6:
+            headerView.categoryLabel.text = "Estética"
+        default:
+            headerView.categoryLabel.text = "Erro"
+        }
+        return headerView
+    }
 
 
     //MARK: Salon Detail Delegate Method
     func reloadDataOfTable() {
         print("---- SALONDETAIL DELEGATE METHOD ---------")
         
-        self.arrayCategories = (self.hbSalonDetail?.categoriesArray)!
+        self.servicesByCategoryArray = (self.hbSalonDetail?.servicesArray)!
         self.tableView.reloadData()
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "scheduleSegue" {
+            let indexPath = tableView.indexPathForSelectedRow
+            let service = servicesByCategoryArray[indexPath!.section-1][indexPath!.row]
+            
+            let nextVc = segue.destinationViewController as! HBScheludingTableViewController
+            nextVc.serviceName = service.name //name
+            let str = NSString(format: "%.2f", service.price!)
+            nextVc.servicePrice = "R$ " + (str as String) //price
+            nextVc.serviceId = service.id //id
+        }
     }
 }

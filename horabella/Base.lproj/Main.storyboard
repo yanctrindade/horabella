@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5H8-H4-MlW">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <!--initialView-->
         <scene sceneID="I1m-vt-s77">
             <objects>
-                <tabBarController storyboardIdentifier="startView" title="initialView" id="5H8-H4-MlW" customClass="HBTabBarViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="initialView" title="initialView" id="5H8-H4-MlW" customClass="HBTabBarViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1sB-6G-mN7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -73,7 +74,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TesteSalaoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-2K-N23">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="188"/>
                                             <animations/>
                                         </imageView>
@@ -305,7 +306,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileNoPicture" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-GK-rod">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileNoPicture" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-GK-rod">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.20000000000000001" green="0.13333333333333333" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
@@ -631,7 +632,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlx-vf-MMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="1615"/>
+            <point key="canvasLocation" x="1600" y="1615"/>
         </scene>
         <!--Salões-->
         <scene sceneID="ojh-FU-MZL">
@@ -815,7 +816,7 @@
             <objects>
                 <tableViewController id="DpF-uD-Kxl" customClass="HBSalonDetailTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="213" sectionHeaderHeight="28" sectionFooterHeight="28" id="spv-U2-07e">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1236,32 +1237,61 @@ sofnaof</string>
                                     <outlet property="collectionView" destination="GeM-J9-fDE" id="K7u-vK-k0d"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="serviceCell" rowHeight="50" id="Axr-kQ-hwW" customClass="HBServiceTableViewCell" customModule="horabella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="868" width="600" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="41" id="3u9-dT-wdo" userLabel="Section Header" customClass="HBServiceHeaderTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="868" width="600" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Axr-kQ-hwW" id="N6E-uC-1Za">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3u9-dT-wdo" id="4lG-AY-iKS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-8G-c8i">
-                                            <rect key="frame" x="8" y="14" width="490" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBz-m9-73n">
+                                            <rect key="frame" x="8" y="8" width="584" height="25"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="oBz-m9-73n" firstAttribute="top" secondItem="4lG-AY-iKS" secondAttribute="topMargin" id="0Fe-mw-ORV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="oBz-m9-73n" secondAttribute="trailing" id="HKK-z7-9Uc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="oBz-m9-73n" secondAttribute="bottom" id="dBX-RE-xi1"/>
+                                        <constraint firstItem="oBz-m9-73n" firstAttribute="leading" secondItem="4lG-AY-iKS" secondAttribute="leadingMargin" id="dkW-5Z-wz1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="backgroundColor" red="0.48627450979999998" green="0.70980392160000005" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="oBz-m9-73n" id="WFA-Sb-BVZ"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="serviceCell" rowHeight="41" id="Axr-kQ-hwW" userLabel="Service Cell" customClass="HBServiceTableViewCell" customModule="horabella" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="909" width="600" height="41"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Axr-kQ-hwW" id="N6E-uC-1Za">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="41"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Serviço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-8G-c8i">
+                                            <rect key="frame" x="8" y="10" width="490" height="22"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="JU9-PE-sEm"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$1000,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-0C-mIC">
-                                            <rect key="frame" x="508" y="14" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="R$1000,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-0C-mIC">
+                                            <rect key="frame" x="508" y="10" width="84" height="21"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="84" id="88N-Oq-dWp"/>
                                                 <constraint firstAttribute="height" constant="21" id="MDe-ea-Bnd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1275,6 +1305,7 @@ sofnaof</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.94391177398989901" green="0.75661847723182196" blue="0.75682358255925086" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="priceLabel" destination="3jU-0C-mIC" id="o9V-S1-kLZ"/>
                                     <outlet property="serviceLabel" destination="cbJ-8G-c8i" id="43m-Bu-5sc"/>
@@ -1288,7 +1319,7 @@ sofnaof</string>
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
+                    <size key="freeformSize" width="600" height="1100"/>
                     <connections>
                         <outlet property="pageControl" destination="lDx-e7-mPr" id="B0W-uI-VuR"/>
                         <outlet property="picturesScrollView" destination="hJa-hg-66j" id="cyK-LU-PXE"/>
@@ -1303,8 +1334,8 @@ sofnaof</string>
         <scene sceneID="Qbm-MV-VJD">
             <objects>
                 <tableViewController id="1oa-rv-QF3" customClass="HBScheludingTableViewController" customModule="horabella" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ew0-Bn-vH8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ew0-Bn-vH8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1319,7 +1350,7 @@ sofnaof</string>
                                         <constraint firstAttribute="height" constant="21" id="KcQ-v5-Bbt"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$1000,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj5-vZ-4b6">
@@ -1330,7 +1361,7 @@ sofnaof</string>
                                         <constraint firstAttribute="width" constant="84" id="qsf-Ma-Vl4"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -1392,7 +1423,7 @@ sofnaof</string>
                                             <rect key="frame" x="84" y="15" width="498" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1467,7 +1498,7 @@ sofnaof</string>
                                             <rect key="frame" x="18" y="12" width="564" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

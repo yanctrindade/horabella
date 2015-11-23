@@ -33,8 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateInitialViewController()
         } else {
             let rootViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
-            //let navigation = UINavigationController(rootViewController: rootViewController)
-           self.window?.rootViewController = rootViewController
+            self.window?.rootViewController = rootViewController
         }
         
         //Facebook Credentials
