@@ -386,11 +386,11 @@
 			children = (
 				BBBCBB2E1BFCE99500063173 /* HBScheludingTableViewController.swift */,
 				0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */,
-				0231B1281C0374C20098E1B0 /* HBProfessional.swift */,
 				BBBCBB301BFCEF1600063173 /* HBProfessinalTableViewCell.swift */,
 				BBBCBB321BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift */,
 				BBBCBB341BFCEF3A00063173 /* HBCalendarTableViewCell.swift */,
 				BBBCBB361BFCFE8F00063173 /* HBHeaderTableViewCell.swift */,
+				0231B1281C0374C20098E1B0 /* HBProfessional.swift */,
 			);
 			name = "Service Schedule";
 			sourceTree = "<group>";
