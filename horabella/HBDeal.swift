@@ -19,14 +19,13 @@ class HBDeal: NSObject {
     init(json: JSON) {
         self.shop = HBSalon(json: json)
         
-        var deal = json["offers"]
-        self.id = deal["id"].intValue
-        self.dealDescription = deal["description"].stringValue
-        self.discount = deal["discount"].floatValue
+        var deal = json["offers"].arrayValue.first?.dictionaryValue
+        self.id = deal!["id"]!.intValue
+        self.dealDescription = deal!["description"]!.stringValue
+        self.discount = deal!["discount"]!.floatValue
         
-        self.service = HBService(json: deal["service"])
-        print("aee")
+        self.service = HBService(json: deal!["service"]!)
+        super.init()
     }
-    
     
 }

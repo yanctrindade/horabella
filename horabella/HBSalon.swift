@@ -38,6 +38,7 @@ class HBSalon: NSObject {
         self.images = images
         self.id = id
         self.distanceToUser = 0.0
+        super.init()
     }
     
     init(json: JSON) {
@@ -50,9 +51,10 @@ class HBSalon: NSObject {
         self.phone = json["phone"].stringValue
         self.rate = json["rate"].doubleValue
         self.website = json["website"].stringValue
-        //self.images = json["images"].arrayValue
+        self.images = []
         self.id = json["id"].intValue
         self.distanceToUser = 0.0
+        super.init()
     }
     
     class func stringToCLLocation(locationString: String) -> CLLocation {
