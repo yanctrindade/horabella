@@ -11,7 +11,7 @@ import CoreLocation
 
 class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocationManagerDelegate {
     
-    var offerArray = Array<HBDeal>()
+    var dealsArray = Array<HBDeal>()
     
     var hbDeals: HBDeals?
     
@@ -39,19 +39,28 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.offerArray.count
+        return self.dealsArray.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.offerArray.count
+        return 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("discountCell", forIndexPath: indexPath) as! HBDealsTableViewCell
         
         // Configure the cell...
-        cell.percentageLabel.text = "40%"
-        cell.descriptionLabel.text = "de desconto na terça-feira"
+        if (self.dealsArray.count > 0) {
+            cell.percentageLabel.text = String(Int(self.dealsArray[indexPath.section].discount!)) + "%"
+            cell.descriptionLabel.text = self.dealsArray[indexPath.section].dealDescription
+            if indexPath.section%2 == 0 {
+                //cell.backgroundColor = UIColor(hex: 0x7CB5A0) //cor verde
+                cell.backgroundColor = UIColor(hex: 0xFE4F68) //cor rosa
+            }
+        } else {
+            cell.percentageLabel.text = "FALHA"
+            cell.descriptionLabel.text = "ao carregar ofertas"
+        }
 
         return cell
     }
@@ -66,7 +75,7 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCellWithIdentifier("sectionHeader") as!HBSectionHeaderTableViewCell
-        headerView.salonNameLabel.text = "Helio Diff Instituto de Beleza"
+        headerView.salonNameLabel.text = self.dealsArray[section].shop?.name
         return headerView;
     }
     
@@ -116,6 +125,11 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     func reloadDataOfTable() {
         print("-------- HBDEAL DELEGATE METHOD ACCESSED -------")
         
+        self.dealsArray = (self.hbDeals?.dealsArray)!
+        
         self.tableView.reloadData()
     }
 }
+
+
+
