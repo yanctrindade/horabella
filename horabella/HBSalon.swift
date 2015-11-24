@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftyJSON
 
 class HBSalon: NSObject {
     
@@ -39,5 +40,24 @@ class HBSalon: NSObject {
         self.distanceToUser = 0.0
     }
     
-
+    init(json: JSON) {
+        self.address = json["address"].stringValue
+        self.comments = json["comments"].intValue
+        self.evaluations = json["evaluations"].intValue
+        self.likes = json["likes"].intValue
+        self.location = HBSalon.stringToCLLocation(json["location"].stringValue)
+        self.name = json["name"].stringValue
+        self.phone = json["phone"].stringValue
+        self.rate = json["rate"].doubleValue
+        self.website = json["website"].stringValue
+        //self.images = json["images"].arrayValue
+        self.id = json["id"].intValue
+        self.distanceToUser = 0.0
+    }
+    
+    class func stringToCLLocation(locationString: String) -> CLLocation {
+        let locationArray = locationString.characters.split{$0 == ","}.map(String.init)
+        let location = CLLocation(latitude: Double(locationArray[0])!, longitude: Double(locationArray[1])!)
+        return location
+    }
 }

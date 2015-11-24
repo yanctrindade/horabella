@@ -16,8 +16,22 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconForLogin" translatesAutoresizingMaskIntoConstraints="NO" id="O4n-nc-Mwp">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="GIr-Si-ZoM"/>
+                                    <constraint firstAttribute="height" constant="150" id="SRK-bz-g1K"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.30980392156862746" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="O4n-nc-Mwp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FMq-VM-XFC"/>
+                            <constraint firstItem="O4n-nc-Mwp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="udJ-yv-9tN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconForLogin" width="138" height="119"/>
+    </resources>
 </document>

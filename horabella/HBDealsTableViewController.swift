@@ -7,32 +7,43 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HBDealsTableViewController: UITableViewController {
+class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocationManagerDelegate {
+    
+    var offerArray = Array<HBDeal>()
+    
+    var hbDeals: HBDeals?
+    
+    var coordinates: CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        hbDeals = HBDeals(latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+        hbDeals?.delegate = self
+        
+        //configurações de localização
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 20
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.offerArray.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.offerArray.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,6 +69,53 @@ class HBDealsTableViewController: UITableViewController {
         headerView.salonNameLabel.text = "Helio Diff Instituto de Beleza"
         return headerView;
     }
+    
+    //MARK: CLLocationDelegate Methods
+    //funçao que retorna a localizacao atual do celular
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locationArray = locations as Array<CLLocation>
+        coordinates = locationArray.last! as CLLocation
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+        print("Falha na localização")
+        
+        //AlertView se o GPS estiver off e abre a tela de Configurações
+        /*let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
+        let defaultAction = UIAlertAction(title: "Configurações", style: .Cancel) { (alert: UIAlertAction!) -> Void in
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        }
+        alert.addAction(defaultAction)
+        presentViewController(alert, animated: true, completion:nil)*/
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        var coreLocationStatus = "";
+        
+        switch (status) {
+        case .Restricted:
+            coreLocationStatus = "Permissão alterada para Restricted"
+            break
+        case .Denied:
+            coreLocationStatus = "Permissão alterada para Denied"
+            break
+        case .AuthorizedAlways:
+            coreLocationStatus = "Permissão alterada para AuthorizedAlways"
+            break
+        case .AuthorizedWhenInUse:
+            coreLocationStatus = "Permissão alterada para AuthorizedWhenInUse"
+            break
+        default:
+            print("\(status)")
+        }
+        print("\(coreLocationStatus)")
+    }
 
 
+    func reloadDataOfTable() {
+        print("-------- HBDEAL DELEGATE METHOD ACCESSED -------")
+        
+        self.tableView.reloadData()
+    }
 }

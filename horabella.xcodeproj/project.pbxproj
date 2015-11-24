@@ -14,6 +14,8 @@
 		0231B1231C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */; };
 		0231B1271C036C900098E1B0 /* HBScheduleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */; };
 		0231B1291C0374C20098E1B0 /* HBProfessional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B1281C0374C20098E1B0 /* HBProfessional.swift */; };
+		0231B12D1C0398080098E1B0 /* HBDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B12C1C0398080098E1B0 /* HBDeal.swift */; };
+		0231B12F1C0398160098E1B0 /* HBDealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231B12E1C0398160098E1B0 /* HBDealDelegate.swift */; };
 		0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */; };
 		0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */; };
 		025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47AC1BE28A7800D247D7 /* HBTabBarViewController.swift */; };
@@ -85,6 +87,8 @@
 		0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0231B1261C036C900098E1B0 /* HBScheduleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleDelegate.swift; sourceTree = "<group>"; };
 		0231B1281C0374C20098E1B0 /* HBProfessional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBProfessional.swift; sourceTree = "<group>"; };
+		0231B12C1C0398080098E1B0 /* HBDeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDeal.swift; sourceTree = "<group>"; };
+		0231B12E1C0398160098E1B0 /* HBDealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBDealDelegate.swift; sourceTree = "<group>"; };
 		0235A9371BDF3DCA00355207 /* HBSalonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewController.swift; sourceTree = "<group>"; };
 		0235A9391BDF3F0100355207 /* HBSalonListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonListTableViewCell.swift; sourceTree = "<group>"; };
 		0235A93E1BDF4A2E00355207 /* HB-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HB-Bridge.h"; sourceTree = "<group>"; };
@@ -215,8 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */,
+				0231B12E1C0398160098E1B0 /* HBDealDelegate.swift */,
 				025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */,
 				025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */,
+				0231B12C1C0398080098E1B0 /* HBDeal.swift */,
 			);
 			name = Deals;
 			sourceTree = "<group>";
@@ -599,6 +605,7 @@
 				0231B1231C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift in Sources */,
 				BBBCBB2F1BFCE99500063173 /* HBScheludingTableViewController.swift in Sources */,
 				0215E5361BF4FFDD00DF6A2F /* CurrentHBSalonList.swift in Sources */,
+				0231B12F1C0398160098E1B0 /* HBDealDelegate.swift in Sources */,
 				02174E631BF3C97800AF3337 /* HBSalon.swift in Sources */,
 				BB7518911BE91FDC00D2200A /* Smoke.swift in Sources */,
 				BB7518801BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift in Sources */,
@@ -616,6 +623,7 @@
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
 				02174E611BF3AC4F00AF3337 /* HBSalonListDelegate.swift in Sources */,
 				BB7518961BED0B8B00D2200A /* IJProgressView.swift in Sources */,
+				0231B12D1C0398080098E1B0 /* HBDeal.swift in Sources */,
 				BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */,
 				02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */,
 				BBBCBB331BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift in Sources */,
