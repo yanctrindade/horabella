@@ -51,7 +51,13 @@ class HBSalon: NSObject {
         self.phone = json["phone"].stringValue
         self.rate = json["rate"].doubleValue
         self.website = json["website"].stringValue
-        self.images = []
+        //images
+        self.images = Array<String>()
+        let jsonArray = json["images"].arrayValue
+        for dictionary in jsonArray {
+            let url = dictionary["url"].stringValue
+            self.images?.append(url)
+        }
         self.id = json["id"].intValue
         self.distanceToUser = 0.0
         super.init()

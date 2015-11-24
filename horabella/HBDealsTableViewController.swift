@@ -53,8 +53,9 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
         if (self.dealsArray.count > 0) {
             cell.percentageLabel.text = String(Int(self.dealsArray[indexPath.section].discount!)) + "%"
             cell.descriptionLabel.text = self.dealsArray[indexPath.section].dealDescription
-            if indexPath.section%2 != 0 {
-                cell.backgroundColor = UIColor(hex: 0x7CB5A0) //#7CB5A0
+            if indexPath.section%2 == 0 {
+                //cell.backgroundColor = UIColor(hex: 0x7CB5A0) //cor verde
+                cell.backgroundColor = UIColor(hex: 0xFE4F68) //cor rosa
             }
         } else {
             cell.percentageLabel.text = "FALHA"
