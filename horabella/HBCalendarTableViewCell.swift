@@ -17,6 +17,16 @@ class HBCalendarTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let calendar = NSCalendar.currentCalendar()
+        let currentDate = calendarView.manager.currentDate
+        let dateComponents = calendar.components([.Day, .Month, .Year], fromDate: currentDate)
+        
+        HBAppointment.sharedInstance.day = dateComponents.day
+        HBAppointment.sharedInstance.month = dateComponents.month
+        HBAppointment.sharedInstance.year = dateComponents.year
+        
+        HBAppointment.sharedInstance.isCalendarSelected = true
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -43,6 +53,14 @@ extension HBCalendarTableViewCell: CVCalendarViewDelegate, CVCalendarMenuViewDel
     
     func didSelectDayView(dayView: DayView) {
         print(dayView.date.commonDescription + " selecionado!")
+        
+        //adiciona data na singleton de appointment
+        HBAppointment.sharedInstance.day = dayView.date.day
+        HBAppointment.sharedInstance.month = dayView.date.month
+        HBAppointment.sharedInstance.year = dayView.date.year
+        
+        HBAppointment.sharedInstance.isCalendarSelected = true
+        
     }
     
 }

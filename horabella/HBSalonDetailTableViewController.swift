@@ -27,7 +27,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         
         tableView.allowsSelection = true
         
-        salon = CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row]
+//        salon = CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row]
         
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         if let info = salon.name {
@@ -62,7 +62,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        hbSalonDetail = HBSalonDetail(idSalon: CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row].id!)
+        hbSalonDetail = HBSalonDetail(idSalon: self.salon.id!)
         hbSalonDetail?.delegate = self
     }
     
@@ -377,6 +377,10 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         if segue.identifier == "scheduleSegue" {
             let indexPath = tableView.indexPathForSelectedRow
             let service = servicesByCategoryArray[indexPath!.section-1][indexPath!.row]
+            
+            //coloca serviço e salao na singleton appointment
+            HBAppointment.sharedInstance.service = service
+            HBAppointment.sharedInstance.salon = salon
             
             let nextVc = segue.destinationViewController as! HBScheludingTableViewController
             nextVc.serviceName = service.name //name

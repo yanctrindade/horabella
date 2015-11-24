@@ -212,7 +212,7 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             
             //passa index do salao clicado para tela de detalhes
             if let indexPath = self.tableView.indexPathForSelectedRow{
-                vc.salonIndex = indexPath
+                vc.salon = CurrentHBSalonList.sharedInstance.HBSalonArray[indexPath.row]
             }
             
         }

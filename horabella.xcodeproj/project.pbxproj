@@ -35,6 +35,8 @@
 		02CE010A1BF1313000EE0793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CE01091BF1313000EE0793 /* CoreLocation.framework */; };
 		02CE010C1BF26B6100EE0793 /* HBFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE010B1BF26B6100EE0793 /* HBFilter.swift */; };
 		9B732544BE13D259A9F84794 /* Pods_horabella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */; };
+		BB11797E1C04CCDD00F12423 /* HBAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11797D1C04CCDD00F12423 /* HBAppointment.swift */; };
+		BB1179801C04E92200F12423 /* HBConfirmationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11797F1C04E92200F12423 /* HBConfirmationTableViewController.swift */; };
 		BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */; };
 		BB1B6DE41BDEA033004C95EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE21BDEA033004C95EB /* Main.storyboard */; };
 		BB1B6DE91BDEA033004C95EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1B6DE71BDEA033004C95EB /* LaunchScreen.storyboard */; };
@@ -115,6 +117,8 @@
 		6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.release.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.release.xcconfig"; sourceTree = "<group>"; };
 		73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-horabella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-horabella/Pods-horabella.debug.xcconfig"; sourceTree = "<group>"; };
 		99E9D8189DCE2BEF7D34482B /* Pods_horabella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_horabella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB11797D1C04CCDD00F12423 /* HBAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBAppointment.swift; sourceTree = "<group>"; };
+		BB11797F1C04E92200F12423 /* HBConfirmationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBConfirmationTableViewController.swift; sourceTree = "<group>"; };
 		BB1B6DDB1BDEA033004C95EB /* horabella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horabella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B6DDE1BDEA033004C95EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB1B6DE31BDEA033004C95EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 				BBBCBB321BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift */,
 				BBBCBB341BFCEF3A00063173 /* HBCalendarTableViewCell.swift */,
 				BBBCBB361BFCFE8F00063173 /* HBHeaderTableViewCell.swift */,
+				BB11797D1C04CCDD00F12423 /* HBAppointment.swift */,
+				BB11797F1C04E92200F12423 /* HBConfirmationTableViewController.swift */,
 			);
 			name = "Service Schedule";
 			sourceTree = "<group>";
@@ -626,8 +632,10 @@
 				0231B12D1C0398080098E1B0 /* HBDeal.swift in Sources */,
 				BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */,
 				02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */,
+				BB1179801C04E92200F12423 /* HBConfirmationTableViewController.swift in Sources */,
 				BBBCBB331BFCEF2F00063173 /* HBAvailableScheduleTableViewCell.swift in Sources */,
 				02BF943F1BFF450A005C9940 /* HBScheduleTableViewController.swift in Sources */,
+				BB11797E1C04CCDD00F12423 /* HBAppointment.swift in Sources */,
 				BB75188F1BE2ACBD00D2200A /* HBSalonInfoTableViewCell.swift in Sources */,
 				0231B1271C036C900098E1B0 /* HBScheduleDelegate.swift in Sources */,
 				BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */,

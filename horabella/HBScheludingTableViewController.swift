@@ -18,7 +18,7 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     
     var calendarCell: HBCalendarTableViewCell!
     
-    var isProfessionalSelected = false
+    var isTimeSelected = false
     
     var hbSchedule:HBSchedule?
     var serviceName: String?
@@ -33,7 +33,9 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        isProfessionalSelected = false
+        isTimeSelected = false
+        
+        HBAppointment.sharedInstance.reset()
         
         //protocol request
         hbSchedule = HBSchedule(idService: self.serviceId!)
@@ -52,7 +54,13 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     
     // MARK: - Schedule
     @IBAction func confirmSchedule(sender: AnyObject) {
-        print("faz agendamento")
+        
+        if HBAppointment.sharedInstance.isReady() {
+            performSegueWithIdentifier("confirmSchedule", sender: self)
+        }else{
+            print("falta infos")
+        }
+        
     }
     
 
@@ -101,9 +109,24 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     //DID SELECT ROW
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
-            isProfessionalSelected = true
+            HBAppointment.sharedInstance.isProfessionalSelected = true
+            
+            //coloca profissional na singleton appointment
+            HBAppointment.sharedInstance.professional = professionalArray[indexPath.row]
+            
             self.tableView.reloadData()
             self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Middle)
+        } else if indexPath.section == 2 {
+            
+            let time = availableSchedulesArray[indexPath.row] as String
+            let timeArray = time.componentsSeparatedByString(":")
+            
+            HBAppointment.sharedInstance.hour = Int(timeArray[0])
+            HBAppointment.sharedInstance.minute = Int(timeArray[1])
+            
+            HBAppointment.sharedInstance.setDate()
+            HBAppointment.sharedInstance.isTimeSelected = true
+            
         }
     }
     
