@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HBConfirmationTableViewController: UITableViewController {
     
@@ -36,6 +37,24 @@ class HBConfirmationTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //download the salon image 0
+        if HBAppointment.sharedInstance.salon.images?.count > 0 {
+            Alamofire.request(.GET, HBAppointment.sharedInstance.salon.images![0])
+                .responseImage { response in
+                    //debugPrint(response)
+                    
+                    //print(response.request)
+                    //print(response.response)
+                    //debugPrint(response.result)
+                    
+                    if let image = response.result.value {
+                        //print("image downloaded: \(image)")
+                        self.salonPhoto.image = image
+                    }
+            }
+            
+        }
         
         salonName.text = HBAppointment.sharedInstance.salon.name
         salonAddress.text = HBAppointment.sharedInstance.salon
