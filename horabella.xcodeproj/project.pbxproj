@@ -22,6 +22,8 @@
 		025C47B11BE29E4800D247D7 /* HBDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B01BE29E4800D247D7 /* HBDealsTableViewController.swift */; };
 		025C47B31BE29E6900D247D7 /* HBDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B21BE29E6900D247D7 /* HBDealsTableViewCell.swift */; };
 		025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */; };
+		028173871C062EB3000B1E14 /* HBMyScheduleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */; };
+		028173DB1C063A75000B1E14 /* HBMyAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028173DA1C063A75000B1E14 /* HBMyAppointment.swift */; };
 		02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */; };
 		02A6C6951BF111B6001FA056 /* profileTeste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6941BF111B6001FA056 /* profileTeste.jpg */; };
 		02A6C6971BF111BF001FA056 /* tste.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6961BF111BF001FA056 /* tste.png */; };
@@ -102,6 +104,8 @@
 		025C47B61BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		025C47B71BE2ABDE00D247D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMyScheduleDelegate.swift; sourceTree = "<group>"; };
+		028173DA1C063A75000B1E14 /* HBMyAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMyAppointment.swift; sourceTree = "<group>"; };
 		02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilterCollectionViewController.swift; sourceTree = "<group>"; };
 		02A6C6941BF111B6001FA056 /* profileTeste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profileTeste.jpg; sourceTree = "<group>"; };
 		02A6C6961BF111BF001FA056 /* tste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tste.png; sourceTree = "<group>"; };
@@ -262,8 +266,10 @@
 			isa = PBXGroup;
 			children = (
 				02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */,
+				028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */,
 				02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */,
 				02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */,
+				028173DA1C063A75000B1E14 /* HBMyAppointment.swift */,
 			);
 			name = "My Schedule";
 			sourceTree = "<group>";
@@ -628,7 +634,9 @@
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,
 				BB1B6DDF1BDEA033004C95EB /* AppDelegate.swift in Sources */,
 				02174E611BF3AC4F00AF3337 /* HBSalonListDelegate.swift in Sources */,
+				028173871C062EB3000B1E14 /* HBMyScheduleDelegate.swift in Sources */,
 				BB7518961BED0B8B00D2200A /* IJProgressView.swift in Sources */,
+				028173DB1C063A75000B1E14 /* HBMyAppointment.swift in Sources */,
 				0231B12D1C0398080098E1B0 /* HBDeal.swift in Sources */,
 				BB75188D1BE2ACA500D2200A /* HBSalonDescriptionTableViewCell.swift in Sources */,
 				02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */,

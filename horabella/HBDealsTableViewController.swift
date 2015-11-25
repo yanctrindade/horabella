@@ -143,15 +143,7 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
         
         self.dealsArray = (self.hbDeals?.dealsArray)!
         
-        //self.tableView.reloadData()
-        let indexPathArray = [] as NSMutableArray
-        let index = NSIndexPath(forItem: 0, inSection: 0)
-        let index2 = NSIndexPath(forItem: 0, inSection: 1)
-        let index3 = NSIndexPath(forItem: 0, inSection: 2)
-        indexPathArray.addObject(index)
-        indexPathArray.addObject(index2)
-        indexPathArray.addObject(index3)
-        self.tableView.reloadRowsAtIndexPaths([index,index2,index3], withRowAnimation: .Automatic)
+        self.tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
