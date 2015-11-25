@@ -17,7 +17,8 @@ class HBMyAppointment: NSObject {
     init (json: JSON) {
         self.scheduleTime = json["schedule_time"].stringValue
         
-        self.service = HBService(json: json["service"])
+        //self.service = HBService(json: json["service"])
+        self.service = HBService(json: json["service"], withShop: true)
         
         self.professional = HBProfessional(json: json["professional"])
     }

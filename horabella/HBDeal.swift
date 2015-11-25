@@ -24,7 +24,9 @@ class HBDeal: NSObject {
         self.dealDescription = deal!["description"]!.stringValue
         self.discount = deal!["discount"]!.floatValue
         
-        self.service = HBService(json: deal!["service"]!)
+        //self.service = HBService(json: deal!["service"]!)
+        self.service = HBService(json: deal!["service"]!, withShop: true)
+        
         super.init()
     }
     

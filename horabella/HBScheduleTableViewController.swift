@@ -48,7 +48,7 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCellWithIdentifier("headerCell") as!HBScheduleHeaderTableViewCell
-        headerView.salonNameLabel.text = "Helio Diff Hair Design"
+        headerView.salonNameLabel.text = self.myAppointmentsArray[section].service.salon?.name
         return headerView;
     }
     
