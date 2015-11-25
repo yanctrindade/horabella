@@ -116,15 +116,10 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             if salon.images?.count > 0 {
                 Alamofire.request(.GET, salon.images![0])
                     .responseImage { response in
-                        //debugPrint(response)
-                        
-                        //print(response.request)
-                        //print(response.response)
-                        //debugPrint(response.result)
-                        
                         if let image = response.result.value {
                             //print("image downloaded: \(image)")
                             cell.salonImage.image = image
+                            salon.firstImage = image
                         }
                 }
 
@@ -192,7 +187,11 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         self.salonArray = mySalonArray.sort({$0.distanceToUser < $1.distanceToUser})
         CurrentHBSalonList.sharedInstance.HBSalonArray = self.salonArray
         
-        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+        //self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+        
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesInRange: range)
+        self.tableView.reloadSections(sections, withRowAnimation: .Automatic)
     }
     
     //MARK: Calculate Distance Between Salon x User Location
@@ -205,26 +204,20 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if segue.identifier == "salonDetailSegue" {
-            
             let vc = segue.destinationViewController as! HBSalonDetailTableViewController
-            
             //passa index do salao clicado para tela de detalhes
             if let indexPath = self.tableView.indexPathForSelectedRow{
                 vc.salon = CurrentHBSalonList.sharedInstance.HBSalonArray[indexPath.row]
             }
-            
         }
-        
     }
+    
 }
 
 extension Double{
     var roundedOneDigit:Double{
-        
         return Double(round(10*self)/10)
-        
     }
 }
 

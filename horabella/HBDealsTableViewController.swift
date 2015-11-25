@@ -39,7 +39,11 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.dealsArray.count
+        if self.dealsArray.count > 0 {
+            return self.dealsArray.count
+        } else {
+            return 1 //error cell
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +55,8 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
         
         // Configure the cell...
         if (self.dealsArray.count > 0) {
+            cell.percentageLabel.hidden = false
+            cell.userInteractionEnabled = true
             cell.percentageLabel.text = String(Int(self.dealsArray[indexPath.section].discount!)) + "%"
             cell.descriptionLabel.text = self.dealsArray[indexPath.section].dealDescription
             if indexPath.section%2 == 0 {
@@ -58,8 +64,10 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
                 cell.backgroundColor = UIColor(hex: 0xFE4F68) //cor rosa
             }
         } else {
-            cell.percentageLabel.text = "FALHA"
-            cell.descriptionLabel.text = "ao carregar ofertas"
+            cell.percentageLabel.hidden = true
+            cell.descriptionLabel.text = "Nenhuma oferta encontrada"
+            cell.backgroundColor = UIColor.redColor()
+            cell.userInteractionEnabled = false
         }
 
         return cell
@@ -70,12 +78,20 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        if self.dealsArray.count > 0 {
+            return 35
+        } else {
+            return 0 //nenhuma oferta encontrada
+        }
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCellWithIdentifier("sectionHeader") as!HBSectionHeaderTableViewCell
-        headerView.salonNameLabel.text = self.dealsArray[section].shop?.name
+        if self.dealsArray.count > 0 {
+            headerView.salonNameLabel.text = self.dealsArray[section].shop?.name
+        } else {
+            headerView.salonNameLabel.text = ""
+        }
         return headerView;
     }
     
@@ -129,6 +145,17 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
         
         self.tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "dealToDetail" {
+            let vc = segue.destinationViewController as! HBSalonDetailTableViewController
+            //passa index do salao clicado para tela de detalhes
+            if let indexPath = self.tableView.indexPathForSelectedRow{
+                vc.salon = self.dealsArray[indexPath.row].shop
+            }
+        }
+    }
+    
 }
 
 
