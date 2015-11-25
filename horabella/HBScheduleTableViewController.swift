@@ -37,7 +37,7 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("agendamentoCell", forIndexPath: indexPath) as! HBScheduleTableViewCell
         
-        let appointment = self.myAppointmentsArray[indexPath.row]
+        let appointment = self.myAppointmentsArray[indexPath.section]
         // Configure the cell...
         cell.serviceNameLabel.text = appointment.service.name
         cell.serviceProviderNameLabel.text = appointment.professional.firstName! + " " + appointment.professional.lastName!
