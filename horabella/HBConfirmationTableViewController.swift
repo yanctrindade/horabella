@@ -76,6 +76,31 @@ class HBConfirmationTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func confirmAppointment(sender: AnyObject) {
+
+        let parameters: Dictionary<String, AnyObject> = [
+            "professional_id": HBAppointment.sharedInstance.professional.id!,
+            "service_id": HBAppointment.sharedInstance.service.id!,
+            "schedule_time": HBAppointment.sharedInstance.getStringDate()
+        ]
+        
+        Smoke().postWithParameters(true, endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment", parameters: parameters, successBlock: { (response) -> Void in
+            print("deu certo")
+            }) { (response) -> Void in
+                print("nao deu certo")
+                
+                print(NSString(data: response.data!, encoding: 4))
+        }
+        
+//        let parameters: Dictionary<String, AnyObject> = [
+//            "professional_id": HBAppointment.sharedInstance.professional.id!,
+//            "service_id": HBAppointment.sharedInstance.service.id!,
+//            "schedule_time": HBAppointment.sharedInstance.getStringDate()
+//        ]
+        
+    }
+    
 
     // MARK: - Table view data source
 

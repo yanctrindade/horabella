@@ -12,9 +12,23 @@ import SimpleKeychain
 
 class Smoke: NSObject {
     
-    func postWithParameters(endpoint: String, parameters: Dictionary<String, String>, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
+    func postWithParameters(withToken: Bool = false, endpoint: String, parameters: Dictionary<String, AnyObject>, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
         
-        Alamofire.request(.POST, endpoint, parameters: parameters)
+        var headers = [String: String]()
+        
+        //adiciona token como header para validaçao
+        if withToken {
+            
+            if let token = SmokeUser().getToken() {
+                let authorization: String = "Bearer " + token
+                
+                headers = ["Authorization": authorization]
+                
+            }
+            
+        }
+        
+        Alamofire.request(.POST, endpoint, parameters: parameters, headers: headers)
             .validate() //validaçao automatica 200...299
             .responseJSON { (response) -> Void in
                 
@@ -29,7 +43,7 @@ class Smoke: NSObject {
         }
     }
     
-    func getWithParameters(withToken: Bool = true, endpoint: String, parameters: Dictionary<String, String>? = nil, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
+    func getWithParameters(withToken: Bool = true, endpoint: String, parameters: Dictionary<String, AnyObject>? = nil, successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
         
         var headers = [String: String]()
         
