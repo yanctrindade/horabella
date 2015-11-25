@@ -11,6 +11,7 @@ import SwiftyJSON
 
 protocol HBScheduleDelegate {
     func reloadDataOfTable()
+    func reloadAvailableTimes()
 }
 
 
@@ -18,6 +19,7 @@ class HBSchedule: NSObject {
     var delegate: HBScheduleDelegate?
     var endpoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/service/"
     var professionalsArray = [] as Array<HBProfessional>
+    var availableTimesArray = [] as Array<String>
     
     init (idService: Int) {
         super.init()
@@ -44,4 +46,28 @@ class HBSchedule: NSObject {
                 print("Error HBSchedule Delegate")
         }
     }
+    
+    func getAvailableTimes(day: Int, month: Int, year: Int, serviceId: Int, professionalId: Int) {
+        
+        let parameters = [
+            "day": day,
+            "month": month,
+            "year": year,
+            "service_id": serviceId,
+            "professional_id": professionalId
+        ]
+        
+        Smoke().getWithParameters(endpoint: endpoint, parameters: parameters, successBlock: { (response) -> Void in
+            
+            //adiciona horarios diponiveis no array
+            
+            self.delegate?.reloadAvailableTimes()
+            
+            }) { (response) -> Void in
+                print("Erro para obter horarios disponiveis")
+        }
+        
+        
+    }
+    
 }

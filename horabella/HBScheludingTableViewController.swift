@@ -27,7 +27,6 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        availableSchedulesArray = ["9:00","10:00","11:00"]
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -114,7 +113,8 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
             //coloca profissional na singleton appointment
             HBAppointment.sharedInstance.professional = professionalArray[indexPath.row]
             
-            self.tableView.reloadData()
+            hbSchedule?.getAvailableTimes(HBAppointment.sharedInstance.day, month: HBAppointment.sharedInstance.month, year: HBAppointment.sharedInstance.year, serviceId: Int(HBAppointment.sharedInstance.service.id!), professionalId: Int(HBAppointment.sharedInstance.professional.id!))
+            
             self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Middle)
         } else if indexPath.section == 2 {
             
@@ -180,5 +180,13 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
         self.professionalArray = (self.hbSchedule?.professionalsArray)!
         
         self.tableView.reloadData()
+    }
+    
+    func reloadAvailableTimes() {
+        
+        self.availableSchedulesArray = (self.hbSchedule?.availableTimesArray)!
+        
+        self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
+        
     }
 }
