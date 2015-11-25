@@ -54,6 +54,16 @@ class HBAppointment: NSObject {
         
     }
     
+    func getStringDate() -> String {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatter.stringFromDate(self.date)
+        
+    }
+    
     func getProfessionalName() -> String {
         return professional.firstName! + " " + professional.lastName!
     }

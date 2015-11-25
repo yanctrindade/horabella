@@ -87,7 +87,7 @@ class SmokeUser: NSObject {
     
     func loginWithEmailAndPassword(email: String, password: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Bool {
         
-        Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/login", parameters: ["email": email, "password": password], successBlock: { (response) -> Void in
+        Smoke().postWithParameters(endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/login", parameters: ["email": email, "password": password], successBlock: { (response) -> Void in
             
             if let jsonDictionary = self.dataToDictionary(response.data!){
                 
@@ -181,7 +181,7 @@ class SmokeUser: NSObject {
     
     func signUp(successBlock: Response<AnyObject, NSError> -> Void, errorBlock: Response<AnyObject, NSError> -> Void) -> Void {
         
-        Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user", parameters: ["first_name": firstName, "last_name": lastName, "email": email, "password": password], successBlock: { (response) -> Void in
+        Smoke().postWithParameters(endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user", parameters: ["first_name": firstName, "last_name": lastName, "email": email, "password": password], successBlock: { (response) -> Void in
             
             successBlock(response)
             
@@ -194,7 +194,7 @@ class SmokeUser: NSObject {
     
     func resetPassword(email: String, successBlock: (Response<AnyObject, NSError> -> Void)? = nil, errorBlock: (Response<AnyObject, NSError> -> Void)? = nil) -> Void {
         
-        Smoke().postWithParameters("http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/password/email", parameters: ["email": email], successBlock: { (response) -> Void in
+        Smoke().postWithParameters(endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/password/email", parameters: ["email": email], successBlock: { (response) -> Void in
             
             //executa bloco caso exista
             if let block = successBlock {
