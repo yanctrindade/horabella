@@ -17,8 +17,6 @@ class HBScheduleTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
 
     // MARK: - Table view data source
@@ -39,6 +37,20 @@ class HBScheduleTableViewController: UITableViewController {
         cell.dateAndTimeLabel.text = "26/10 às 9:00"
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableCellWithIdentifier("headerCell") as!HBScheduleHeaderTableViewCell
+        headerView.salonNameLabel.text = "Helio Diff Hair Design"
+        return headerView;
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 94
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 48
     }
 
 }

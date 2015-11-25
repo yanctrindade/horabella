@@ -24,6 +24,7 @@ class HBSalon: NSObject {
     var website: String?
     var images: Array<String>?
     var distanceToUser: Double?
+    var firstImage: UIImage?
     
     init(address: String, comments: Int, evaluations: Int,id: Int, likes: Int, location: CLLocation, name: String, phone: String, rate: Double, website: String, images: Array<String>) {
         self.address = address

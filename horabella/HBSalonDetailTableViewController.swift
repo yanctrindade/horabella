@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDelegate {
     
@@ -18,8 +20,8 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     var servicesByCategoryArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
     
     var salon: HBSalon!
-    var salonIndex: NSIndexPath!
-    var salonImages: [UIImage] = []
+
+    //var salonImages = [UIImage(named: "noImage")!, UIImage(named: "noImage")!, UIImage(named: "noImage")!] as Array<UIImage>
     var pageViews: [UIImageView?] = []
     
     override func viewDidLoad() {
@@ -27,21 +29,16 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         
         tableView.allowsSelection = true
         
-//        salon = CurrentHBSalonList.sharedInstance.HBSalonArray[salonIndex.row]
-        
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         if let info = salon.name {
             title = info
         }
         
-        //seta array com imagens do salao
-        salonImages = [UIImage(named: "TesteSalaoBackground")!, UIImage(named: "TesteSalaoBackground")!, UIImage(named: "TesteSalaoBackground")!]
-        
         //configuraçoes do scrollview
         picturesScrollView.showsHorizontalScrollIndicator = false
         picturesScrollView.showsVerticalScrollIndicator = false
         
-        let pageCount = salonImages.count
+        let pageCount = salon.images!.count
         
         pageControl.currentPage = 0
         pageControl.numberOfPages = pageCount
@@ -51,24 +48,25 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         }
 
         let pagesScrollViewSize = CGSize(width: self.view.frame.width, height: picturesScrollView.frame.height)
-        picturesScrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(salonImages.count),
+        picturesScrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(salon.images!.count),
             height: pagesScrollViewSize.height)
 
-        loadVisiblePages()
         
     }
     
     //MARK: Will Appear - Delegate Request
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         hbSalonDetail = HBSalonDetail(idSalon: self.salon.id!)
         hbSalonDetail?.delegate = self
+        
+        loadVisiblePages()
     }
     
     //MARK: - ScrollView
     func loadPage(page: Int) {
-        if page < 0 || page >= salonImages.count {
+        if page < 0 || page >= salon.images!.count {
             // If it's outside the range of what you have to display, then do nothing
             return
         }
@@ -81,7 +79,18 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             let frame = CGRect(x: self.view.frame.width * CGFloat(page), y: 0.0, width: self.view.frame.width, height: picturesScrollView.frame.height)
             
             // 3
-            let newPageView = UIImageView(image: salonImages[page])
+            var newPageView = UIImageView(image: UIImage(named: "noImage"))
+            
+            //download the salon images
+            Alamofire.request(.GET, salon.images![page])
+                .responseImage { response in
+                    if let image = response.result.value {
+                        newPageView.image = image
+                    }
+            }
+
+            
+            
             newPageView.contentMode = .ScaleAspectFill
             newPageView.clipsToBounds = true
             newPageView.frame = frame
@@ -93,7 +102,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     }
     
     func purgePage(page: Int) {
-        if page < 0 || page >= salonImages.count {
+        if page < 0 || page >= salon.images!.count {
             // If it's outside the range of what you have to display, then do nothing
             return
         }
@@ -128,7 +137,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         }
         
         // Purge anything after the last page
-        for var index = lastPage+1; index < salonImages.count; ++index {
+        for var index = lastPage+1; index < salon.images!.count; ++index {
             purgePage(index)
         }
     }
@@ -236,12 +245,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 let cell = tableView.dequeueReusableCellWithIdentifier("serviceCell", forIndexPath: indexPath) as! HBServiceTableViewCell
                 
                 let service = servicesByCategoryArray[indexPath.section-1][indexPath.row]
-                
-                if indexPath.row % 2 == 0 {
-                    cell.backgroundColor = UIColor.whiteColor()
-                    cell.serviceLabel.textColor = UIColor.blackColor()
-                    cell.priceLabel.textColor = UIColor.blackColor()
-                }
                 
                 cell.serviceLabel.text = service.name
                 let str = NSString(format: "%.2f", service.price!)
