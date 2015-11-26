@@ -240,7 +240,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 return cell
                 
             }else{
-                print("\(indexPath.section) \(indexPath.row)")
                 //carrega uma celula pra cada serviço do salao
                 let cell = tableView.dequeueReusableCellWithIdentifier("serviceCell", forIndexPath: indexPath) as! HBServiceTableViewCell
                 

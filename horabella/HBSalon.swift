@@ -47,7 +47,8 @@ class HBSalon: NSObject {
         self.comments = json["comments"].intValue
         self.evaluations = json["evaluations"].intValue
         self.likes = json["likes"].intValue
-        self.location = HBSalon.stringToCLLocation(json["location"].stringValue)
+        let locationString = json["location"].stringValue
+        self.location = HBSalon.stringToCLLocation(locationString)
         self.name = json["name"].stringValue
         self.phone = json["phone"].stringValue
         self.rate = json["rate"].doubleValue
@@ -65,9 +66,13 @@ class HBSalon: NSObject {
     }
     
     class func stringToCLLocation(locationString: String) -> CLLocation {
-        print(locationString)
-        let locationArray = locationString.characters.split{$0 == ","}.map(String.init)
-        let location = CLLocation(latitude: Double(locationArray[0])!, longitude: Double(locationArray[1])!)
-        return location
+        var locationArray = []
+        locationArray = locationString.characters.split{$0 == ","}.map(String.init)
+        if (locationArray.count == 2) {
+            let location = CLLocation(latitude: Double(locationArray[0] as! String)!, longitude: Double(locationArray[1] as! String)!)
+            return location
+        } else {
+            return CLLocation(latitude: Double(0), longitude: Double(0))
+        }
     }
 }

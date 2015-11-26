@@ -198,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p4k-A0-lgE" id="wBL-lI-68h">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="47.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Helio Diff Hair Design" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy3-yO-r3t">
@@ -628,7 +628,6 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="Sqv-pD-mvF" id="pZe-4m-pul"/>
                                     <outlet property="percentageLabel" destination="vHJ-O9-6xs" id="fYL-nm-6h9"/>
-                                    <segue destination="DpF-uD-Kxl" kind="show" identifier="dealToDetail" id="fKy-eL-Edh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -641,6 +640,9 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="Kwz-9S-nWX"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="DpF-uD-Kxl" kind="show" identifier="dealToDetail" id="3lY-3D-fda"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlx-vf-MMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1935,7 +1937,7 @@ sofnaof</string>
         <image name="starPinkIcon" width="17" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sob-Oa-fqK"/>
+        <segue reference="3lY-3D-fda"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.29803921568627451" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>

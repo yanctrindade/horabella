@@ -15,6 +15,8 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     
     var hbDeals: HBDeals?
     
+    var currentSalon: HBSalon?
+    
     var coordinates: CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
 
     override func viewDidLoad() {
@@ -71,6 +73,11 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
         }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentSalon = self.dealsArray[indexPath.section].shop
+        self.performSegueWithIdentifier("dealToDetail", sender: self)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -149,10 +156,7 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "dealToDetail" {
             let vc = segue.destinationViewController as! HBSalonDetailTableViewController
-            //passa index do salao clicado para tela de detalhes
-            if let indexPath = self.tableView.indexPathForSelectedRow{
-                vc.salon = self.dealsArray[indexPath.row].shop
-            }
+                vc.salon = self.currentSalon
         }
     }
     
