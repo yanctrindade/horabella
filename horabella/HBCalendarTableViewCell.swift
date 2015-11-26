@@ -52,7 +52,7 @@ extension HBCalendarTableViewCell: CVCalendarViewDelegate, CVCalendarMenuViewDel
     }
     
     func didSelectDayView(dayView: DayView) {
-        print(dayView.date.commonDescription + " selecionado!")
+        //print(dayView.date.commonDescription + " selecionado!")
         
         //adiciona data na singleton de appointment
         HBAppointment.sharedInstance.day = dayView.date.day
@@ -60,6 +60,9 @@ extension HBCalendarTableViewCell: CVCalendarViewDelegate, CVCalendarMenuViewDel
         HBAppointment.sharedInstance.year = dayView.date.year
         
         HBAppointment.sharedInstance.isCalendarSelected = true
+        
+        //avisa que selecionou um dia
+        NSNotificationCenter.defaultCenter().postNotificationName("didSelectDay", object: nil)
         
     }
     

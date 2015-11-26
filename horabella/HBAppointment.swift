@@ -57,8 +57,7 @@ class HBAppointment: NSObject {
     func getStringDate() -> String {
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         
         return dateFormatter.stringFromDate(self.date)
         
