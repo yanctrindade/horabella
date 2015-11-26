@@ -18,6 +18,7 @@ protocol HBScheduleDelegate {
 class HBSchedule: NSObject {
     var delegate: HBScheduleDelegate?
     var endpoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/service/"
+    var endpointAppointments = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment/available"
     var professionalsArray = [] as Array<HBProfessional>
     var availableTimesArray = [] as Array<String>
     
@@ -47,19 +48,28 @@ class HBSchedule: NSObject {
         }
     }
     
-    func getAvailableTimes(day: Int, month: Int, year: Int, serviceId: Int, professionalId: Int) {
+    func getAvailableTimes(day: Int, month: Int, year: Int, professionalId: Int) {
         
         let parameters = [
             "day": day,
             "month": month,
             "year": year,
-            "service_id": serviceId,
             "professional_id": professionalId
         ]
         
-        Smoke().getWithParameters(endpoint: endpoint, parameters: parameters, successBlock: { (response) -> Void in
+        Smoke().getWithParameters(endpoint: endpointAppointments, parameters: parameters, successBlock: { (response) -> Void in
             
             //adiciona horarios diponiveis no array
+            let json = JSON(data: response.data!)
+            
+            print(json)
+            
+            self.availableTimesArray.removeAll()
+            
+            for hour in json.arrayValue {
+                let string = "\(hour)"
+                self.availableTimesArray.append(string)
+            }
             
             self.delegate?.reloadAvailableTimes()
             

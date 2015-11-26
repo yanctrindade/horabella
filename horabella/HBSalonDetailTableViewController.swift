@@ -345,7 +345,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     
     //VIEW FOR HEADER
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableCellWithIdentifier("sectionHeader") as! HBServiceHeaderTableViewCell
+        let headerView = tableView.dequeueReusableCellWithIdentifier ("sectionHeader") as! HBServiceHeaderTableViewCell
         switch (section) {
         case 1:
             headerView.categoryLabel.text = "Cabelo"

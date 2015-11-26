@@ -43,6 +43,14 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
         //outlets
         serviceLabel.text = serviceName
         priceLabel.text = servicePrice!
+        
+        //observer para atualizar horarios quando clica em um dia
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("didSelectDay:"),
+            name: "didSelectDay",
+            object: nil)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +96,12 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("professionalCell", forIndexPath: indexPath) as! HBProfessinalTableViewCell
             cell.name.text = professionalArray[indexPath.row].firstName! + " " + professionalArray[indexPath.row].lastName!
+            if HBAppointment.sharedInstance.isProfessionalSelected {
+                if professionalArray[indexPath.row].id == HBAppointment.sharedInstance.professional.id {
+                    tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.None)
+                }
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("calendarCell", forIndexPath: indexPath) as! HBCalendarTableViewCell
@@ -113,7 +127,7 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
             //coloca profissional na singleton appointment
             HBAppointment.sharedInstance.professional = professionalArray[indexPath.row]
             
-            hbSchedule?.getAvailableTimes(HBAppointment.sharedInstance.day, month: HBAppointment.sharedInstance.month, year: HBAppointment.sharedInstance.year, serviceId: Int(HBAppointment.sharedInstance.service.id!), professionalId: Int(HBAppointment.sharedInstance.professional.id!))
+            updateTimes()
             
             self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Middle)
         } else if indexPath.section == 2 {
@@ -186,7 +200,20 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
         
         self.availableSchedulesArray = (self.hbSchedule?.availableTimesArray)!
         
-        self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
+        self.tableView.reloadData()
         
     }
+    
+    //MARK: Get available times
+    
+    func didSelectDay(sender: NSNotification) {
+        if HBAppointment.sharedInstance.isProfessionalSelected{
+            updateTimes()
+        }
+    }
+    
+    func updateTimes() {
+        hbSchedule?.getAvailableTimes(HBAppointment.sharedInstance.day, month: HBAppointment.sharedInstance.month, year: HBAppointment.sharedInstance.year, professionalId: Int(HBAppointment.sharedInstance.professional.id!))
+    }
+    
 }
