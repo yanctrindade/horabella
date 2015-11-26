@@ -65,6 +65,7 @@ class HBSalon: NSObject {
     }
     
     class func stringToCLLocation(locationString: String) -> CLLocation {
+        print(locationString)
         let locationArray = locationString.characters.split{$0 == ","}.map(String.init)
         let location = CLLocation(latitude: Double(locationArray[0])!, longitude: Double(locationArray[1])!)
         return location

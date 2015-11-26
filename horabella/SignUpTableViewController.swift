@@ -118,7 +118,25 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
                 
                 let alert = UIAlertController(title: "Sucesso", message: "Cadastro realizado com sucesso!", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
-                    alert.dismissViewControllerAnimated(true, completion: nil)
+                    //try to loggin after signup
+                    SmokeUser().loginWithEmailAndPassword(newUser.email, password: newUser.password, successBlock: { (response) -> Void in
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewControllerWithIdentifier("initialView") as! HBTabBarViewController
+                        self.presentViewController(vc, animated: true, completion: nil)
+                        
+                        }) { (response) -> Void in
+                            
+                            let alert = UIAlertController(title: "Erro!", message: "Email ou senha inválidos", preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                                alert .dismissViewControllerAnimated(true, completion: nil)
+                            }))
+                            
+                            self.presentViewController(alert, animated: true, completion: { () -> Void in
+                                self.passwordTextField.text = nil
+                            })
+                            
+                    }
                 }))
                 
                 self.presentViewController(alert, animated: true, completion: nil)
