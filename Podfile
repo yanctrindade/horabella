@@ -15,6 +15,7 @@ pod 'SimpleKeychain'
 pod 'VMaskTextField'
 pod 'CVCalendar', '~> 1.2.7'
 pod 'SwiftyJSON'
+pod 'SCLAlertView'
 end
 
 target ‘horabellaTests’ do

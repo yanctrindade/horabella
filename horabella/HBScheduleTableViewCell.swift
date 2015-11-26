@@ -13,6 +13,7 @@ class HBScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var serviceNameLabel: UILabel!
     @IBOutlet weak var serviceProviderNameLabel: UILabel!
     @IBOutlet weak var dateAndTimeLabel: UILabel!
+    @IBOutlet weak var salonNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

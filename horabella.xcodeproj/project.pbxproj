@@ -30,7 +30,6 @@
 		02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */; };
 		02AAF38C1BEBDD6100B97FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */; };
 		02BF943F1BFF450A005C9940 /* HBScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */; };
-		02BF94411BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */; };
 		02BF94431BFF453D005C9940 /* HBScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */; };
 		02C37F601BFF4E0D0087B97C /* HBSalonDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */; };
 		02C37F641BFF6FA10087B97C /* HBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C37F631BFF6FA10087B97C /* HBService.swift */; };
@@ -112,7 +111,6 @@
 		02A6C6991BF11C33001FA056 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		02AAF38B1BEBDD6100B97FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleTableViewController.swift; sourceTree = "<group>"; };
-		02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSalonDetailDelegate.swift; sourceTree = "<group>"; };
 		02C37F631BFF6FA10087B97C /* HBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBService.swift; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 			children = (
 				02BF943E1BFF450A005C9940 /* HBScheduleTableViewController.swift */,
 				028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */,
-				02BF94401BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift */,
 				02BF94421BFF453D005C9940 /* HBScheduleTableViewCell.swift */,
 				028173DA1C063A75000B1E14 /* HBMyAppointment.swift */,
 			);
@@ -628,7 +625,6 @@
 				BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */,
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
 				02CE010C1BF26B6100EE0793 /* HBFilter.swift in Sources */,
-				02BF94411BFF4529005C9940 /* HBScheduleHeaderTableViewCell.swift in Sources */,
 				BBD90E321BF267A3009C19D1 /* HBServicesTableViewCell.swift in Sources */,
 				BBBCBB371BFCFE8F00063173 /* HBHeaderTableViewCell.swift in Sources */,
 				0235A9381BDF3DCA00355207 /* HBSalonListTableViewController.swift in Sources */,

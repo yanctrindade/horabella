@@ -27,38 +27,53 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.myAppointmentsArray.count
+       return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return myAppointmentsArray.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("agendamentoCell", forIndexPath: indexPath) as! HBScheduleTableViewCell
         
-        let appointment = self.myAppointmentsArray[indexPath.section]
-        // Configure the cell...
-        cell.serviceNameLabel.text = appointment.service.name
-        cell.serviceProviderNameLabel.text = appointment.professional.firstName! + " " + appointment.professional.lastName!
-        cell.dateAndTimeLabel.text = appointment.scheduleTime
-
+        if myAppointmentsArray.count > 0 {
+            let appointment = self.myAppointmentsArray[indexPath.row]
+            // Configure the cell...
+            cell.salonNameLabel.text = appointment.service.salon!.name
+            cell.serviceNameLabel.text = appointment.service.name
+            cell.serviceProviderNameLabel.text = appointment.professional.firstName! + " " + appointment.professional.lastName!
+            cell.dateAndTimeLabel.text = appointment.scheduleTime
+        } else {
+            cell.serviceNameLabel.text = "Error"
+        }
+        
         return cell
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableCellWithIdentifier("headerCell") as!HBScheduleHeaderTableViewCell
-        headerView.salonNameLabel.text = self.myAppointmentsArray[section].service.salon?.name
-        return headerView;
+    //Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment/" + String(self.myAppointmentsArray[indexPath.row].id!)
+            
+            Smoke().deleteWithParameters(true, endpoint: endPoint, parameters: nil, successBlock: { (response) -> Void in
+                print(response)
+                self.myAppointmentsArray.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                }, errorBlock: { (response) -> Void in
+                    print(response)
+            })
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
-    
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 94
+        return 150
     }
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 48
-    }
+
     
     func reloadDataOfTable() {
         print("------ MYSCHEDULE DELEGATE METHOD ACCESSED ------")

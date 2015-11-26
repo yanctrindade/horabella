@@ -28,6 +28,7 @@ PODS:
     - CryptoSwift (= 0.0.14)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
+  - SCLAlertView (0.4.3)
   - SimpleKeychain (0.6.1)
   - SwiftyJSON (2.3.1)
   - VMaskTextField (1.0.4)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - HCSStarRatingView (from `https://github.com/hugocampossousa/HCSStarRatingView.git`)
   - JSONWebToken
   - Parse
+  - SCLAlertView
   - SimpleKeychain
   - SwiftyJSON
   - VMaskTextField
@@ -67,6 +69,7 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   JSONWebToken: cf8b58850dc4cf38ce777a08753a2ea1620d960e
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  SCLAlertView: a5c726a80a938fd3127edd7dbc19da33fb936ca3
   SimpleKeychain: 150d76f3b9200de58f033228f6e976c6241a221c
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   VMaskTextField: 633dfde6182fb3ea6604abb675e05cdc108006df
