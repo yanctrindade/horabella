@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftyJSON
 
 protocol HBSalonListDelegate {
     func reloadDataOfTable()
@@ -15,8 +16,9 @@ protocol HBSalonListDelegate {
 
 class HBSalonList: NSObject {
     var delegate: HBSalonListDelegate?
-    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/locate"
-
+    var endPointLocate = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/locate"
+    var endPointSearch = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/search"
+    
     init(latitude: Double, longitude: Double) {
         super.init()
         //faz a requisição e monta o array
@@ -28,12 +30,10 @@ class HBSalonList: NSObject {
         parameters["longitude"] = String(longitude)
         
         //montar endPoints String
-        Smoke().getWithParameters(false, endpoint: endPoint, parameters: parameters, successBlock: {
+        Smoke().getWithParameters(false, endpoint: endPointLocate, parameters: parameters, successBlock: {
             (response) -> Void in
             
-            //print(response)
             let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
-            //print(shopArray?.count)
             
             if shopArray != nil {
                 for shop in shopArray! {
@@ -77,5 +77,111 @@ class HBSalonList: NSObject {
         let location = CLLocation(latitude: Double(locationArray[0])!, longitude: Double(locationArray[1])!)
         return location
     }
+    
+    func search (searchText: String, latitude: Double, longitude: Double) {
+        print(" -------  Requisição Search Bar START ----------- ")
+        
+        CurrentHBSalonList.sharedInstance.HBSalonArray.removeAll() //clear the array
+        
+        var parameters = Dictionary<String,String>()
+        parameters["radius"] = "10000"
+        parameters["latitude"] = String(latitude)
+        parameters["longitude"] = String(longitude)
+        parameters["q"] = searchText //typed by the user
+        
+        Smoke().getWithParameters(true, endpoint: endPointSearch, parameters: parameters, successBlock: {
+            (response) -> Void in
+            
+            let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
+            
+            if shopArray != nil {
+                for shop in shopArray! {
+                    let address = shop["address"] as! String
+                    let comment = Int(shop["comments"]! as! String)
+                    let evaluations = Int(shop["evaluations"]! as! String)
+                    let id = Int(shop["id"]! as! String)
+                    let likes = Int(shop["likes"]! as! String)
+                    let location = self.stringToCLLocation(shop["location"]! as! String)
+                    let name = shop["name"]! as! String
+                    let phone = shop["phone"]! as! String
+                    let rate = Double(shop["rate"]! as! String)
+                    let website = shop["website"]! as! String
+                    let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    
+                    var imagesArray = Array<String>()
+                    for dictionary in arrayDictionaryImage {
+                        let url = dictionary["url"]! as String
+                        imagesArray.append(url)
+                    }
+                    
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    
+                    CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
+                }
+            }
+            
+            print(" ------- Encontrados: \(CurrentHBSalonList.sharedInstance.HBSalonArray.count) salões -------")
+            
+            self.delegate?.reloadDataOfTable()
+
+            }) { (response) -> Void in
+                print("deu merda")
+                
+        }
+    }
+    
+    func searchByLocation(latitude: Double, longitude: Double) {
+        
+        //faz a requisição e monta o array
+        print(" -------  Requisição Feeds de Salões START ----------- ")
+        
+        var parameters = Dictionary<String,String>()
+        parameters["radius"] = "10000"
+        parameters["latitude"] = String(latitude)
+        parameters["longitude"] = String(longitude)
+        
+        //montar endPoints String
+        Smoke().getWithParameters(false, endpoint: endPointLocate, parameters: parameters, successBlock: {
+            (response) -> Void in
+            
+            let shopArray = Smoke().dataToArrayOfDictionaries(response.data!)
+            
+            if shopArray != nil {
+                for shop in shopArray! {
+                    let address = shop["address"] as! String
+                    let comment = Int(shop["comments"]! as! String)
+                    let evaluations = Int(shop["evaluations"]! as! String)
+                    let id = Int(shop["id"]! as! String)
+                    let likes = Int(shop["likes"]! as! String)
+                    let location = self.stringToCLLocation(shop["location"]! as! String)
+                    let name = shop["name"]! as! String
+                    let phone = shop["phone"]! as! String
+                    let rate = Double(shop["rate"]! as! String)
+                    let website = shop["website"]! as! String
+                    let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    
+                    var imagesArray = Array<String>()
+                    for dictionary in arrayDictionaryImage {
+                        let url = dictionary["url"]! as String
+                        imagesArray.append(url)
+                    }
+                    
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    
+                    CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
+                }
+            }
+            
+            print(" ------- Encontrados: \(CurrentHBSalonList.sharedInstance.HBSalonArray.count) salões -------")
+            
+            self.delegate?.reloadDataOfTable()
+            }) {
+                (response) -> Void in
+                print(response)
+                print(" ------- Falha na Busca de Salões END -------")
+        }
+        
+    }
+    
     
 }

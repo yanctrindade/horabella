@@ -24,6 +24,7 @@
 		025C47B91BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */; };
 		028173871C062EB3000B1E14 /* HBMyScheduleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */; };
 		028173DB1C063A75000B1E14 /* HBMyAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028173DA1C063A75000B1E14 /* HBMyAppointment.swift */; };
+		028173E21C08C8B5000B1E14 /* HBServiceFilterSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028173E11C08C8B5000B1E14 /* HBServiceFilterSingleton.swift */; };
 		02A1484D1BE9418700BFA08D /* HBFilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */; };
 		02A6C6951BF111B6001FA056 /* profileTeste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6941BF111B6001FA056 /* profileTeste.jpg */; };
 		02A6C6971BF111BF001FA056 /* tste.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A6C6961BF111BF001FA056 /* tste.png */; };
@@ -105,6 +106,7 @@
 		025C47B81BE2B05F00D247D7 /* HBSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		028173861C062EB3000B1E14 /* HBMyScheduleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMyScheduleDelegate.swift; sourceTree = "<group>"; };
 		028173DA1C063A75000B1E14 /* HBMyAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMyAppointment.swift; sourceTree = "<group>"; };
+		028173E11C08C8B5000B1E14 /* HBServiceFilterSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceFilterSingleton.swift; sourceTree = "<group>"; };
 		02A1484C1BE9418700BFA08D /* HBFilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFilterCollectionViewController.swift; sourceTree = "<group>"; };
 		02A6C6941BF111B6001FA056 /* profileTeste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profileTeste.jpg; sourceTree = "<group>"; };
 		02A6C6961BF111BF001FA056 /* tste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tste.png; sourceTree = "<group>"; };
@@ -231,6 +233,25 @@
 				0231B12C1C0398080098E1B0 /* HBDeal.swift */,
 			);
 			name = Deals;
+			sourceTree = "<group>";
+		};
+		028173DD1C08C733000B1E14 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BBD90E311BF267A3009C19D1 /* HBServicesTableViewCell.swift */,
+				BBD90E351BF268EE009C19D1 /* HBServiceCollectionViewCell.swift */,
+				028173E11C08C8B5000B1E14 /* HBServiceFilterSingleton.swift */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		028173DE1C08C759000B1E14 /* ServicesList */ = {
+			isa = PBXGroup;
+			children = (
+				0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */,
+				BBBCBB201BF5028900063173 /* HBServiceTableViewCell.swift */,
+			);
+			name = ServicesList;
 			sourceTree = "<group>";
 		};
 		02A1484B1BE9416000BFA08D /* Filter */ = {
@@ -368,10 +389,8 @@
 				BB75187D1BE19AC800D2200A /* HBSalonDetailTableViewController.swift */,
 				02C37F5F1BFF4E0D0087B97C /* HBSalonDetailDelegate.swift */,
 				02C37F631BFF6FA10087B97C /* HBService.swift */,
-				BBD90E311BF267A3009C19D1 /* HBServicesTableViewCell.swift */,
-				BBD90E351BF268EE009C19D1 /* HBServiceCollectionViewCell.swift */,
-				BBBCBB201BF5028900063173 /* HBServiceTableViewCell.swift */,
-				0231B1221C034B970098E1B0 /* HBServiceHeaderTableViewCell.swift */,
+				028173DD1C08C733000B1E14 /* CollectionView */,
+				028173DE1C08C759000B1E14 /* ServicesList */,
 				0231B1241C0368B10098E1B0 /* Detail */,
 				02BF94441BFF490D005C9940 /* Evaluation */,
 				BBBCBB291BFB9C5100063173 /* Service Schedule */,
@@ -622,6 +641,7 @@
 				BBBCBB351BFCEF3A00063173 /* HBCalendarTableViewCell.swift in Sources */,
 				BBD90E361BF268EE009C19D1 /* HBServiceCollectionViewCell.swift in Sources */,
 				02BF94431BFF453D005C9940 /* HBScheduleTableViewCell.swift in Sources */,
+				028173E21C08C8B5000B1E14 /* HBServiceFilterSingleton.swift in Sources */,
 				BB7518811BE19AC800D2200A /* HBSalonDetailTableViewController.swift in Sources */,
 				0235A93A1BDF3F0100355207 /* HBSalonListTableViewCell.swift in Sources */,
 				02CE010C1BF26B6100EE0793 /* HBFilter.swift in Sources */,

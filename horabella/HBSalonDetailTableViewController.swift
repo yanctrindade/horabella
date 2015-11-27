@@ -21,7 +21,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     
     var salon: HBSalon!
 
-    //var salonImages = [UIImage(named: "noImage")!, UIImage(named: "noImage")!, UIImage(named: "noImage")!] as Array<UIImage>
     var pageViews: [UIImageView?] = []
     
     override func viewDidLoad() {
@@ -50,7 +49,6 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         let pagesScrollViewSize = CGSize(width: self.view.frame.width, height: picturesScrollView.frame.height)
         picturesScrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(salon.images!.count),
             height: pagesScrollViewSize.height)
-
         
     }
     
@@ -62,6 +60,12 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         hbSalonDetail?.delegate = self
         
         loadVisiblePages()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        HBServiceFilterSingleton.sharedInstance.selected.removeAll()
     }
     
     //MARK: - ScrollView
@@ -149,9 +153,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     
     
     // MARK: - Segmented Control
-    
     @IBAction func indexChanged(sender: AnyObject) {
-        
         //se for a primeira aba, abilita seleçao para escolher serviço
         if sender.selectedSegmentIndex == 0  || sender.selectedSegmentIndex == 2{
             tableView.allowsSelection = true
@@ -224,7 +226,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
 
         switch segControl.selectedSegmentIndex {
         case 0:
-            if indexPath.row == 0 && indexPath.section == 0{
+            if indexPath.section == 0{
                 let cell = tableView.dequeueReusableCellWithIdentifier("servicesCell", forIndexPath: indexPath) as! HBServicesTableViewCell
                 
                 //saber quais categorias possuem serviços
@@ -339,6 +341,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         case 0:
             if indexPath.row == 0 && indexPath.section == 0{
                 //collectionView
+                print("passei aqui -------")
             }else{
                 //celula de servicos
             }
@@ -481,4 +484,5 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             nextVc.serviceId = service.id //id
         }
     }
+
 }

@@ -12,13 +12,12 @@ import CoreLocation
 import AlamofireImage
 import Alamofire
 
-class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate, HBSalonListDelegate {
+class HBSalonListTableViewController: UITableViewController,UISearchControllerDelegate, UISearchBarDelegate, CLLocationManagerDelegate, HBSalonListDelegate, UITabBarControllerDelegate {
     
     var salonArray = Array<HBSalon>()
     
     var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop"
     var searchController = UISearchController(searchResultsController: nil)
-    var salaoNome = "Helio Diff Hair Design"
     //LocationManager variables
     var locationManager = CLLocationManager()
     var coordinates: CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
@@ -29,13 +28,16 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         super.viewDidLoad()
         
         //Search Controller Settings
-        searchController.searchResultsUpdater = self
+        //searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Salão, Endereço"
         searchController.delegate = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.definesPresentationContext = false
         navigationItem.titleView = searchController.searchBar
+        
+        self.tabBarController?.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,18 +66,27 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         self.tableView.reloadData()
     }
     
-    //MARK: Search Bar Delegate
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchString = searchController.searchBar.text
-        salaoNome = searchString!
-        self.tableView.reloadData()
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.searchController.active = false
     }
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        //self.navigationItem.rightBarButtonItem.
-        print("comecouuuu")
+    //MARK: Search Bar Delegate Methods
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print(searchBar.text)
+        if searchBar.text != "" {
+            if let info = searchBar.text {
+                self.salonList!.search(info, latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+            }
+        }
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        if searchBar.text == nil {
+            salonList?.searchByLocation(coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+        }
+    }
     
     //MARK: Filter Bar Button
     func FilterBarButton() {
@@ -192,11 +203,8 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         self.salonArray = mySalonArray.sort({$0.distanceToUser < $1.distanceToUser})
         CurrentHBSalonList.sharedInstance.HBSalonArray = self.salonArray
         
-        //self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
-        
-        let range = NSMakeRange(0, self.tableView.numberOfSections)
-        let sections = NSIndexSet(indexesInRange: range)
-        self.tableView.reloadSections(sections, withRowAnimation: .Automatic)
+        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+
     }
     
     //MARK: Calculate Distance Between Salon x User Location
@@ -216,6 +224,11 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
                 vc.salon = CurrentHBSalonList.sharedInstance.HBSalonArray[indexPath.row]
             }
         }
+    }
+    
+    //MARK: TabBarController Delegate Method
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        self.searchController.active = false
     }
     
 }

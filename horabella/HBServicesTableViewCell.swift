@@ -33,7 +33,6 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     }
     
     //MARK: - CollectionView
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoriesArray.count
     }
@@ -45,6 +44,7 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
             let category = categoriesArray[indexPath.row]
             cell.image.image = UIImage(named: "\(filterArrayON[category])")
             cell.tag = category
+            
             cell.image.transform = CGAffineTransformMakeScale(0.1, 0.1)
             
             var delay = Double(indexPath.row)
@@ -72,6 +72,14 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
             cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
             }, completion: nil)
         
+        //salvar num singleton
+        print("Salvo no Singleton")
+        HBServiceFilterSingleton.sharedInstance.selected.append(cell.tag)
+        print(HBServiceFilterSingleton.sharedInstance.selected)
+        
+        //get a reference of tableview and refresh it
+        //let tableView = cell.superview?.superview?.superview?.superview?.superview as! UITableView
+        //tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -86,6 +94,19 @@ class HBServicesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             cell.image.transform = CGAffineTransformMakeScale(0.6, 0.6)
             }, completion: nil)
+        
+        //retirar do singleton
+        print("Não Selecionado")
+        for var i = 0; i < HBServiceFilterSingleton.sharedInstance.selected.count; i++ {
+            if cell.tag == HBServiceFilterSingleton.sharedInstance.selected[i] {
+                HBServiceFilterSingleton.sharedInstance.selected.removeAtIndex(i)
+            }
+        }
+        print(HBServiceFilterSingleton.sharedInstance.selected)
+    
+        //get a reference of tableview and refresh it
+        /*let tableView = cell.superview?.superview?.superview?.superview?.superview as! UITableView
+        tableView.reloadData()*/
     }
 
 }
