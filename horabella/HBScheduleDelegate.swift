@@ -75,6 +75,8 @@ class HBSchedule: NSObject {
             
             }) { (response) -> Void in
                 print("Erro para obter horarios disponiveis")
+                print(NSString(data: response.data!, encoding: 4))
+                
         }
         
         
