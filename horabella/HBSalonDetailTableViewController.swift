@@ -185,7 +185,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             }else if segControl.selectedSegmentIndex == 1 {
                 return 2 + commentsArray.count
             }else{
-                return 2
+                return 4
             }
         } else {
             return servicesByCategoryArray[section-1].count
