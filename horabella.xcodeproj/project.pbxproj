@@ -55,6 +55,7 @@
 		BB7518961BED0B8B00D2200A /* IJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7518951BED0B8B00D2200A /* IJProgressView.swift */; };
 		BB758C811BDEB63400F3A467 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C801BDEB63400F3A467 /* LogInViewController.swift */; };
 		BB758C831BDEB65800F3A467 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */; };
+		BBA0D8991C08D2EF0044B303 /* HBComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0D8981C08D2EF0044B303 /* HBComment.swift */; };
 		BBBCBB211BF5028900063173 /* HBServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCBB201BF5028900063173 /* HBServiceTableViewCell.swift */; };
 		BBBCBB2F1BFCE99500063173 /* HBScheludingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCBB2E1BFCE99500063173 /* HBScheludingTableViewController.swift */; };
 		BBBCBB311BFCEF1600063173 /* HBProfessinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCBB301BFCEF1600063173 /* HBProfessinalTableViewCell.swift */; };
@@ -144,6 +145,7 @@
 		BB7518951BED0B8B00D2200A /* IJProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJProgressView.swift; sourceTree = "<group>"; };
 		BB758C801BDEB63400F3A467 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BB758C821BDEB65800F3A467 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
+		BBA0D8981C08D2EF0044B303 /* HBComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBComment.swift; sourceTree = "<group>"; };
 		BBBCBB201BF5028900063173 /* HBServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBServiceTableViewCell.swift; sourceTree = "<group>"; };
 		BBBCBB2E1BFCE99500063173 /* HBScheludingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBScheludingTableViewController.swift; sourceTree = "<group>"; };
 		BBBCBB301BFCEF1600063173 /* HBProfessinalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBProfessinalTableViewCell.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				BB75187C1BE19AC800D2200A /* HBSalonCommentsTableViewCell.swift */,
 				BB75187E1BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift */,
 				BB75187B1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift */,
+				BBA0D8981C08D2EF0044B303 /* HBComment.swift */,
 			);
 			name = Evaluation;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			files = (
 				02A6C69A1BF11C33001FA056 /* ProfileTableViewController.swift in Sources */,
 				02C37F601BFF4E0D0087B97C /* HBSalonDetailDelegate.swift in Sources */,
+				BBA0D8991C08D2EF0044B303 /* HBComment.swift in Sources */,
 				025C47AD1BE28A7800D247D7 /* HBTabBarViewController.swift in Sources */,
 				BB7518821BE19AC800D2200A /* HBSalonEvaluationTableViewCell.swift in Sources */,
 				BB75187F1BE19AC800D2200A /* HBMakeCommentTableViewCell.swift in Sources */,

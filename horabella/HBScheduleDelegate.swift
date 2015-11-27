@@ -74,6 +74,7 @@ class HBSchedule: NSObject {
             self.delegate?.reloadAvailableTimes()
             
             }) { (response) -> Void in
+                self.availableTimesArray.removeAll()
                 print("Erro para obter horarios disponiveis")
                 print(NSString(data: response.data!, encoding: 4))
                 
