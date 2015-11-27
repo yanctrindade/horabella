@@ -88,6 +88,11 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>SimpleKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,6 +122,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0563B7F48A266F8D16E64446FBC1764F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>371C696CE3CBA03A1EBF6286A0CE4C10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
@@ -167,12 +182,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>636410B8D2264165476E368B364C11F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>650A0F9AD9C39E2D016CC5935B4B8D95</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>73FFF788096F05B28FF4851F340E8A3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>749AEC0FFB6E76CF1851129B86A583DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D45850C8CDBF05603FEFAE104D50430</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>954EE46CF1C07DD0DDCB8A6E1541C0A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

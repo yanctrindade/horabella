@@ -17,7 +17,12 @@ class HBSalonCommentsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        userPicture.layer.cornerRadius = userPicture.frame.size.width/2
+        userPicture.clipsToBounds = true
+        
+        userPicture.image = UIImage(named: "profileNoPicture")
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

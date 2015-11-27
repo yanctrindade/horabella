@@ -66,6 +66,14 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
             performSegueWithIdentifier("confirmSchedule", sender: self)
         }else{
             print("falta infos")
+            
+            let alert = UIAlertController(title: "Erro", message: "Escolha um horário válido para confirmar", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
         }
         
     }

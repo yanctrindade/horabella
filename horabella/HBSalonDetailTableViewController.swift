@@ -18,6 +18,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     
     var hbSalonDetail: HBSalonDetail?
     var servicesByCategoryArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
+    var commentsArray = [] as Array<HBComment>
     
     var salon: HBSalon!
 
@@ -159,6 +160,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             tableView.allowsSelection = true
         }else{
             tableView.allowsSelection = false
+            hbSalonDetail?.getComments(salon.id!)
         }
         tableView.reloadData()
     }
@@ -181,9 +183,9 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             if segControl.selectedSegmentIndex == 0 {
                 return 1
             }else if segControl.selectedSegmentIndex == 1 {
-                return 3
+                return 2 + commentsArray.count
             }else{
-                return 4
+                return 2
             }
         } else {
             return servicesByCategoryArray[section-1].count
@@ -278,12 +280,22 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 
                 return cell
             }else{
+                
                 //carrega os comentarios
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonComment", forIndexPath: indexPath) as! HBSalonCommentsTableViewCell
                 
-                cell.userName.text = "Erick"
-                cell.commentDate.text = "ontem"
-                cell.comment.text = "Adorei o corte amigaaaaa"
+                cell.userName.text = commentsArray[indexPath.row-2].fullName!
+                cell.commentDate.text = commentsArray[indexPath.row-2].date!
+                cell.comment.text = commentsArray[indexPath.row-2].comment!
+
+                //baixa imagem do comentario
+                Alamofire.request(.GET, commentsArray[indexPath.row-2].picture!)
+                    .responseImage { response in
+                        if let image = response.result.value {
+                            //print("image downloaded: \(image)")
+                            cell.userPicture.image = image
+                        }
+                }
                 
                 return cell
             }
@@ -464,6 +476,11 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         print("---- SALONDETAIL DELEGATE METHOD ---------")
         
         self.servicesByCategoryArray = (self.hbSalonDetail?.servicesArray)!
+        self.tableView.reloadData()
+    }
+    
+    func reloadComments() {
+        self.commentsArray = (self.hbSalonDetail?.commentsArray)!
         self.tableView.reloadData()
     }
     

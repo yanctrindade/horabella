@@ -11,13 +11,14 @@ import SwiftyJSON
 
 protocol HBSalonDetailDelegate {
     func reloadDataOfTable()
+    func reloadComments()
 }
 
 class HBSalonDetail: NSObject {
     var delegate: HBSalonDetailDelegate?
     var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/"
     var servicesArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
-    
+    var commentsArray = [] as Array<HBComment>
     
     init(idSalon: Int) {
         super.init()
@@ -46,4 +47,34 @@ class HBSalonDetail: NSObject {
         
         
     }
+    
+    func getComments(salonId: Int) {
+        
+        let commentsEndpoint = endPoint + "\(salonId)" + "/evaluations"
+        
+        Smoke().getWithParameters(endpoint: commentsEndpoint, successBlock: { (response) -> Void in
+            print("pegou comentarios")
+            
+            //adiciona comentarios no array
+            let json = JSON(data: response.data!)
+            
+            print(json)
+            
+            self.commentsArray.removeAll()
+            
+            for comment in json.arrayValue {
+                let newComment = HBComment(json: comment)
+                self.commentsArray.append(newComment)
+            }
+            
+            print(self.commentsArray)
+            
+            self.delegate?.reloadComments()
+            }) { (response) -> Void in
+                print("nao pegou comentarios")
+                self.commentsArray.removeAll()
+        }
+        
+    }
+    
 }

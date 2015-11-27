@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5H8-H4-MlW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5H8-H4-MlW">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1541,10 +1541,22 @@ sofnaof</string>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="1Xb-3x-vs4" secondAttribute="bottom" id="2oQ-Ym-3lR"/>
+                                        <constraint firstItem="1Xb-3x-vs4" firstAttribute="leading" secondItem="Y5G-we-1bL" secondAttribute="leading" id="PAR-Dn-SwP"/>
                                         <constraint firstItem="1Xb-3x-vs4" firstAttribute="leading" secondItem="Y5G-we-1bL" secondAttribute="leadingMargin" id="aHS-vK-ap4"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Xb-3x-vs4" secondAttribute="trailing" id="bgr-kd-NcX"/>
+                                        <constraint firstItem="1Xb-3x-vs4" firstAttribute="top" secondItem="Y5G-we-1bL" secondAttribute="top" id="cEp-jB-ECT"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="1Xb-3x-vs4" secondAttribute="trailing" id="nA6-D0-jW3"/>
                                         <constraint firstItem="1Xb-3x-vs4" firstAttribute="top" secondItem="Y5G-we-1bL" secondAttribute="topMargin" id="uAy-Zv-6IC"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Xb-3x-vs4" secondAttribute="bottom" id="wLi-Vj-ZG3"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="2oQ-Ym-3lR"/>
+                                            <exclude reference="aHS-vK-ap4"/>
+                                            <exclude reference="nA6-D0-jW3"/>
+                                            <exclude reference="uAy-Zv-6IC"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" red="0.55294117649999996" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>

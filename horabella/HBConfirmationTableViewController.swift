@@ -66,7 +66,7 @@ class HBConfirmationTableViewController: UITableViewController {
         
         professionalName.text = HBAppointment.sharedInstance.getProfessionalName()
         
-        time.text = "\(HBAppointment.sharedInstance.hour):\(HBAppointment.sharedInstance.minute)"
+        time.text = "\(HBAppointment.sharedInstance.hour):00"
         
         date.text = "\(HBAppointment.sharedInstance.day)/\(HBAppointment.sharedInstance.month)/\(HBAppointment.sharedInstance.year)"
         
@@ -86,9 +86,25 @@ class HBConfirmationTableViewController: UITableViewController {
         ]
         
         Smoke().postWithParameters(true, endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment", parameters: parameters, successBlock: { (response) -> Void in
+            
+            let alert = UIAlertController(title: "Sucesso", message: "Agendamento feito com sucesso", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: { () -> Void in
+                //passa para tela de agendamentos
+                self.tabBarController?.selectedIndex = 1
+            })
+            
             print("deu certo")
             }) { (response) -> Void in
                 print("nao deu certo")
+                
+                let alert = UIAlertController(title: "Erro", message: "Falha para fazer agendamento. Tente novamente", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
                 
                 print(NSString(data: response.data!, encoding: 4))
         }
