@@ -32,9 +32,9 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.searchBar.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext = true
+        searchController.definesPresentationContext = false
         navigationItem.titleView = searchController.searchBar
     }
     
@@ -69,6 +69,11 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         let searchString = searchController.searchBar.text
         salaoNome = searchString!
         self.tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        //self.navigationItem.rightBarButtonItem.
+        print("comecouuuu")
     }
     
     

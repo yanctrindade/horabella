@@ -72,14 +72,14 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         }
         
         // 1
-        if let pageView = pageViews[page] {
+        if let _ = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
             // 2
             let frame = CGRect(x: self.view.frame.width * CGFloat(page), y: 0.0, width: self.view.frame.width, height: picturesScrollView.frame.height)
             
             // 3
-            var newPageView = UIImageView(image: UIImage(named: "noImage"))
+            let newPageView = UIImageView(image: UIImage(named: "noImage"))
             
             //download the salon images
             Alamofire.request(.GET, salon.images![page])
