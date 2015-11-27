@@ -153,7 +153,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     @IBAction func indexChanged(sender: AnyObject) {
         
         //se for a primeira aba, abilita seleçao para escolher serviço
-        if sender.selectedSegmentIndex == 0 {
+        if sender.selectedSegmentIndex == 0  || sender.selectedSegmentIndex == 2{
             tableView.allowsSelection = true
         }else{
             tableView.allowsSelection = false
@@ -279,7 +279,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 //carrega os comentarios
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonComment", forIndexPath: indexPath) as! HBSalonCommentsTableViewCell
                 
-                cell.userName.text = "Yan"
+                cell.userName.text = "Erick"
                 cell.commentDate.text = "ontem"
                 cell.comment.text = "Adorei o corte amigaaaaa"
                 
@@ -331,6 +331,96 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
             }
         }
         
+    }
+    
+    //DID SELECT
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            if indexPath.row == 0 && indexPath.section == 0{
+                //collectionView
+            }else{
+                //celula de servicos
+            }
+            
+        case 1:
+            if indexPath.row == 1 {
+                //makeComment
+            }else{
+                //carrega os comentarios
+            }
+        default:
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! HBSalonInfoTableViewCell
+            if indexPath.row == 1 {
+                //endereco
+                let lat = String(self.salon.location!.coordinate.latitude)
+                let long = String(self.salon.location!.coordinate.longitude)
+                
+                let wazeURL = "waze://?ll=\(lat),\(long)&navigate=yes"
+                let mapsURL = "maps://?daddr=\(lat),\(long)"
+                
+                //check if waze is installed on iphone
+                let canOpenURL = UIApplication.sharedApplication().canOpenURL(NSURL(string: wazeURL)!)
+                
+                let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+                let wazeAction = UIAlertAction(title: "Abrir Waze", style: .Default) { _ in
+                    //call to salon
+                    UIApplication.sharedApplication().openURL(NSURL(string: wazeURL)!)
+                }
+                let mapsAction = UIAlertAction(title: "Abrir Mapas", style: .Default) { _ in
+                    //call to salon
+                    UIApplication.sharedApplication().openURL(NSURL(string: mapsURL)!)
+                }
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel) { _ in }
+                if canOpenURL {
+                    alert.addAction(wazeAction)
+                }
+                alert.addAction(mapsAction)
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true){}
+                
+            } else if indexPath.row == 2 {
+                
+                //remove non number characters
+                let stringArray = cell.infoDescription.text!.componentsSeparatedByCharactersInSet(
+                    NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+                let phone = stringArray.joinWithSeparator("")
+                
+                let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+                let callAction = UIAlertAction(title: "Ligar", style: .Default) { _ in
+                    //call to salon
+                    if let phoneCallURL:NSURL = NSURL(string: "tel://+55\(phone)") {
+                        let application:UIApplication = UIApplication.sharedApplication()
+                        if (application.canOpenURL(phoneCallURL)) {
+                            application.openURL(phoneCallURL);
+                        }
+                    }
+                }
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel) { _ in }
+                alert.addAction(callAction)
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true){}
+                
+            } else {
+                //website
+                let website = cell.infoDescription.text
+                let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+                let callAction = UIAlertAction(title: "Acessar Website", style: .Default) { _ in
+                    //call to salon
+                    if let websiteURL:NSURL = NSURL(string: website!) {
+                        let application:UIApplication = UIApplication.sharedApplication()
+                        if (application.canOpenURL(websiteURL)) {
+                            application.openURL(websiteURL);
+                        }
+                    }
+                }
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel) { _ in }
+                alert.addAction(callAction)
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true){}
+                
+            }
+        }
     }
     
     //HEIGHT FOR HEADER
