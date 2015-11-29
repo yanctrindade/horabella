@@ -22,12 +22,5 @@ class HBMakeCommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    @IBAction func sendComment(sender: AnyObject) {
-        
-        print("enviar comentario")
-        
-    }
-    
 
 }

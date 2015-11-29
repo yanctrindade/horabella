@@ -24,6 +24,8 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
 
     var pageViews: [UIImageView?] = []
     
+    var commentCell: HBMakeCommentTableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,6 +69,16 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         super.viewWillDisappear(animated)
         
         HBServiceFilterSingleton.sharedInstance.selected.removeAll()
+    }
+    
+    //MARK: - Make comment
+    
+    @IBAction func makeComment(sender: AnyObject) {
+        
+        hbSalonDetail?.makeComment(salon.id!, comment: commentCell.comment.text!)
+        
+        commentCell.comment.text = nil
+        
     }
     
     //MARK: - ScrollView
@@ -277,6 +289,8 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 
             }else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("makeComment", forIndexPath: indexPath) as! HBMakeCommentTableViewCell
+                
+                commentCell = cell
                 
                 return cell
             }else{

@@ -77,4 +77,28 @@ class HBSalonDetail: NSObject {
         
     }
     
+    func makeComment(salonId: Int, comment: String) {
+        
+        let evaluationEndpoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/evaluation"
+        
+        let parameters = [
+            "shop_id": salonId,
+            "comment": comment,
+            "rate": 4
+        ]
+        
+        Smoke().postWithParameters(true, endpoint: evaluationEndpoint, parameters: parameters as! Dictionary<String, AnyObject>, successBlock: { (response) -> Void in
+            
+            print("fez comentario")
+            
+            self.getComments(salonId)
+            
+            }) { (response) -> Void in
+                
+                print("falha para fazer comentario")
+                
+        }
+        
+    }
+    
 }
