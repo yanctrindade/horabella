@@ -274,15 +274,15 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                 let cell = tableView.dequeueReusableCellWithIdentifier("salonEvaluation", forIndexPath: indexPath) as! HBSalonEvaluationTableViewCell
                 
                 if let info = salon.rate{
-                    cell.evaluationLabel.text = "\(info) estrelas"
+                    cell.evaluationLabel.text = "\(suffixNumber(NSNumber(double: info)))"
                 }
                 
                 if let info = salon.likes{
-                    cell.likesLabel.text = "\(info) curtidas"
+                    cell.likesLabel.text = "\(suffixNumber(info))"
                 }
                 
                 if let info = salon.comments{
-                    cell.commentsLabel.text = "\(info) comentários"
+                    cell.commentsLabel.text = "\(suffixNumber(info))"
                 }
                 
                 return cell
@@ -490,6 +490,27 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         }
         
         return true
+    }
+    
+    //MARK: - Abreviar numero
+    func suffixNumber(number:NSNumber) -> NSString {
+        
+        var num:Double = number.doubleValue;
+        let sign = ((num < 0) ? "-" : "" );
+        
+        num = fabs(num);
+        
+        if (num < 1000.0){
+            return "\(sign)\(num)";
+        }
+        
+        let exp:Int = Int(log10(num) / log10(1000));
+        
+        let units:[String] = ["K","M","G","T","P","E"];
+        
+        let roundedNum:Double = round(10 * num / pow(1000.0,Double(exp))) / 10;
+        
+        return "\(sign)\(roundedNum)\(units[exp-1])";
     }
 
 
