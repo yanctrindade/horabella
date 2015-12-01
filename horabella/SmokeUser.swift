@@ -20,6 +20,7 @@ class SmokeUser: NSObject {
     var phone: String!
     var birthDate: String!
     var pictureURL: String!
+    var points: String!
     var password: String!
     
     //flag para indicar quando o usuario está sendo atualizado
@@ -152,11 +153,19 @@ class SmokeUser: NSObject {
                         SmokeUser.sharedInstance.phone = info as! String
                     }
                     
-                    SmokeUser.sharedInstance.isCurrentUser = true
+                    if let info = user["picture"]{
+                        SmokeUser.sharedInstance.pictureURL = info as! String
+                    }
                     
-//                    if let info = user["birthdate"]{
-//                        SmokeUser.sharedInstance.birthDate = info as! String
-//                    }
+                    if let info = user["birthday"]{
+                        SmokeUser.sharedInstance.birthDate = info as! String
+                    }
+                    
+                    if let info = user["points"]{
+                        SmokeUser.sharedInstance.points = info as! String
+                    }
+                    
+                    SmokeUser.sharedInstance.isCurrentUser = true
                     
                 }
                 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileTableViewController: UITableViewController {
 
@@ -15,6 +16,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userLoyaltyPoints: UILabel!
     @IBOutlet weak var userHistoryLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,21 @@ class ProfileTableViewController: UITableViewController {
         //loading user info
         if (SmokeUser.sharedInstance.isCurrentUser!) {
             userNameLabel.text = SmokeUser.sharedInstance.firstName + " " + SmokeUser.sharedInstance.lastName
-            userLoyaltyPoints.text = "0 Pontos"
+            userLoyaltyPoints.text = "\(SmokeUser.sharedInstance.points) Pontos"
+            emailLabel.text = SmokeUser.sharedInstance.email
             userHistoryLabel.text = "0 Agendamentos"
             //backgroundImage.image = UIImage(named: "")
             //profilePicture.image = UIImage(named: "")
+            
+            //baixa imagem do usuario
+            Alamofire.request(.GET, SmokeUser.sharedInstance.pictureURL!)
+                .responseImage { response in
+                    if let image = response.result.value {
+                        self.profilePicture.image = image
+                        self.backgroundImage.image = image
+                    }
+            }
+            
         }
         
         print(SmokeUser.sharedInstance.isCurrentUser)
@@ -39,6 +52,10 @@ class ProfileTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
 
     

@@ -483,6 +483,14 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         }
         return headerView
     }
+    
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        }
+        
+        return true
+    }
 
 
     //MARK: Salon Detail Delegate Method

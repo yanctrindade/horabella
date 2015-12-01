@@ -27,6 +27,13 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //observer pra quando a tela de filtro sumir
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("didDismissFilterViewControlller:"),
+            name: "didDismissFilterViewControlller",
+            object: nil)
+        
         //Search Controller Settings
         //searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Salão, Endereço"
@@ -79,6 +86,8 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
             if let info = searchBar.text {
                 self.salonList!.search(info, latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
             }
+        }else{
+            salonList?.searchByLocation(coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
         }
     }
     
@@ -90,18 +99,19 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     
     //MARK: Filter Bar Button
     func FilterBarButton() {
-        //observer pra quando a tela de filtro sumir
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("didDismissFilterViewControlller:"),
-            name: "didDismissFilterViewControlller",
-            object: nil)
-        
         self.performSegueWithIdentifier("feedToFilter", sender: self)
     }
     
     func didDismissFilterViewControlller(sender: NSNotification){
-        self.tableView.reloadData()
+        if HBFilter.sharedInstance.filtersArray.contains("6") || HBFilter.sharedInstance.filtersArray.contains("7"){
+            
+            salonList?.searchByLocation(coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+            
+        }else if HBFilter.sharedInstance.filtersArray.count > 0 {
+            salonList?.searchByCategoriesAndLocation(HBFilter.sharedInstance.filtersArray, latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+        }else{
+            salonList?.searchByLocation(coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+        }
     }
     
     // MARK: - Table view data source
@@ -195,17 +205,18 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         
         //calculate the distance between user and salon
         for salon in mySalonArray {
-            let distancia = self.calculateDistanceToUser(salon.location!)
-            salon.distanceToUser = distancia
+            salon.distanceToUser = self.calculateDistanceToUser(salon.location!)
         }
         
         //sort by distance
-        self.salonArray = mySalonArray.sort({$0.distanceToUser < $1.distanceToUser})
+        self.salonArray = mySalonArray.sort({$0.distanceToUser <= $1.distanceToUser})
         CurrentHBSalonList.sharedInstance.HBSalonArray = self.salonArray
         
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
 
     }
+    
+    
     
     //MARK: Calculate Distance Between Salon x User Location
     func calculateDistanceToUser(location: CLLocation) -> Double {
