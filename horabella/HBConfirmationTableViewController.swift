@@ -27,6 +27,8 @@ class HBConfirmationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Confirme"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -90,11 +92,10 @@ class HBConfirmationTableViewController: UITableViewController {
             let alert = UIAlertController(title: "Sucesso", message: "Agendamento feito com sucesso", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                 alert.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }))
-            self.presentViewController(alert, animated: true, completion: { () -> Void in
-                //passa para tela de agendamentos
-                self.tabBarController?.selectedIndex = 1
-            })
+            
+            self.presentViewController(alert, animated: true, completion: nil)
             
             print("deu certo")
             }) { (response) -> Void in

@@ -27,6 +27,12 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("didSelectDay:"),
+            name: "didSelectDay",
+            object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,11 +51,7 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
         priceLabel.text = servicePrice!
         
         //observer para atualizar horarios quando clica em um dia
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("didSelectDay:"),
-            name: "didSelectDay",
-            object: nil)
+        
         
     }
     
@@ -81,7 +83,7 @@ class HBScheludingTableViewController: UITableViewController, HBScheduleDelegate
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
