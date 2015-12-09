@@ -49,6 +49,7 @@ class HBSalonList: NSObject {
                     let rate = Double(shop["rate"]! as! String)
                     let website = shop["website"]! as! String
                     let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    let description = shop["description"] as! String
                    
                     var imagesArray = Array<String>()
                     for dictionary in arrayDictionaryImage {
@@ -56,7 +57,7 @@ class HBSalonList: NSObject {
                         imagesArray.append(url)
                     }
                     
-                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray, description: description)
                     
                     CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
                 }
@@ -108,6 +109,7 @@ class HBSalonList: NSObject {
                     let rate = Double(shop["rate"]! as! String)
                     let website = shop["website"]! as! String
                     let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    let description = shop["description"] as! String
                     
                     var imagesArray = Array<String>()
                     for dictionary in arrayDictionaryImage {
@@ -115,7 +117,7 @@ class HBSalonList: NSObject {
                         imagesArray.append(url)
                     }
                     
-                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray, description: description)
                     
                     CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
                 }
@@ -162,6 +164,7 @@ class HBSalonList: NSObject {
                     let rate = Double(shop["rate"]! as! String)
                     let website = shop["website"]! as! String
                     let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    let description = shop["description"] as! String
                     
                     var imagesArray = Array<String>()
                     for dictionary in arrayDictionaryImage {
@@ -169,7 +172,7 @@ class HBSalonList: NSObject {
                         imagesArray.append(url)
                     }
                     
-                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray, description: description)
                     
                     CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
                 }
@@ -226,6 +229,7 @@ class HBSalonList: NSObject {
                     let rate = Double(shop["rate"]! as! String)
                     let website = shop["website"]! as! String
                     let arrayDictionaryImage = shop["images"] as! Array<Dictionary<String,String>>
+                    let description = shop["description"] as! String
                     
                     var imagesArray = Array<String>()
                     for dictionary in arrayDictionaryImage {
@@ -233,7 +237,7 @@ class HBSalonList: NSObject {
                         imagesArray.append(url)
                     }
                     
-                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray)
+                    let newSalon = HBSalon(address: address, comments: comment!, evaluations: evaluations!, id: id!, likes: likes!, location: location, name: name, phone: phone, rate: rate!, website: website, images: imagesArray, description: description)
                     
                     CurrentHBSalonList.sharedInstance.HBSalonArray.append(newSalon)
                 }

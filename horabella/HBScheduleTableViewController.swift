@@ -21,8 +21,12 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.hbMySchedule = HBMySchedule()
-        self.hbMySchedule?.delegate = self
+        if SmokeUser.sharedInstance.currentUser() == nil {
+            self.tabBarController?.selectedIndex = 0
+        } else {
+            self.hbMySchedule = HBMySchedule()
+            self.hbMySchedule?.delegate = self
+        }
     }
 
     // MARK: - Table view data source
@@ -82,4 +86,5 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
         
         self.tableView.reloadData()
     }
+    
 }

@@ -26,27 +26,32 @@ class ProfileTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //loading user info
-        if (SmokeUser.sharedInstance.isCurrentUser!) {
-            userNameLabel.text = SmokeUser.sharedInstance.firstName + " " + SmokeUser.sharedInstance.lastName
-            userLoyaltyPoints.text = "\(SmokeUser.sharedInstance.points) Pontos"
-            emailLabel.text = SmokeUser.sharedInstance.email
-            userHistoryLabel.text = "0 Agendamentos"
-            //backgroundImage.image = UIImage(named: "")
-            //profilePicture.image = UIImage(named: "")
-            
-            //baixa imagem do usuario
-            Alamofire.request(.GET, SmokeUser.sharedInstance.pictureURL!)
-                .responseImage { response in
-                    if let image = response.result.value {
-                        self.profilePicture.image = image
-                        self.backgroundImage.image = image
-                    }
+        if SmokeUser.sharedInstance.currentUser() == nil {
+            self.tabBarController?.selectedIndex = 0
+        } else {
+            //loading user info
+            if (SmokeUser.sharedInstance.isCurrentUser!) {
+                userNameLabel.text = SmokeUser.sharedInstance.firstName + " " + SmokeUser.sharedInstance.lastName
+                userLoyaltyPoints.text = "\(SmokeUser.sharedInstance.points) Pontos"
+                emailLabel.text = SmokeUser.sharedInstance.email
+                userHistoryLabel.text = "0 Agendamentos"
+                //backgroundImage.image = UIImage(named: "")
+                //profilePicture.image = UIImage(named: "")
+                
+                //baixa imagem do usuario
+                Alamofire.request(.GET, SmokeUser.sharedInstance.pictureURL!)
+                    .responseImage { response in
+                        if let image = response.result.value {
+                            self.profilePicture.image = image
+                            self.backgroundImage.image = image
+                        }
+                }
+                
             }
             
+            print(SmokeUser.sharedInstance.isCurrentUser)
         }
         
-        print(SmokeUser.sharedInstance.isCurrentUser)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,5 +70,10 @@ class ProfileTableViewController: UITableViewController {
     
     @IBAction func settingsButton(sender: AnyObject) {
         print("Settings button pressed")
+    }
+    
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+        SmokeUser.sharedInstance.logOut()
+        self.tabBarController?.selectedIndex = 0
     }
 }

@@ -240,6 +240,20 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     //MARK: TabBarController Delegate Method
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         self.searchController.active = false
+        
+        if let identifier = viewController.restorationIdentifier {
+            if identifier == "salonListId" {
+                
+            }
+        } else {
+            if (SmokeUser.sharedInstance.currentUser() != nil) {
+                
+            } else {
+                let loginViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
+                presentViewController(loginViewController, animated: true, completion: nil)
+            }
+        }
+        
     }
     
 }
