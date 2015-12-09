@@ -75,9 +75,14 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     
     @IBAction func makeComment(sender: AnyObject) {
         
-        hbSalonDetail?.makeComment(salon.id!, comment: commentCell.comment.text!)
-        
-        commentCell.comment.text = nil
+        if SmokeUser.sharedInstance.currentUser() != nil {
+            hbSalonDetail?.makeComment(salon.id!, comment: commentCell.comment.text!)
+            
+            commentCell.comment.text = nil
+        } else {
+            let loginViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
+            presentViewController(loginViewController, animated: true, completion: nil)
+        }
         
     }
     
@@ -321,7 +326,10 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                     cell.name.text = info
                 }
                 
-                cell.salonDescription.text = "Descriçao do\nsalao\ntop"
+                if let info = salon.desc{
+                    cell.salonDescription.text = info
+                }
+                
                 return cell
                 
             } else if indexPath.row == 1 {
@@ -527,9 +535,24 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
         self.tableView.reloadData()
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "scheduleSegue" {
+            
+            if SmokeUser.sharedInstance.currentUser() == nil {
+                let loginViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
+                presentViewController(loginViewController, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        return true
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "scheduleSegue" {
+            
             let indexPath = tableView.indexPathForSelectedRow
             let service = servicesByCategoryArray[indexPath!.section-1][indexPath!.row]
             

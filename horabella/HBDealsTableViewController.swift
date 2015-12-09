@@ -27,16 +27,21 @@ class HBDealsTableViewController: UITableViewController, HBDealDelegate, CLLocat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        hbDeals = HBDeals(latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
-        hbDeals?.delegate = self
+        if SmokeUser.sharedInstance.currentUser() == nil {
+            self.tabBarController?.selectedIndex = 0
+        } else {
+            hbDeals = HBDeals(latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)
+            hbDeals?.delegate = self
+            
+            //configurações de localização
+            let locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            locationManager.distanceFilter = 20
+        }
         
-        //configurações de localização
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.distanceFilter = 20
     }
 
     // MARK: - Table view data source

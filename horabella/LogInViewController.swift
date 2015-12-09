@@ -224,6 +224,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+    @IBAction func cancelBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
 
     // MARK: - Navigation
 

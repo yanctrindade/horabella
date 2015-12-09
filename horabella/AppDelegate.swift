@@ -29,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         //authenticatedUser: check is User is logged in or present login view
-        if (SmokeUser.sharedInstance.currentUser() != nil) {
+//        if (SmokeUser.sharedInstance.currentUser() != nil) {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateInitialViewController()
-        } else {
-            let rootViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
-            self.window?.rootViewController = rootViewController
-        }
+//        } else {
+//            let rootViewController = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("loginViewController")
+//            self.window?.rootViewController = rootViewController
+//        }
         
         //Facebook Credentials
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

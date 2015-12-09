@@ -686,6 +686,21 @@
                                     <constraint firstAttribute="width" constant="153" id="czY-qo-2Wf"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-gg-6ik">
+                                <rect key="frame" x="270" y="423" width="61" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="WjG-8Q-Zi4"/>
+                                    <constraint firstAttribute="height" constant="30" id="lSs-d9-Kuh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="BuX-9p-Kwg" eventType="touchUpInside" id="QvV-SI-HRB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -705,6 +720,7 @@
                             <constraint firstAttribute="trailing" secondItem="auT-VK-5kn" secondAttribute="trailing" id="Nu6-xr-enR"/>
                             <constraint firstAttribute="trailing" secondItem="Ta3-Ar-q8f" secondAttribute="trailing" id="ONs-ah-lye"/>
                             <constraint firstItem="auT-VK-5kn" firstAttribute="top" secondItem="hAe-rh-Nvo" secondAttribute="top" id="OTV-Ed-3vE"/>
+                            <constraint firstItem="ItB-gg-6ik" firstAttribute="centerX" secondItem="hAe-rh-Nvo" secondAttribute="centerX" id="Ou2-P6-Wio"/>
                             <constraint firstItem="Ta3-Ar-q8f" firstAttribute="leading" secondItem="hAe-rh-Nvo" secondAttribute="leading" id="PPH-M7-jSy"/>
                             <constraint firstAttribute="trailing" secondItem="XZ3-gM-Ttc" secondAttribute="trailing" id="Thr-ie-amc"/>
                             <constraint firstItem="XZ3-gM-Ttc" firstAttribute="centerX" secondItem="hAe-rh-Nvo" secondAttribute="centerX" id="WAH-aa-Z6b"/>
@@ -716,6 +732,7 @@
                             <constraint firstItem="AeR-wV-Sc0" firstAttribute="top" secondItem="XG5-2m-tsy" secondAttribute="bottom" id="j5Y-AN-pyW"/>
                             <constraint firstItem="auT-VK-5kn" firstAttribute="leading" secondItem="hAe-rh-Nvo" secondAttribute="leading" id="lTt-T6-ghd"/>
                             <constraint firstItem="XZ3-gM-Ttc" firstAttribute="top" secondItem="Ta3-Ar-q8f" secondAttribute="bottom" constant="16" id="lol-cf-fPZ"/>
+                            <constraint firstItem="ItB-gg-6ik" firstAttribute="top" secondItem="SIe-LV-r5y" secondAttribute="bottom" constant="-4" id="obF-3r-ri3"/>
                             <constraint firstItem="XG5-2m-tsy" firstAttribute="top" secondItem="JBO-G2-4gp" secondAttribute="bottom" id="uhj-KV-Wrq"/>
                             <constraint firstItem="QbK-d7-ReK" firstAttribute="top" secondItem="hAe-rh-Nvo" secondAttribute="top" id="wx0-pu-COf"/>
                             <constraint firstItem="Ta3-Ar-q8f" firstAttribute="top" secondItem="KID-bM-dd3" secondAttribute="bottom" constant="10" id="yxB-EL-z7J"/>
@@ -765,6 +782,6 @@
         <image name="loginBackground" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zH1-gu-aNZ"/>
+        <segue reference="TAM-y9-ifY"/>
     </inferredMetricsTieBreakers>
 </document>
