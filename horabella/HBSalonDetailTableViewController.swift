@@ -321,7 +321,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
                     cell.name.text = info
                 }
                 
-                cell.salonDescription.text = "Descriçao do\nsalao\ntop"
+                cell.salonDescription.text = "Descriçao do\nsalao"
                 return cell
                 
             } else if indexPath.row == 1 {
@@ -485,7 +485,7 @@ class HBSalonDetailTableViewController: UITableViewController, HBSalonDetailDele
     }
     
     override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && segControl.selectedSegmentIndex == 0 {
             return false
         }
         
