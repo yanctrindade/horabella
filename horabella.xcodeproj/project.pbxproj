@@ -492,7 +492,7 @@
 				TargetAttributes = {
 					BB1B6DDA1BDEA033004C95EB = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 955Z9AWD99;
+						DevelopmentTeam = 7869VQ6K2Z;
 					};
 					BB1B6DEE1BDEA033004C95EB = {
 						CreatedOnToolsVersion = 7.1;
@@ -796,14 +796,14 @@
 			baseConfigurationReference = 73642571618E75C773AAE020 /* Pods-horabella.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ian Ferreira (7869VQ6K2Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Ferreira (7869VQ6K2Z)";
 				INFOPLIST_FILE = horabella/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "05dc793d-713d-4f52-918e-5fd48858feff";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -813,14 +813,14 @@
 			baseConfigurationReference = 6236783C0D08AF1A5B3831D4 /* Pods-horabella.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ian Ferreira (7869VQ6K2Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Ferreira (7869VQ6K2Z)";
 				INFOPLIST_FILE = horabella/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yimobile.horabella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "05dc793d-713d-4f52-918e-5fd48858feff";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

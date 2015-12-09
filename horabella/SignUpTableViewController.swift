@@ -34,6 +34,8 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         
+        super.viewWillAppear(animated)
+        
         firstNameTextField.text = SmokeUser.sharedInstance.firstName
         lastNameTextField.text = SmokeUser.sharedInstance.lastName
         emailTextField.text = SmokeUser.sharedInstance.email
