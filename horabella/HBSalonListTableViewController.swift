@@ -171,9 +171,7 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         let defaultAction = UIAlertAction(title: "Configurações", style: .Default) { (alert: UIAlertAction!) -> Void in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
         }
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         alert.addAction(defaultAction)
-        alert.addAction(cancelAction)
         
         presentViewController(alert, animated: true, completion:nil)
     }
