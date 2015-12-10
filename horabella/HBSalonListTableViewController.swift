@@ -167,12 +167,15 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         print("Falha na localização")
         
         //AlertView se o GPS estiver off e abre a tela de Configurações
-        /*let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
-        let defaultAction = UIAlertAction(title: "Configurações", style: .Cancel) { (alert: UIAlertAction!) -> Void in
+        let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
+        let defaultAction = UIAlertAction(title: "Configurações", style: .Default) { (alert: UIAlertAction!) -> Void in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
         }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         alert.addAction(defaultAction)
-        presentViewController(alert, animated: true, completion:nil)*/
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion:nil)
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
