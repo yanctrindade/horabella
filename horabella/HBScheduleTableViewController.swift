@@ -59,7 +59,7 @@ class HBScheduleTableViewController: UITableViewController, HBMyScheduleDelegate
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
-            let endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment/" + String(self.myAppointmentsArray[indexPath.row].id!)
+            let endPoint = "http://horabella.com.br/api/v1/appointment/" + String(self.myAppointmentsArray[indexPath.row].id!)
             
             Smoke().deleteWithParameters(true, endpoint: endPoint, parameters: nil, successBlock: { (response) -> Void in
                 print(response)

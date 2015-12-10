@@ -17,8 +17,8 @@ protocol HBScheduleDelegate {
 
 class HBSchedule: NSObject {
     var delegate: HBScheduleDelegate?
-    var endpoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/service/"
-    var endpointAppointments = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment/available"
+    var endpoint = "http://horabella.com.br/api/v1/service/"
+    var endpointAppointments = "http://horabella.com.br/api/v1/appointment/available"
     var professionalsArray = [] as Array<HBProfessional>
     var availableTimesArray = [] as Array<String>
     

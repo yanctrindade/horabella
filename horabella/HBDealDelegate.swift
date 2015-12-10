@@ -15,7 +15,7 @@ protocol HBDealDelegate {
 
 class HBDeals: NSObject {
     var delegate: HBDealDelegate?
-    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/offer/locate/"
+    var endPoint = "http://horabella.com.br/api/v1/offer/locate/"
     var dealsArray = [] as Array<HBDeal>
     
     init(latitude: Double, longitude: Double) {

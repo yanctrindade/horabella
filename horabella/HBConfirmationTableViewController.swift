@@ -87,7 +87,7 @@ class HBConfirmationTableViewController: UITableViewController {
             "schedule_time": HBAppointment.sharedInstance.getStringDate()
         ]
         
-        Smoke().postWithParameters(true, endpoint: "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/appointment", parameters: parameters, successBlock: { (response) -> Void in
+        Smoke().postWithParameters(true, endpoint: "http://horabella.com.br/api/v1/appointment", parameters: parameters, successBlock: { (response) -> Void in
             
             let alert = UIAlertController(title: "Sucesso", message: "Agendamento feito com sucesso", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in

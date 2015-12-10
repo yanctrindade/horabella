@@ -16,7 +16,7 @@ protocol HBSalonDetailDelegate {
 
 class HBSalonDetail: NSObject {
     var delegate: HBSalonDetailDelegate?
-    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/"
+    var endPoint = "http://horabella.com.br/api/v1/shop/"
     var servicesArray = Array<Array<HBService>>(count: 6, repeatedValue: [])
     var commentsArray = [] as Array<HBComment>
     
@@ -79,7 +79,7 @@ class HBSalonDetail: NSObject {
     
     func makeComment(salonId: Int, comment: String) {
         
-        let evaluationEndpoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/evaluation"
+        let evaluationEndpoint = "http://horabella.com.br/api/v1/evaluation"
         
         let parameters = [
             "shop_id": salonId,
