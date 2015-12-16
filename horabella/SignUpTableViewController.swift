@@ -44,6 +44,8 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             }else{
                 genderSegControl.selectedSegmentIndex = 0
             }
+        }else{
+            genderSegControl.selectedSegmentIndex = 2
         }
         
     }
@@ -85,7 +87,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             }))
             presentViewController(alert, animated: true, completion: nil)
             
-        }else if birthdateTextField.text!.characters.count < 1 {
+        /*}else if birthdateTextField.text!.characters.count < 1 {
             
             let alert = UIAlertController(title: "Erro", message: "Insira sua data de nascimento!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
@@ -93,7 +95,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             }))
             presentViewController(alert, animated: true, completion: nil)
             
-        }else if passwordTextField.text!.characters.count < 6 {
+        */}else if passwordTextField.text!.characters.count < 6 {
             
             let alert = UIAlertController(title: "Erro", message: "Senha muito curta!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
@@ -110,8 +112,10 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
             newUser.password = passwordTextField.text
             if genderSegControl.selectedSegmentIndex == 0{
                 newUser.gender = "male"
-            }else{
+            }else if genderSegControl.selectedSegmentIndex == 1 {
                 newUser.gender = "female"
+            }else{
+                newUser.gender = "n/a"
             }
             
             newUser.signUp({ (response) -> Void in
