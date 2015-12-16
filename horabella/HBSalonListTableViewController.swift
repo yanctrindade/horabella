@@ -16,7 +16,7 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
     
     var salonArray = Array<HBSalon>()
     
-    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop"
+    var endPoint = "http://horabella.com.br/api/v1/shop"
     var searchController = UISearchController(searchResultsController: nil)
     //LocationManager variables
     var locationManager = CLLocationManager()
@@ -167,12 +167,13 @@ class HBSalonListTableViewController: UITableViewController,UISearchControllerDe
         print("Falha na localização")
         
         //AlertView se o GPS estiver off e abre a tela de Configurações
-        /*let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
-        let defaultAction = UIAlertAction(title: "Configurações", style: .Cancel) { (alert: UIAlertAction!) -> Void in
+        let alert = UIAlertController(title: "Permissão de GPS", message: "Vá as configurações do aparelho e autorize o uso de GPS.", preferredStyle:.Alert)
+        let defaultAction = UIAlertAction(title: "Configurações", style: .Default) { (alert: UIAlertAction!) -> Void in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
         }
         alert.addAction(defaultAction)
-        presentViewController(alert, animated: true, completion:nil)*/
+        
+        presentViewController(alert, animated: true, completion:nil)
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

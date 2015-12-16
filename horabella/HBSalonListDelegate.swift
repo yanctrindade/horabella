@@ -16,9 +16,9 @@ protocol HBSalonListDelegate {
 
 class HBSalonList: NSObject {
     var delegate: HBSalonListDelegate?
-    var endPointLocate = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/locate"
-    var endPointSearch = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/search"
-    var endPointFilter = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/shop/filter"
+    var endPointLocate = "http://horabella.com.br/api/v1/shop/locate"
+    var endPointSearch = "http://horabella.com.br/api/v1/shop/search"
+    var endPointFilter = "http://horabella.com.br/api/v1/shop/filter"
     
     init(latitude: Double, longitude: Double) {
         super.init()

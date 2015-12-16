@@ -15,7 +15,7 @@ protocol HBMyScheduleDelegate {
 
 class HBMySchedule: NSObject {
     var delegate: HBMyScheduleDelegate?
-    var endPoint = "http://ec2-54-233-79-138.sa-east-1.compute.amazonaws.com/api/v1/user/appointments"
+    var endPoint = "http://horabella.com.br/api/v1/user/appointments"
     var myAppointmentsArray = Array<HBMyAppointment>()
     
     override init() {
